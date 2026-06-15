@@ -1,0 +1,20 @@
+[
+  {
+    "id": "QRY-501",
+    "name": "Suresh Patil",
+    "email": "suresh.patil@gmail.com",
+    "subject": "Inquiry regarding Health Check-up Packages",
+    "message": "Could you please provide details on pre-employment health screening packages?",
+    "date": "15 Jun, 2026",
+    "status": "Pending"
+  },
+  {
+    "id": "QRY-502",
+    "name": "Meena Rao",
+    "email": "meena.rao@yahoo.com",
+    "subject": "Doctor Appointment availability",
+    "message": "I would like to know if Dr. Rajesh Kulkarni is available on coming Thursday for orthopedics consultation.",
+    "date": "15 Jun, 2026",
+    "status": "Resolved"
+  }
+]

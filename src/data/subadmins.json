@@ -1,0 +1,16 @@
+[
+  {
+    "username": "admin.sneha",
+    "email": "sneha@bhaktivedantahospital.com",
+    "role": "Administration",
+    "status": "Active",
+    "created": "12 Oct 2023"
+  },
+  {
+    "username": "admin.rajesh",
+    "email": "rajesh@bhaktivedantahospital.com",
+    "role": "Administration",
+    "status": "Active",
+    "created": "15 Oct 2023"
+  }
+]
