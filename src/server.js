@@ -66,7 +66,11 @@ app.use((err, req, res, next) => {
 });
 
 // Start listening
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`CORS allowed origins: ${FRONTEND_URL}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    console.log(`CORS allowed origins: ${FRONTEND_URL}`);
+  });
+}
+
+export default app;

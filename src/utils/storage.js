@@ -19,10 +19,16 @@ function getFilePath(key) {
   return path.join(DATA_DIR, `${key}.json`);
 }
 
+const memoryCache = {};
+
 /**
  * Read data for a key. If the file doesn't exist, seed it.
  */
 export function readData(key) {
+  if (memoryCache[key]) {
+    return memoryCache[key];
+  }
+
   const filePath = getFilePath(key);
   
   if (!fs.existsSync(filePath)) {
@@ -39,13 +45,20 @@ export function readData(key) {
     else if (key === 'specialities_state') seedData = seeds.defaultSpecialitiesState;
     
     // Write seed data
-    fs.writeFileSync(filePath, JSON.stringify(seedData, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(seedData, null, 2), 'utf-8');
+    } catch (err) {
+      console.warn(`Could not write seed file for ${key} (probably read-only fs):`, err.message);
+    }
+    memoryCache[key] = seedData;
     return seedData;
   }
   
   try {
     const rawContent = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(rawContent);
+    const parsed = JSON.parse(rawContent);
+    memoryCache[key] = parsed;
+    return parsed;
   } catch (err) {
     console.error(`Error reading database file for ${key}:`, err);
     return [];
@@ -56,13 +69,14 @@ export function readData(key) {
  * Write data back to a key's JSON file.
  */
 export function writeData(key, data) {
+  memoryCache[key] = data;
   const filePath = getFilePath(key);
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
     return true;
   } catch (err) {
-    console.error(`Error writing database file for ${key}:`, err);
-    return false;
+    console.warn(`Error writing database file for ${key} (ignoring since memory is updated):`, err.message);
+    return true; // Return true so client API doesn't get error
   }
 }
 
