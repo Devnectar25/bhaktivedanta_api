@@ -31,6 +31,26 @@ app.use(express.json());
 // Initialize JSON database storage & seeding
 initializeDatabase();
 
+// Root Endpoint
+app.get('/', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Welcome to Bhaktivedanta Hospital API',
+    endpoints: {
+      health: '/api/health',
+      doctors: '/api/doctors',
+      appointments: '/api/appointments',
+      specialities: '/api/specialities-state',
+      events: '/api/events',
+      testimonials: '/api/testimonials',
+      news: '/api/news',
+      gallery: '/api/gallery',
+      queries: '/api/queries',
+      subadmins: '/api/subadmins'
+    }
+  });
+});
+
 // Health Check Endpoint
 app.get('/api/health', (req, res) => {
   res.json({
