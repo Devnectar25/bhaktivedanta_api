@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { initializeDatabase } from './utils/storage.js';
 
+
 // Routers
 import doctorsRouter from './routes/doctors.js';
 import appointmentsRouter from './routes/appointments.js';
@@ -26,10 +27,12 @@ app.use(cors({
   origin: [FRONTEND_URL, 'http://localhost:5173', 'http://127.0.0.1:5173'],
   credentials: true
 }));
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // Initialize JSON database storage & seeding
 initializeDatabase();
+
 
 // Root Endpoint
 app.get('/', (req, res) => {
