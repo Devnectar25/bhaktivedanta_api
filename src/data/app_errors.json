@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ERR-901",
+    "timestamp": "2026-08-26 10:45:12",
+    "level": "Error",
+    "source": "Database Query",
+    "message": "Supabase real-time connection failure: Node 20 WebSocket initialization",
+    "endpoint": "/api/specialities-state",
+    "status": "Investigating",
+    "details": "Configured globalThis.WebSocket fallback via ws transport."
+  },
+  {
+    "id": "ERR-902",
+    "timestamp": "2026-08-26 08:30:00",
+    "level": "Warning",
+    "source": "CORS Middleware",
+    "message": "CORS header missing for origin http://127.0.0.1:5173",
+    "endpoint": "/api/doctors",
+    "status": "Resolved",
+    "details": "Updated CORS allowed origins in server.js middleware."
+  },
+  {
+    "id": "ERR-903",
+    "timestamp": "2026-08-25 18:22:40",
+    "level": "Critical",
+    "source": "API Gateway",
+    "message": "HTTP 500: Database table bv_doctors not found in Supabase schema",
+    "endpoint": "/api/doctors",
+    "status": "Investigating",
+    "details": "Database table bv_doctors requires verification in Supabase dashboard."
+  }
+]

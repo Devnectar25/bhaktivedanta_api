@@ -42,6 +42,8 @@ export function readData(key) {
     else if (key === 'gallery') seedData = seeds.defaultGallery;
     else if (key === 'queries') seedData = seeds.defaultQueries;
     else if (key === 'subadmins') seedData = seeds.defaultSubAdmins;
+    else if (key === 'helpdesk') seedData = seeds.defaultHelpDesk;
+    else if (key === 'app_errors') seedData = seeds.defaultAppErrors;
     else if (key === 'specialities_state') seedData = seeds.defaultSpecialitiesState;
     
     // Write seed data
@@ -91,6 +93,8 @@ export function initializeDatabase() {
     'gallery',
     'queries',
     'subadmins',
+    'helpdesk',
+    'app_errors',
     'specialities_state'
   ];
   

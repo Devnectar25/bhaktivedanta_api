@@ -14,6 +14,8 @@ import newsRouter from './routes/news.js';
 import galleryRouter from './routes/gallery.js';
 import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
+import helpdeskRouter from './routes/helpdesk.js';
+import appErrorsRouter from './routes/appErrors.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -49,7 +51,9 @@ app.get('/', (req, res) => {
       news: '/api/news',
       gallery: '/api/gallery',
       queries: '/api/queries',
-      subadmins: '/api/subadmins'
+      subadmins: '/api/subadmins',
+      helpdesk: '/api/helpdesk',
+      appErrors: '/api/app-errors'
     }
   });
 });
@@ -73,6 +77,8 @@ app.use('/api/news', newsRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/queries', queriesRouter);
 app.use('/api/subadmins', subadminsRouter);
+app.use('/api/helpdesk', helpdeskRouter);
+app.use('/api/app-errors', appErrorsRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
