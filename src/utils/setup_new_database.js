@@ -1,6 +1,6 @@
 import pg from 'pg';
 import dotenv from 'dotenv';
-import { defaultSpecialitiesState, ensureStandardTabs, defaultDoctors, defaultAppointments } from './seeds.js';
+import { defaultSpecialitiesState, ensureStandardTabs, defaultDoctors, defaultAppointments, defaultServicesState } from './seeds.js';
 
 dotenv.config();
 
@@ -15,6 +15,49 @@ async function setup() {
   try {
     await client.connect();
     console.log('Connected to new database via pg client.');
+
+    // Create table bv_service_categories
+    console.log('Creating table bv_service_categories...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_service_categories (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT,
+        "order" INTEGER DEFAULT 1,
+        status BOOLEAN DEFAULT true,
+        "adminId" TEXT DEFAULT 'ADM-001',
+        "adminName" TEXT DEFAULT 'Super Administrator',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+    console.log('Table bv_service_categories created successfully.');
+
+    // Create table admin_services
+    console.log('Creating table admin_services...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS admin_services (
+        id VARCHAR PRIMARY KEY,
+        service_name VARCHAR NOT NULL,
+        icon VARCHAR,
+        short_description TEXT,
+        banner_image TEXT,
+        thumbnail_image TEXT,
+        slug VARCHAR,
+        status VARCHAR,
+        category_id VARCHAR NOT NULL,
+        category_name VARCHAR NOT NULL,
+        category_description TEXT,
+        category_order INTEGER,
+        category_status BOOLEAN DEFAULT true,
+        tabs_data JSONB,
+        admin_id VARCHAR NOT NULL DEFAULT 'ADM-001',
+        admin_name VARCHAR DEFAULT 'Super Administrator',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+    console.log('Table admin_services created successfully.');
 
     // 1. Create table admin_specialities if not exists
     console.log('Creating table admin_specialities...');
@@ -194,6 +237,83 @@ async function setup() {
       ]);
     }
     console.log('Successfully seeded categories into bv_categories table!');
+
+    // 8. Seed Service Categories
+    console.log('Seeding service categories into bv_service_categories table...');
+    const servicesState = JSON.parse(JSON.stringify(defaultServicesState));
+    const serviceCatsMap = {};
+    for (const cat of (servicesState.categories || [])) {
+      serviceCatsMap[cat.id] = cat;
+      await client.query(`
+        INSERT INTO bv_service_categories (id, name, description, "order", status, "adminId", "adminName", created_at, updated_at)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        ON CONFLICT (id) DO UPDATE SET
+          name = EXCLUDED.name,
+          description = EXCLUDED.description,
+          "order" = EXCLUDED."order",
+          status = EXCLUDED.status,
+          "adminId" = EXCLUDED."adminId",
+          "adminName" = EXCLUDED."adminName",
+          updated_at = NOW();
+      `, [
+        cat.id, cat.name, cat.description || '', cat.order || 1,
+        cat.status !== false, cat.adminId || 'ADM-001',
+        cat.adminName || 'Super Administrator',
+        cat.createdAt || new Date().toISOString(),
+        cat.updatedAt || new Date().toISOString()
+      ]);
+    }
+    console.log('Successfully seeded service categories into bv_service_categories table!');
+
+    // 9. Seed Services
+    console.log('Seeding services into admin_services table...');
+    for (const srv of (servicesState.services || [])) {
+      const cat = serviceCatsMap[srv.categoryId] || {};
+      await client.query(`
+        INSERT INTO admin_services (
+          id, service_name, icon, short_description, banner_image, thumbnail_image, slug,
+          status, category_id, category_name, category_description, category_order,
+          category_status, tabs_data, admin_id, admin_name, created_at, updated_at
+        ) VALUES (
+          $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18
+        )
+        ON CONFLICT (id) DO UPDATE SET
+          service_name = EXCLUDED.service_name,
+          icon = EXCLUDED.icon,
+          short_description = EXCLUDED.short_description,
+          banner_image = EXCLUDED.banner_image,
+          thumbnail_image = EXCLUDED.thumbnail_image,
+          slug = EXCLUDED.slug,
+          status = EXCLUDED.status,
+          category_id = EXCLUDED.category_id,
+          category_name = EXCLUDED.category_name,
+          category_description = EXCLUDED.category_description,
+          category_order = EXCLUDED.category_order,
+          category_status = EXCLUDED.category_status,
+          tabs_data = EXCLUDED.tabs_data,
+          updated_at = NOW();
+      `, [
+        srv.id,
+        srv.name,
+        srv.icon || 'medical_services',
+        srv.shortDescription || '',
+        srv.bannerImage || 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop',
+        srv.thumbnailImage || 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop',
+        srv.slug || `/${srv.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+        srv.status ? 'Active' : 'Draft',
+        srv.categoryId,
+        cat.name || 'Unassigned',
+        cat.description || '',
+        cat.order || 1,
+        cat.status !== false,
+        JSON.stringify(srv.tabs || []),
+        srv.adminId || 'ADM-001',
+        srv.adminName || 'Super Administrator',
+        srv.createdAt || new Date().toISOString(),
+        srv.updatedAt || new Date().toISOString()
+      ]);
+    }
+    console.log('Successfully seeded services into admin_services table!');
 
     const tablesRes = await client.query(`
       SELECT table_name 
