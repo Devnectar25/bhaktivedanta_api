@@ -59,7 +59,9 @@ router.post('/', async (req, res, next) => {
         .insert([newAppointment])
         .select();
 
-      if (!error && data && data.length > 0) {
+      if (error) {
+        console.error('Supabase appointments insert error:', error.message, error.details, error.hint);
+      } else if (data && data.length > 0) {
         return res.status(201).json(data[0]);
       }
     }

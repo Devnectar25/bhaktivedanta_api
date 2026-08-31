@@ -1,6 +1,10 @@
 import pg from 'pg';
 import dotenv from 'dotenv';
-import { defaultSpecialitiesState, ensureStandardTabs, defaultDoctors, defaultAppointments, defaultServicesState } from './seeds.js';
+import { 
+  defaultSpecialitiesState, ensureStandardTabs, defaultDoctors, defaultAppointments, 
+  defaultServicesState, defaultTestimonials, defaultEvents, defaultNews, 
+  defaultGallery, defaultQueries, defaultSubAdmins, defaultHelpDesk 
+} from './seeds.js';
 
 dotenv.config();
 
@@ -109,7 +113,6 @@ async function setup() {
         id TEXT PRIMARY KEY,
         "patientName" TEXT NOT NULL,
         "patientPhone" TEXT NOT NULL,
-        "doctorName" TEXT,
         department TEXT NOT NULL,
         "dateTime" TEXT,
         payment TEXT DEFAULT 'Unpaid',
@@ -118,6 +121,16 @@ async function setup() {
       );
     `);
     console.log('Table bv_appointments created successfully.');
+
+    // Ensure all columns exist and drop doctorName column
+    console.log('Ensuring all columns exist in bv_appointments and dropping doctorName...');
+    await client.query(`
+      ALTER TABLE bv_appointments DROP COLUMN IF EXISTS "doctorName";
+      ALTER TABLE bv_appointments ADD COLUMN IF NOT EXISTS payment TEXT DEFAULT 'Unpaid';
+      ALTER TABLE bv_appointments ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'Pending';
+      ALTER TABLE bv_appointments ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP;
+    `);
+    console.log('Columns in bv_appointments verified.');
 
     // 4. Create table bv_categories if not exists
     console.log('Creating table bv_categories...');
@@ -135,6 +148,137 @@ async function setup() {
       );
     `);
     console.log('Table bv_categories created successfully.');
+
+    // Create table bv_queries
+    console.log('Creating table bv_queries...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_queries (
+        id TEXT PRIMARY KEY,
+        name TEXT,
+        email TEXT,
+        subject TEXT,
+        message TEXT,
+        date TEXT,
+        status TEXT DEFAULT 'Pending',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_testimonials
+    console.log('Creating table bv_testimonials...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_testimonials (
+        id TEXT PRIMARY KEY,
+        "patientName" TEXT NOT NULL,
+        disease TEXT,
+        content TEXT,
+        rating INTEGER DEFAULT 5,
+        status TEXT DEFAULT 'Pending',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_events
+    console.log('Creating table bv_events...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_events (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        date TEXT,
+        "time" TEXT,
+        location TEXT,
+        description TEXT,
+        image TEXT,
+        status TEXT DEFAULT 'Upcoming',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_gallery
+    console.log('Creating table bv_gallery...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_gallery (
+        id TEXT PRIMARY KEY,
+        title TEXT,
+        type TEXT DEFAULT 'Image',
+        url TEXT NOT NULL,
+        category TEXT,
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_news
+    console.log('Creating table bv_news...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_news (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        summary TEXT,
+        content TEXT,
+        date TEXT,
+        image TEXT,
+        author TEXT,
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_helpdesk
+    console.log('Creating table bv_helpdesk...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_helpdesk (
+        id TEXT PRIMARY KEY,
+        "ticketSubject" TEXT NOT NULL,
+        "ticketDescription" TEXT,
+        "submittedBy" TEXT,
+        "submittedEmail" TEXT,
+        status TEXT DEFAULT 'Open',
+        priority TEXT DEFAULT 'Medium',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_subadmins
+    console.log('Creating table bv_subadmins...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_subadmins (
+        username TEXT PRIMARY KEY,
+        name TEXT,
+        email TEXT,
+        role TEXT DEFAULT 'Administration',
+        status TEXT DEFAULT 'Active',
+        created TEXT,
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+    await client.query(`
+      ALTER TABLE bv_subadmins ADD COLUMN IF NOT EXISTS role TEXT DEFAULT 'Administration';
+      ALTER TABLE bv_subadmins ADD COLUMN IF NOT EXISTS created TEXT;
+    `);
+    console.log('Table bv_subadmins verified.');
+
+    // Create table bv_app_errors
+    console.log('Creating table bv_app_errors...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_app_errors (
+        id TEXT PRIMARY KEY,
+        timestamp TEXT,
+        level TEXT DEFAULT 'Error',
+        source TEXT DEFAULT 'Client Web App',
+        message TEXT,
+        endpoint TEXT,
+        status TEXT DEFAULT 'Investigating',
+        details TEXT,
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+    await client.query(`
+      ALTER TABLE bv_app_errors ADD COLUMN IF NOT EXISTS level TEXT DEFAULT 'Error';
+      ALTER TABLE bv_app_errors ADD COLUMN IF NOT EXISTS source TEXT DEFAULT 'Client Web App';
+      ALTER TABLE bv_app_errors ADD COLUMN IF NOT EXISTS endpoint TEXT;
+      ALTER TABLE bv_app_errors ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'Investigating';
+      ALTER TABLE bv_app_errors ADD COLUMN IF NOT EXISTS details TEXT;
+    `);
+    console.log('Table bv_app_errors verified.');
 
     // 4. Prepare specialities data
     const rawState = JSON.parse(JSON.stringify(defaultSpecialitiesState));
@@ -314,6 +458,122 @@ async function setup() {
       ]);
     }
     console.log('Successfully seeded services into admin_services table!');
+
+    // Seed Appointments if empty
+    const aptCheck = await client.query('SELECT COUNT(*) FROM bv_appointments');
+    if (parseInt(aptCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding appointments into bv_appointments table...');
+      for (const a of defaultAppointments) {
+        await client.query(`
+          INSERT INTO bv_appointments (id, "patientName", "patientPhone", department, "dateTime", payment, status)
+          VALUES ($1, $2, $3, $4, $5, $6, $7)
+          ON CONFLICT (id) DO NOTHING;
+        `, [
+          a.id, a.patientName || a.name || '', a.patientPhone || a.phone || '', 
+          a.department || 'General Medicine', 
+          a.dateTime || a.preferredDate || '', a.payment || 'Unpaid', a.status || 'Pending'
+        ]);
+      }
+      console.log('Successfully seeded appointments into bv_appointments table!');
+    }
+
+    // Seed Testimonials if empty
+    const testCheck = await client.query('SELECT COUNT(*) FROM bv_testimonials');
+    if (parseInt(testCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding testimonials into bv_testimonials table...');
+      for (const t of defaultTestimonials) {
+        await client.query(`
+          INSERT INTO bv_testimonials (id, "patientName", disease, content, rating, status)
+          VALUES ($1, $2, $3, $4, $5, $6)
+          ON CONFLICT (id) DO NOTHING;
+        `, [t.id, t.patientName || '', t.disease || '', t.content || '', t.rating || 5, t.status || 'Approved']);
+      }
+      console.log('Successfully seeded testimonials into bv_testimonials table!');
+    }
+
+    // Seed Events if empty
+    const evtCheck = await client.query('SELECT COUNT(*) FROM bv_events');
+    if (parseInt(evtCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding events into bv_events table...');
+      for (const e of defaultEvents) {
+        await client.query(`
+          INSERT INTO bv_events (id, title, date, "time", location, description, image, status)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+          ON CONFLICT (id) DO NOTHING;
+        `, [e.id, e.title, e.date || '', e.time || '', e.location || '', e.description || '', e.image || '', e.status || 'Upcoming']);
+      }
+      console.log('Successfully seeded events into bv_events table!');
+    }
+
+    // Seed Gallery if empty
+    const galCheck = await client.query('SELECT COUNT(*) FROM bv_gallery');
+    if (parseInt(galCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding gallery into bv_gallery table...');
+      for (const g of defaultGallery) {
+        await client.query(`
+          INSERT INTO bv_gallery (id, title, type, url, category)
+          VALUES ($1, $2, $3, $4, $5)
+          ON CONFLICT (id) DO NOTHING;
+        `, [g.id, g.title || '', g.type || 'Image', g.url || '', g.category || 'Hospital']);
+      }
+      console.log('Successfully seeded gallery into bv_gallery table!');
+    }
+
+    // Seed News if empty
+    const newsCheck = await client.query('SELECT COUNT(*) FROM bv_news');
+    if (parseInt(newsCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding news into bv_news table...');
+      for (const n of defaultNews) {
+        await client.query(`
+          INSERT INTO bv_news (id, title, summary, content, date, image, author)
+          VALUES ($1, $2, $3, $4, $5, $6, $7)
+          ON CONFLICT (id) DO NOTHING;
+        `, [n.id, n.title || '', n.summary || '', n.content || '', n.date || '', n.image || '', n.author || 'Admin']);
+      }
+      console.log('Successfully seeded news into bv_news table!');
+    }
+
+    // Seed Helpdesk if empty
+    const hdCheck = await client.query('SELECT COUNT(*) FROM bv_helpdesk');
+    if (parseInt(hdCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding tickets into bv_helpdesk table...');
+      for (const h of defaultHelpDesk) {
+        await client.query(`
+          INSERT INTO bv_helpdesk (id, "ticketSubject", "ticketDescription", "submittedBy", "submittedEmail", status, priority)
+          VALUES ($1, $2, $3, $4, $5, $6, $7)
+          ON CONFLICT (id) DO NOTHING;
+        `, [h.id, h.ticketSubject || '', h.ticketDescription || '', h.submittedBy || '', h.submittedEmail || '', h.status || 'Open', h.priority || 'Medium']);
+      }
+      console.log('Successfully seeded tickets into bv_helpdesk table!');
+    }
+
+    // Seed Subadmins if empty
+    const subCheck = await client.query('SELECT COUNT(*) FROM bv_subadmins');
+    if (parseInt(subCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding subadmins into bv_subadmins table...');
+      for (const s of defaultSubAdmins) {
+        await client.query(`
+          INSERT INTO bv_subadmins (username, name, email, status)
+          VALUES ($1, $2, $3, $4)
+          ON CONFLICT (username) DO NOTHING;
+        `, [s.username, s.name || '', s.email || '', s.status || 'Active']);
+      }
+      console.log('Successfully seeded subadmins into bv_subadmins table!');
+    }
+
+    // Seed Queries if empty
+    const qCheck = await client.query('SELECT COUNT(*) FROM bv_queries');
+    if (parseInt(qCheck.rows[0].count, 10) === 0) {
+      console.log('Seeding queries into bv_queries table...');
+      for (const q of defaultQueries) {
+        await client.query(`
+          INSERT INTO bv_queries (id, name, email, subject, message, date, status)
+          VALUES ($1, $2, $3, $4, $5, $6, $7)
+          ON CONFLICT (id) DO NOTHING;
+        `, [q.id, q.name || '', q.email || '', q.subject || '', q.message || '', q.date || '', q.status || 'Pending']);
+      }
+      console.log('Successfully seeded queries into bv_queries table!');
+    }
 
     const tablesRes = await client.query(`
       SELECT table_name 
