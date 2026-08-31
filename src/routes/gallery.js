@@ -1,20 +1,36 @@
 import express from 'express';
+import { supabase } from '../utils/supabase.js';
 import { readData, writeData } from '../utils/storage.js';
 
 const router = express.Router();
 
-// GET all gallery media
-router.get('/', (req, res, next) => {
+// GET all gallery items
+router.get('/', async (req, res, next) => {
   try {
-    const gallery = readData('gallery');
-    res.json(gallery);
+    if (!supabase) {
+      const gallery = readData('gallery');
+      return res.json(gallery);
+    }
+
+    const { data, error } = await supabase
+      .from('bv_gallery')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Supabase get gallery error, fallback to local storage:', error.message);
+      const gallery = readData('gallery');
+      return res.json(gallery);
+    }
+
+    res.json(data || []);
   } catch (err) {
     next(err);
   }
 });
 
-// PUT bulk update gallery
-router.put('/', (req, res, next) => {
+// PUT bulk update gallery items
+router.put('/', async (req, res, next) => {
   try {
     writeData('gallery', req.body);
     res.json(req.body);
@@ -23,18 +39,31 @@ router.put('/', (req, res, next) => {
   }
 });
 
-// POST create gallery media
-router.post('/', (req, res, next) => {
+// POST create gallery item
+router.post('/', async (req, res, next) => {
   try {
-    const gallery = readData('gallery');
     const newMedia = {
-      id: req.body.id || `GAL-${Math.floor(400 + Math.random() * 600)}`,
+      id: req.body.id || `gal-${Date.now()}`,
       title: req.body.title || '',
-      category: req.body.category || 'General',
-      imageUrl: req.body.imageUrl || '',
-      status: req.body.status || 'Active'
+      type: req.body.type || 'Image',
+      url: req.body.url || '',
+      category: req.body.category || 'Hospital'
     };
-    
+
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('bv_gallery')
+        .insert([newMedia])
+        .select();
+
+      if (error) {
+        console.error('Supabase gallery insert error:', error.message);
+      } else if (data && data.length > 0) {
+        return res.status(201).json(data[0]);
+      }
+    }
+
+    const gallery = readData('gallery');
     gallery.push(newMedia);
     writeData('gallery', gallery);
     res.status(201).json(newMedia);
@@ -43,43 +72,67 @@ router.post('/', (req, res, next) => {
   }
 });
 
-// PUT update gallery media
-router.put('/:id', (req, res, next) => {
+// PUT update gallery item
+router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
+    const updateData = {
+      title: req.body.title,
+      type: req.body.type,
+      url: req.body.url,
+      category: req.body.category
+    };
+
     const gallery = readData('gallery');
     const index = gallery.findIndex(g => g.id === id);
-    
-    if (index === -1) {
-      return res.status(404).json({ error: 'Gallery media not found' });
+
+    if (index !== -1) {
+      gallery[index] = {
+        ...gallery[index],
+        ...req.body,
+        id
+      };
+      writeData('gallery', gallery);
     }
-    
-    gallery[index] = {
-      ...gallery[index],
-      ...req.body,
-      id // Prevent ID change
-    };
-    
-    writeData('gallery', gallery);
-    res.json(gallery[index]);
+
+    if (supabase) {
+      const { error } = await supabase
+        .from('bv_gallery')
+        .update(updateData)
+        .eq('id', id);
+
+      if (error) {
+        console.error('Supabase gallery update error:', error.message);
+      }
+    }
+
+    res.json(gallery[index] || req.body);
   } catch (err) {
     next(err);
   }
 });
 
-// DELETE gallery media
-router.delete('/:id', (req, res, next) => {
+// DELETE gallery item
+router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     const gallery = readData('gallery');
     const filtered = gallery.filter(g => g.id !== id);
-    
-    if (gallery.length === filtered.length) {
-      return res.status(404).json({ error: 'Gallery media not found' });
-    }
-    
+
     writeData('gallery', filtered);
-    res.json({ success: true, message: `Gallery media ${id} deleted` });
+
+    if (supabase) {
+      const { error } = await supabase
+        .from('bv_gallery')
+        .delete()
+        .eq('id', id);
+
+      if (error) {
+        console.error('Supabase gallery delete error:', error.message);
+      }
+    }
+
+    res.json({ success: true, message: `Gallery item ${id} deleted` });
   } catch (err) {
     next(err);
   }
