@@ -16,6 +16,7 @@ import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
 import helpdeskRouter from './routes/helpdesk.js';
 import appErrorsRouter from './routes/appErrors.js';
+import servicesRouter from './routes/services.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -79,6 +80,7 @@ app.use('/api/queries', queriesRouter);
 app.use('/api/subadmins', subadminsRouter);
 app.use('/api/helpdesk', helpdeskRouter);
 app.use('/api/app-errors', appErrorsRouter);
+app.use('/api/services-state', servicesRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {

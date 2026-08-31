@@ -45,6 +45,7 @@ export function readData(key) {
     else if (key === 'helpdesk') seedData = seeds.defaultHelpDesk;
     else if (key === 'app_errors') seedData = seeds.defaultAppErrors;
     else if (key === 'specialities_state') seedData = seeds.defaultSpecialitiesState;
+    else if (key === 'services_state') seedData = seeds.defaultServicesState;
     
     // Write seed data
     try {
@@ -95,7 +96,8 @@ export function initializeDatabase() {
     'subadmins',
     'helpdesk',
     'app_errors',
-    'specialities_state'
+    'specialities_state',
+    'services_state'
   ];
   
   for (const entity of entities) {
