@@ -53,6 +53,63 @@ function rowsToState(rows) {
   };
 }
 
+// POST upload speciality image to Supabase Storage
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { specialityName, fileName, base64Data } = req.body || {};
+    if (!base64Data) {
+      return res.status(400).json({ error: 'No image data provided' });
+    }
+
+    // Convert base64 to Buffer
+    const base64Clean = base64Data.replace(/^data:image\/\w+;base64,/, '');
+    const buffer = Buffer.from(base64Clean, 'base64');
+
+    // Extract mime type & extension
+    const mimeMatch = base64Data.match(/^data:(image\/\w+);base64,/);
+    const mimeType = mimeMatch ? mimeMatch[1] : 'image/png';
+    const ext = mimeType.split('/')[1] || 'png';
+
+    // Create a clean slug from the specific speciality name
+    const slug = (specialityName || 'speciality')
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    const timestamp = Date.now();
+    const filePath = `${slug}/${slug}-${timestamp}.${ext}`;
+
+    if (supabase) {
+      const { data, error } = await supabase.storage
+        .from('specialities-images')
+        .upload(filePath, buffer, {
+          contentType: mimeType,
+          upsert: true
+        });
+
+      if (error) {
+        console.error('[API Upload] Supabase Storage upload error:', error.message);
+        return res.status(500).json({ error: error.message });
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from('specialities-images')
+        .getPublicUrl(filePath);
+
+      const publicUrl = publicUrlData?.publicUrl || '';
+      console.log(`[API Upload] Uploaded image for "${specialityName}" ->`, publicUrl);
+      return res.json({ success: true, url: publicUrl, path: filePath });
+    } else {
+      // Fallback response
+      return res.json({ success: true, url: base64Data, path: filePath });
+    }
+  } catch (err) {
+    console.error('[API Upload] Error handling image upload:', err);
+    next(err);
+  }
+});
+
 // GET specialities state
 router.get('/', async (req, res, next) => {
   try {
@@ -220,6 +277,77 @@ router.get('/flat-table', async (req, res, next) => {
     res.json(flatTableData);
   } catch (err) {
     next(err);
+  }
+});
+
+// POST /upload - Upload image to Supabase Storage Bucket 'specialities-images'
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { specialityName, fileName, base64Data } = req.body;
+
+    if (!base64Data) {
+      return res.status(400).json({ success: false, error: 'base64Data is required' });
+    }
+
+    if (!supabase) {
+      return res.status(500).json({ success: false, error: 'Supabase client is not initialized' });
+    }
+
+    // Convert base64 string to Buffer
+    const matches = base64Data.match(/^data:(.+);base64,(.+)$/);
+    let contentType = 'image/jpeg';
+    let buffer;
+
+    if (matches && matches.length === 3) {
+      contentType = matches[1];
+      buffer = Buffer.from(matches[2], 'base64');
+    } else {
+      buffer = Buffer.from(base64Data, 'base64');
+    }
+
+    // Generate clean file path: slug/slug-timestamp.ext
+    const slug = (specialityName || 'speciality')
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+    const fileExt = (fileName || 'image.jpg').split('.').pop() || 'jpg';
+    const filePath = `${slug}/${slug}-${Date.now()}.${fileExt}`;
+
+    // Upload to Supabase bucket 'specialities-images'
+    const { data: uploadData, error: uploadError } = await supabase
+      .storage
+      .from('specialities-images')
+      .upload(filePath, buffer, {
+        contentType,
+        upsert: true
+      });
+
+    if (uploadError) {
+      console.error('[API Upload Error]:', uploadError);
+      return res.status(500).json({ success: false, error: uploadError.message });
+    }
+
+    // Get public URL
+    const { data: urlData } = supabase
+      .storage
+      .from('specialities-images')
+      .getPublicUrl(filePath);
+
+    const publicUrl = urlData?.publicUrl || '';
+
+    console.log(`[API Upload Success] Uploaded ${filePath} -> ${publicUrl}`);
+
+    res.json({
+      success: true,
+      url: publicUrl,
+      path: filePath
+    });
+  } catch (err) {
+    console.error('[API Upload Crash]:', err);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 

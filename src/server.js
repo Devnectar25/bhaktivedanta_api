@@ -92,6 +92,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/doctors', doctorsRouter);
 app.use('/api/appointments', appointmentsRouter);
 app.use('/api/specialities-state', specialitiesRouter);
+app.use('/api/specialities', specialitiesRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/news', newsRouter);
