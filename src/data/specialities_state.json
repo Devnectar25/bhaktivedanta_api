@@ -5,37 +5,37 @@
   "activeTabId": "t1",
   "categories": [
     {
-      "id": "c1",
-      "name": "General Specialities",
-      "description": "Comprehensive general healthcare services for everyday medical needs.",
+      "id": "c3",
+      "name": "Centres Of Excellence",
+      "description": "World-class multidisciplinary care centres providing specialized treatments.",
       "order": 1,
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-10T10:00:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00"
+      "updatedAt": "2025-01-10T10:00:00+00:00"
     },
     {
-      "id": "c2",
-      "name": "Super Specialities",
-      "description": "Advanced medical treatments and interventions by expert specialists.",
+      "id": "c1",
+      "name": "General Specialities",
+      "description": "Comprehensive general healthcare services for everyday medical needs.",
       "order": 2,
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-10T10:00:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00"
+      "updatedAt": "2025-01-10T10:00:00+00:00"
     },
     {
-      "id": "c3",
-      "name": "Centres Of Excellence",
-      "description": "World-class multidisciplinary care centres providing specialized treatments.",
+      "id": "c2",
+      "name": "Super Specialities",
+      "description": "Advanced medical treatments and interventions by expert specialists.",
       "order": 3,
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-10T10:00:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00"
+      "updatedAt": "2025-01-10T10:00:00+00:00"
     },
     {
       "id": "c4",
@@ -46,57 +46,252 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-10T10:00:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00"
+      "updatedAt": "2025-01-10T10:00:00+00:00"
     },
     {
       "id": "c1787829354773",
-      "name": "bfvdsvfvssdvfvcs",
-      "description": "ghfbyyluoe.lfsdvgyul",
+      "name": "ABC",
+      "description": "Healthcare & Wellness Category ABC",
       "order": 5,
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2026-08-27T11:15:54.773+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00"
+      "updatedAt": "2026-09-03T15:48:47.233+00:00"
+    },
+    {
+      "id": "c1788451000054",
+      "name": "XYZ",
+      "description": "Clinical Services Category XYZ",
+      "order": 6,
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2026-09-03T15:56:40.054+00:00",
+      "updatedAt": "2026-09-03T15:56:40.054+00:00"
     }
   ],
   "specialities": [
     {
-      "id": "s4",
+      "id": "s18",
+      "categoryId": "c2",
+      "name": "Integrated Medicine",
+      "icon": "local_pharmacy",
+      "shortDescription": "Combining modern evidence-based therapies with holistic natural healing.",
+      "bannerImage": "https://ohaokdfkdafgpwccauos.supabase.co/storage/v1/object/public/specialities-images/integrated-medicine/integrated-medicine-1788454266423.jpeg",
+      "thumbnailImage": "https://ohaokdfkdafgpwccauos.supabase.co/storage/v1/object/public/specialities-images/integrated-medicine/integrated-medicine-1788454266423.jpeg",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2026-09-03T16:51:17.299Z",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p class=\"mb-4 text-slate-700 leading-relaxed\">Welcome to the Integrated Medicine department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<ul class=\"list-disc pl-5 space-y-2 mb-4 text-slate-700\"><li>Our Integrated Medicine department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</li></ul>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<ul class=\"list-disc pl-5 space-y-2 mb-4 text-slate-700\"><li>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Integrated Medicine.</li></ul>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p class=\"mb-4 text-slate-700 leading-relaxed\">We offer a wide range of inpatient and outpatient services under Integrated Medicine to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p class=\"mb-4 text-slate-700 leading-relaxed\">Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s1787829392009",
       "categoryId": "c1",
-      "name": "Dentistry",
-      "icon": "dentistry",
-      "shortDescription": "Advanced oral health, cosmetic dentistry, and maxillo-facial surgery.",
+      "name": "cvdmgyku,shcgdsvklvcgb n",
+      "icon": "star",
+      "shortDescription": "hdvcdukcg dcfysfdc",
+      "bannerImage": "",
+      "thumbnailImage": "",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2026-08-27T11:16:32.008+00:00",
+      "updatedAt": "2026-09-03T11:56:49.786+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p class=\"mb-4\">Welcome to the cvdmgyku,shcgdsvklvcgb n department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p class=\"mb-4\">Our department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p class=\"mb-4\">We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p class=\"mb-4\">We offer a wide range of inpatient and outpatient services to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s27",
+      "categoryId": "c4",
+      "name": "Acupuncture",
+      "icon": "healing",
+      "shortDescription": "Traditional precision needle therapy for pain relief and neurological balance.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Dentistry department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Acupuncture department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Dentistry department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Acupuncture department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Dentistry.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Acupuncture.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Dentistry to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Acupuncture to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s35",
+      "categoryId": "c3",
+      "name": "Vascular Interventional Radiology",
+      "icon": "radiology",
+      "shortDescription": "Pinhole image-guided interventions for vascular and tumor treatments.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Vascular Interventional Radiology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Vascular Interventional Radiology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Vascular Interventional Radiology.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Vascular Interventional Radiology to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s37",
+      "categoryId": "c3",
+      "name": "Pediatrics & Pediatrics Surgery",
+      "icon": "child_care",
+      "shortDescription": "Comprehensive pediatric care, NICU/PICU, and specialized child surgeries.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Pediatrics & Pediatrics Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Pediatrics & Pediatrics Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Pediatrics & Pediatrics Surgery.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Pediatrics & Pediatrics Surgery to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -119,7 +314,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -165,7 +360,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -200,6 +395,98 @@
       ]
     },
     {
+      "id": "s14",
+      "categoryId": "c1",
+      "name": "Rheumatology",
+      "icon": "personal_injury",
+      "shortDescription": "Expert care for autoimmune diseases, arthritis, and joint inflammations.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Rheumatology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Rheumatology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Rheumatology.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Rheumatology to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s25",
+      "categoryId": "c2",
+      "name": "Vascular & Endovascular Surgery",
+      "icon": "cardiology",
+      "shortDescription": "Minimally invasive endovascular interventions and vascular surgeries.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Vascular & Endovascular Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Vascular & Endovascular Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Vascular & Endovascular Surgery.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Vascular & Endovascular Surgery to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
       "id": "s1",
       "categoryId": "c1",
       "name": "Anesthesiology",
@@ -211,7 +498,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -246,6 +533,98 @@
       ]
     },
     {
+      "id": "s4",
+      "categoryId": "c1",
+      "name": "Dentistry",
+      "icon": "dentistry",
+      "shortDescription": "Advanced oral health, cosmetic dentistry, and maxillo-facial surgery.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Dentistry department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Dentistry department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Dentistry.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Dentistry to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "categoryId": "c1",
+      "name": "E.N.T",
+      "icon": "hearing",
+      "shortDescription": "Specialized treatment for ear, nose, throat, head, and neck conditions.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the E.N.T department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our E.N.T department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in E.N.T.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under E.N.T to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
       "id": "s10",
       "categoryId": "c1",
       "name": "Pain Management",
@@ -257,7 +636,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -303,7 +682,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -349,7 +728,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -395,7 +774,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -430,185 +809,93 @@
       ]
     },
     {
-      "id": "s19",
-      "categoryId": "c2",
-      "name": "Endocrinology & Endocrine Surgery",
-      "icon": "health_metrics",
-      "shortDescription": "Treatment for thyroid, hormonal, metabolic, and adrenal gland disorders.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Endocrinology & Endocrine Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Endocrinology & Endocrine Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Endocrinology & Endocrine Surgery.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Endocrinology & Endocrine Surgery to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s3",
+      "id": "s1788416425200",
       "categoryId": "c1",
-      "name": "Dermatology & Venerology",
-      "icon": "dermatology",
-      "shortDescription": "Comprehensive care for skin, hair, nail, and venereal disorders.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "name": "XYZ",
+      "icon": "star",
+      "shortDescription": "abcdefghijklmnopqrstuvwxyz",
+      "bannerImage": "",
+      "thumbnailImage": "",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "createdAt": "2026-09-03T06:20:25.2+00:00",
+      "updatedAt": "2026-09-03T11:56:49.786+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Dermatology & Venerology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p class=\"mb-4\">Welcome to the XYZ department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Dermatology & Venerology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p class=\"mb-4\">Our department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Dermatology & Venerology.</p>",
+          "content": "<p class=\"mb-4\">We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Dermatology & Venerology to cater to diverse medical requirements.</p>",
+          "content": "<p class=\"mb-4\">We offer a wide range of inpatient and outpatient services to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
           "id": "t5",
           "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being. * Expert: Dr. Anand Sharma - MBBS, MD (Cardiology)</p>",
           "images": []
         }
       ]
     },
     {
-      "id": "s16",
-      "categoryId": "c2",
-      "name": "Clinical Genetics",
-      "icon": "genetics",
-      "shortDescription": "Genetic counseling, hereditary disease screening, and diagnostic evaluation.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Clinical Genetics department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Clinical Genetics department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Clinical Genetics.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Clinical Genetics to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s7",
+      "id": "s1788416425440",
       "categoryId": "c1",
-      "name": "General & Minimal Access Surgery",
-      "icon": "medical_services",
-      "shortDescription": "Comprehensive laparoscopic, endoscopic, and general surgical care.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "name": "XYZ",
+      "icon": "star",
+      "shortDescription": "abcdefghijklmnopqrstuvwxyz",
+      "bannerImage": "",
+      "thumbnailImage": "",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "createdAt": "2026-09-03T06:20:25.44+00:00",
+      "updatedAt": "2026-09-03T11:56:49.786+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the General & Minimal Access Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p class=\"mb-4\">Welcome to the XYZ department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our General & Minimal Access Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p class=\"mb-4\">Our department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in General & Minimal Access Surgery.</p>",
+          "content": "<p class=\"mb-4\">We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under General & Minimal Access Surgery to cater to diverse medical requirements.</p>",
+          "content": "<p class=\"mb-4\">We offer a wide range of inpatient and outpatient services to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
           "id": "t5",
           "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being. * Expert: Dr. Anand Sharma - MBBS, MD (Cardiology)</p>",
           "images": []
         }
       ]
@@ -625,7 +912,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -660,41 +947,41 @@
       ]
     },
     {
-      "id": "s25",
-      "categoryId": "c2",
-      "name": "Vascular & Endovascular Surgery",
-      "icon": "cardiology",
-      "shortDescription": "Minimally invasive endovascular interventions and vascular surgeries.",
+      "id": "s3",
+      "categoryId": "c1",
+      "name": "Dermatology & Venerology",
+      "icon": "dermatology",
+      "shortDescription": "Comprehensive care for skin, hair, nail, and venereal disorders.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Vascular & Endovascular Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Dermatology & Venerology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Vascular & Endovascular Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Dermatology & Venerology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Vascular & Endovascular Surgery.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Dermatology & Venerology.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Vascular & Endovascular Surgery to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Dermatology & Venerology to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -717,7 +1004,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -752,6 +1039,52 @@
       ]
     },
     {
+      "id": "s7",
+      "categoryId": "c1",
+      "name": "General & Minimal Access Surgery",
+      "icon": "medical_services",
+      "shortDescription": "Comprehensive laparoscopic, endoscopic, and general surgical care.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the General & Minimal Access Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our General & Minimal Access Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in General & Minimal Access Surgery.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under General & Minimal Access Surgery to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
       "id": "s28",
       "categoryId": "c4",
       "name": "Ayurveda",
@@ -763,7 +1096,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -798,190 +1131,6 @@
       ]
     },
     {
-      "id": "s24",
-      "categoryId": "c2",
-      "name": "Plastic & Reconstructive Surgery",
-      "icon": "content_cut",
-      "shortDescription": "Reconstructive procedures, burn care, and aesthetic surgeries.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Plastic & Reconstructive Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Plastic & Reconstructive Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Plastic & Reconstructive Surgery.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Plastic & Reconstructive Surgery to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s17",
-      "categoryId": "c2",
-      "name": "Diabetology",
-      "icon": "blood_pressure",
-      "shortDescription": "Comprehensive management of Type 1, Type 2, and gestational diabetes.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Diabetology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Diabetology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Diabetology.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Diabetology to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s30",
-      "categoryId": "c4",
-      "name": "Yoga",
-      "icon": "self_improvement",
-      "shortDescription": "Therapeutic yoga, pranayama, and meditation for physical and mental health.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Yoga department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Yoga department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Yoga.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Yoga to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s9",
-      "categoryId": "c1",
-      "name": "Nutrition & Dietetics",
-      "icon": "nutrition",
-      "shortDescription": "Personalized clinical nutrition, therapeutic diet planning, and wellness.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Nutrition & Dietetics department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Nutrition & Dietetics department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Nutrition & Dietetics.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Nutrition & Dietetics to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
       "id": "s2",
       "categoryId": "c1",
       "name": "Critical Care",
@@ -993,7 +1142,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1028,133 +1177,41 @@
       ]
     },
     {
-      "id": "s34",
-      "categoryId": "c3",
-      "name": "Heart Centre",
-      "icon": "favorite",
-      "shortDescription": "Advanced interventional cardiology, heart surgeries, and cardiac ICU.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Heart Centre department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Heart Centre department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Heart Centre.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Heart Centre to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s11",
-      "categoryId": "c1",
-      "name": "Palliative Care",
-      "icon": "volunteer_activism",
-      "shortDescription": "Compassionate symptom management and supportive care for chronic illness.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Palliative Care department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Palliative Care department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Palliative Care.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Palliative Care to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s21",
+      "id": "s17",
       "categoryId": "c2",
-      "name": "Hematology & Hemato-Oncology",
-      "icon": "bloodtype",
-      "shortDescription": "Specialized diagnosis and management of blood and bone marrow diseases.",
+      "name": "Diabetology",
+      "icon": "blood_pressure",
+      "shortDescription": "Comprehensive management of Type 1, Type 2, and gestational diabetes.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Hematology & Hemato-Oncology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Diabetology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Hematology & Hemato-Oncology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Diabetology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Hematology & Hemato-Oncology.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Diabetology.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Hematology & Hemato-Oncology to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Diabetology to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -1177,7 +1234,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1212,41 +1269,41 @@
       ]
     },
     {
-      "id": "s23",
+      "id": "s21",
       "categoryId": "c2",
-      "name": "Nephrology",
-      "icon": "kidney",
-      "shortDescription": "Advanced kidney disease management, hemodialysis, and renal care.",
+      "name": "Hematology & Hemato-Oncology",
+      "icon": "bloodtype",
+      "shortDescription": "Specialized diagnosis and management of blood and bone marrow diseases.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Nephrology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Hematology & Hemato-Oncology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Nephrology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Hematology & Hemato-Oncology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Nephrology.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Hematology & Hemato-Oncology.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Nephrology to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Hematology & Hemato-Oncology to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -1269,7 +1326,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1304,98 +1361,6 @@
       ]
     },
     {
-      "id": "s29",
-      "categoryId": "c4",
-      "name": "Homeopathy",
-      "icon": "medication",
-      "shortDescription": "Natural remedies tailored for safe, gentle, and effective healing.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Homeopathy department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Homeopathy department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Homeopathy.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Homeopathy to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "categoryId": "c1",
-      "name": "E.N.T",
-      "icon": "hearing",
-      "shortDescription": "Specialized treatment for ear, nose, throat, head, and neck conditions.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the E.N.T department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our E.N.T department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in E.N.T.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under E.N.T to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
       "id": "s31",
       "categoryId": "c3",
       "name": "Bone & Joint Centre",
@@ -1407,7 +1372,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1442,41 +1407,41 @@
       ]
     },
     {
-      "id": "s14",
-      "categoryId": "c1",
-      "name": "Rheumatology",
-      "icon": "personal_injury",
-      "shortDescription": "Expert care for autoimmune diseases, arthritis, and joint inflammations.",
+      "id": "s34",
+      "categoryId": "c3",
+      "name": "Heart Centre",
+      "icon": "favorite",
+      "shortDescription": "Advanced interventional cardiology, heart surgeries, and cardiac ICU.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Rheumatology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Heart Centre department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Rheumatology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Heart Centre department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Rheumatology.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Heart Centre.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Rheumatology to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Heart Centre to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -1499,7 +1464,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1534,41 +1499,41 @@
       ]
     },
     {
-      "id": "s18",
-      "categoryId": "c2",
-      "name": "Integrated Medicine",
-      "icon": "local_pharmacy",
-      "shortDescription": "Combining modern evidence-based therapies with holistic natural healing.",
+      "id": "s30",
+      "categoryId": "c4",
+      "name": "Yoga",
+      "icon": "self_improvement",
+      "shortDescription": "Therapeutic yoga, pranayama, and meditation for physical and mental health.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Integrated Medicine department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Yoga department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Integrated Medicine department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Yoga department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Integrated Medicine.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Yoga.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Integrated Medicine to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Yoga to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -1580,41 +1545,225 @@
       ]
     },
     {
-      "id": "s27",
-      "categoryId": "c4",
-      "name": "Acupuncture",
-      "icon": "healing",
-      "shortDescription": "Traditional precision needle therapy for pain relief and neurological balance.",
+      "id": "s24",
+      "categoryId": "c2",
+      "name": "Plastic & Reconstructive Surgery",
+      "icon": "content_cut",
+      "shortDescription": "Reconstructive procedures, burn care, and aesthetic surgeries.",
       "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
       "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p>Welcome to the Acupuncture department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p>Welcome to the Plastic & Reconstructive Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
           "id": "t2",
           "title": "Why Choose Us",
-          "content": "<p>Our Acupuncture department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "content": "<p>Our Plastic & Reconstructive Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
           "images": []
         },
         {
           "id": "t3",
           "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Acupuncture.</p>",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Plastic & Reconstructive Surgery.</p>",
           "images": []
         },
         {
           "id": "t4",
           "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Acupuncture to cater to diverse medical requirements.</p>",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Plastic & Reconstructive Surgery to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s29",
+      "categoryId": "c4",
+      "name": "Homeopathy",
+      "icon": "medication",
+      "shortDescription": "Natural remedies tailored for safe, gentle, and effective healing.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Homeopathy department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Homeopathy department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Homeopathy.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Homeopathy to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "categoryId": "c1",
+      "name": "Nutrition & Dietetics",
+      "icon": "nutrition",
+      "shortDescription": "Personalized clinical nutrition, therapeutic diet planning, and wellness.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Nutrition & Dietetics department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Nutrition & Dietetics department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Nutrition & Dietetics.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Nutrition & Dietetics to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "categoryId": "c2",
+      "name": "Endocrinology & Endocrine Surgery",
+      "icon": "health_metrics",
+      "shortDescription": "Treatment for thyroid, hormonal, metabolic, and adrenal gland disorders.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Endocrinology & Endocrine Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Endocrinology & Endocrine Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Endocrinology & Endocrine Surgery.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Endocrinology & Endocrine Surgery to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "categoryId": "c1",
+      "name": "Palliative Care",
+      "icon": "volunteer_activism",
+      "shortDescription": "Compassionate symptom management and supportive care for chronic illness.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Palliative Care department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Palliative Care department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Palliative Care.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Palliative Care to cater to diverse medical requirements.</p>",
           "images": []
         },
         {
@@ -1637,7 +1786,7 @@
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
       "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
       "tabs": [
         {
           "id": "t1",
@@ -1672,113 +1821,23 @@
       ]
     },
     {
-      "id": "s37",
-      "categoryId": "c3",
-      "name": "Pediatrics & Pediatrics Surgery",
-      "icon": "child_care",
-      "shortDescription": "Comprehensive pediatric care, NICU/PICU, and specialized child surgeries.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Pediatrics & Pediatrics Surgery department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Pediatrics & Pediatrics Surgery department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Pediatrics & Pediatrics Surgery.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Pediatrics & Pediatrics Surgery to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s35",
-      "categoryId": "c3",
-      "name": "Vascular Interventional Radiology",
-      "icon": "radiology",
-      "shortDescription": "Pinhole image-guided interventions for vascular and tumor treatments.",
-      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2025-01-15T09:30:00+00:00",
-      "updatedAt": "2026-08-27T11:15:54.81+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p>Welcome to the Vascular Interventional Radiology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p>Our Vascular Interventional Radiology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Vascular Interventional Radiology.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p>We offer a wide range of inpatient and outpatient services under Vascular Interventional Radiology to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
-          "images": []
-        }
-      ]
-    },
-    {
-      "id": "s1787829392009",
-      "categoryId": "c1787829354773",
-      "name": "cvdmgyku,shcgdsvklvcgb n",
+      "id": "s1788416423837",
+      "categoryId": "c1",
+      "name": "XYZ",
       "icon": "star",
-      "shortDescription": "hdvcdukcg dcfysfdc",
+      "shortDescription": "abcdefghijklmnopqrstuvwxyz",
+      "bannerImage": "",
+      "thumbnailImage": "",
       "status": true,
       "adminId": "ADM-001",
       "adminName": "Super Administrator",
-      "createdAt": "2026-08-27T11:16:32.008Z",
-      "updatedAt": "2026-08-27T11:16:32.008Z",
+      "createdAt": "2026-09-03T06:20:23.837+00:00",
+      "updatedAt": "2026-09-03T11:56:49.786+00:00",
       "tabs": [
         {
           "id": "t1",
           "title": "Overview",
-          "content": "<p class=\"mb-4\">Welcome to the cvdmgyku,shcgdsvklvcgb n department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "content": "<p class=\"mb-4\">Welcome to the XYZ department. We provide comprehensive care and support tailored to each patient's needs.</p>",
           "images": []
         },
         {
@@ -1802,7 +1861,99 @@
         {
           "id": "t5",
           "title": "Our Experts",
-          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being. * Expert: Dr. Anand Sharma - MBBS, MD (Cardiology)</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "categoryId": "c2",
+      "name": "Clinical Genetics",
+      "icon": "genetics",
+      "shortDescription": "Genetic counseling, hereditary disease screening, and diagnostic evaluation.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Clinical Genetics department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Clinical Genetics department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Clinical Genetics.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Clinical Genetics to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
+          "images": []
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "categoryId": "c2",
+      "name": "Nephrology",
+      "icon": "kidney",
+      "shortDescription": "Advanced kidney disease management, hemodialysis, and renal care.",
+      "bannerImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "thumbnailImage": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop",
+      "status": true,
+      "adminId": "ADM-001",
+      "adminName": "Super Administrator",
+      "createdAt": "2025-01-15T09:30:00+00:00",
+      "updatedAt": "2025-01-15T09:30:00+00:00",
+      "tabs": [
+        {
+          "id": "t1",
+          "title": "Overview",
+          "content": "<p>Welcome to the Nephrology department. We provide comprehensive care and support tailored to each patient's needs.</p>",
+          "images": []
+        },
+        {
+          "id": "t2",
+          "title": "Why Choose Us",
+          "content": "<p>Our Nephrology department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
+          "images": []
+        },
+        {
+          "id": "t3",
+          "title": "Technology & Infrastructure",
+          "content": "<p>We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results in Nephrology.</p>",
+          "images": []
+        },
+        {
+          "id": "t4",
+          "title": "Services",
+          "content": "<p>We offer a wide range of inpatient and outpatient services under Nephrology to cater to diverse medical requirements.</p>",
+          "images": []
+        },
+        {
+          "id": "t5",
+          "title": "Our Experts",
+          "content": "<p>Meet our leading specialist physicians and support staff who work together to ensure your well-being.</p>",
           "images": []
         }
       ]

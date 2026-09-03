@@ -10,6 +10,18 @@ const categoriesMap = {};
   categoriesMap[cat.id] = cat;
 });
 
+const catRowsToInsert = (rawState.categories || []).map(cat => ({
+  id: cat.id,
+  name: cat.name,
+  description: cat.description || '',
+  order: parseInt(cat.order) || 1,
+  status: cat.status !== false,
+  adminId: cat.adminId || 'ADM-001',
+  adminName: cat.adminName || 'Super Administrator',
+  created_at: cat.createdAt || new Date().toISOString(),
+  updated_at: cat.updatedAt || new Date().toISOString()
+}));
+
 const rowsToInsert = rawState.specialities.map(spec => {
   const cat = categoriesMap[spec.categoryId] || {};
   return {
@@ -34,9 +46,24 @@ const rowsToInsert = rawState.specialities.map(spec => {
 });
 
 async function seed() {
+  console.log(`Seeding ${catRowsToInsert.length} categories into Supabase table "bv_categories"...`);
+  try {
+    const { data: catData, error: catError } = await supabase
+      .from('bv_categories')
+      .upsert(catRowsToInsert, { onConflict: 'id' })
+      .select();
+
+    if (catError) {
+      console.error('Error seeding bv_categories:', catError);
+    } else {
+      console.log(`Successfully seeded ${catData ? catData.length : catRowsToInsert.length} categories into bv_categories table!`);
+    }
+  } catch (err) {
+    console.error('Unexpected error seeding bv_categories:', err);
+  }
+
   console.log(`Seeding ${rowsToInsert.length} specialities into Supabase table "admin_specialities"...`);
   try {
-    // Upsert all rows into admin_specialities
     const { data, error } = await supabase
       .from('admin_specialities')
       .upsert(rowsToInsert, { onConflict: 'id' })
