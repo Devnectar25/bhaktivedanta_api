@@ -30,7 +30,7 @@ export function readData(key) {
   }
 
   const filePath = getFilePath(key);
-  
+
   if (!fs.existsSync(filePath)) {
     // Determine the seed mapping
     let seedData = [];
@@ -46,7 +46,8 @@ export function readData(key) {
     else if (key === 'app_errors') seedData = seeds.defaultAppErrors;
     else if (key === 'specialities_state') seedData = seeds.defaultSpecialitiesState;
     else if (key === 'services_state') seedData = seeds.defaultServicesState;
-    
+    else if (key === 'patient_corner_state') seedData = seeds.defaultPatientCornerState;
+
     // Write seed data
     try {
       fs.writeFileSync(filePath, JSON.stringify(seedData, null, 2), 'utf-8');
@@ -56,7 +57,7 @@ export function readData(key) {
     memoryCache[key] = seedData;
     return seedData;
   }
-  
+
   try {
     const rawContent = fs.readFileSync(filePath, 'utf-8');
     const parsed = JSON.parse(rawContent);
@@ -97,9 +98,10 @@ export function initializeDatabase() {
     'helpdesk',
     'app_errors',
     'specialities_state',
-    'services_state'
+    'services_state',
+    'patient_corner_state'
   ];
-  
+
   for (const entity of entities) {
     readData(entity); // Triggers seeding if not exists
   }

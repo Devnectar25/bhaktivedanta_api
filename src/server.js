@@ -17,6 +17,7 @@ import subadminsRouter from './routes/subadmins.js';
 import helpdeskRouter from './routes/helpdesk.js';
 import appErrorsRouter from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
+import patientCornerRouter from './routes/patientCorner.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -30,18 +31,18 @@ app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps, curl)
     if (!origin) return callback(null, true);
-    
+
     const allowed = [
       FRONTEND_URL,
       'http://localhost:5173',
       'http://127.0.0.1:5173',
       'http://localhost:3000'
     ];
-    
-    const isAllowed = allowed.some(url => url && origin.startsWith(url)) || 
-                      origin.includes('bhaktivedanta') || 
-                      origin.includes('vercel.app');
-                      
+
+    const isAllowed = allowed.some(url => url && origin.startsWith(url)) ||
+      origin.includes('bhaktivedanta') ||
+      origin.includes('vercel.app');
+
     if (isAllowed) {
       callback(null, true);
     } else {
@@ -74,7 +75,9 @@ app.get('/', (req, res) => {
       queries: '/api/queries',
       subadmins: '/api/subadmins',
       helpdesk: '/api/helpdesk',
-      appErrors: '/api/app-errors'
+      appErrors: '/api/app-errors',
+      services: '/api/services-state',
+      patientCorner: '/api/patient-corner-state'
     }
   });
 });
@@ -102,6 +105,9 @@ app.use('/api/subadmins', subadminsRouter);
 app.use('/api/helpdesk', helpdeskRouter);
 app.use('/api/app-errors', appErrorsRouter);
 app.use('/api/services-state', servicesRouter);
+app.use('/api/services', servicesRouter);
+app.use('/api/patient-corner-state', patientCornerRouter);
+app.use('/api/patient-corner', patientCornerRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
