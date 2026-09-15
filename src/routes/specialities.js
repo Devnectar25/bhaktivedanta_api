@@ -110,9 +110,33 @@ router.post('/upload', async (req, res, next) => {
   }
 });
 
-// GET specialities state
+// Helper to trigger Next.js / ISR revalidation webhook if configured
+async function triggerISRRevalidation(paths = ['/specialities', '/']) {
+  const webhookUrl = process.env.ISR_REVALIDATE_URL || process.env.REVALIDATE_WEBHOOK_URL;
+  const secret = process.env.REVALIDATE_SECRET || '';
+  if (webhookUrl) {
+    try {
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(secret ? { 'x-revalidate-secret': secret } : {})
+        },
+        body: JSON.stringify({ paths, timestamp: Date.now() })
+      });
+      console.log(`[API] ISR revalidation triggered for paths:`, paths);
+    } catch (e) {
+      console.warn(`[API] ISR revalidation trigger failed:`, e.message);
+    }
+  }
+}
+
+// GET specialities state (Supports dynamic query params: ?categoryId=...&limit=... without hardcoded cutting)
 router.get('/', async (req, res, next) => {
   try {
+    const { categoryId, limit } = req.query;
+    let state = null;
+
     if (supabase) {
       // Fetch both categories and specialities from Supabase
       const [specRes, catRes] = await Promise.all([
@@ -124,7 +148,7 @@ router.get('/', async (req, res, next) => {
       const catData = catRes.data || [];
 
       if (!specRes.error && specData.length > 0) {
-        let state = rowsToState(specData);
+        state = rowsToState(specData);
 
         // If bv_categories has records, use the authoritative categories from bv_categories
         if (!catRes.error && catData && catData.length > 0) {
@@ -140,14 +164,30 @@ router.get('/', async (req, res, next) => {
             updatedAt: c.updated_at || new Date().toISOString()
           })).sort((a, b) => a.order - b.order);
         }
-
-        return res.json(state);
       }
     }
 
-    // Fallback to local storage if Supabase is offline or empty
-    const state = readData('specialities_state');
-    res.json(state);
+    if (!state) {
+      // Fallback to local storage if Supabase is offline or empty
+      state = readData('specialities_state') || { categories: [], specialities: [] };
+    }
+
+    let filteredSpecialities = state.specialities || [];
+    if (categoryId) {
+      filteredSpecialities = filteredSpecialities.filter(s => s.categoryId === categoryId);
+    }
+    if (limit && !isNaN(parseInt(limit))) {
+      filteredSpecialities = filteredSpecialities.slice(0, parseInt(limit));
+    }
+
+    res.json({
+      view: state.view || 'listing',
+      activeCategoryId: state.activeCategoryId || null,
+      activeSpecialityId: state.activeSpecialityId || null,
+      activeTabId: state.activeTabId || 't1',
+      categories: state.categories || [],
+      specialities: filteredSpecialities
+    });
   } catch (err) {
     next(err);
   }
@@ -227,6 +267,7 @@ router.put('/', async (req, res, next) => {
 
     // Update local file storage cache
     writeData('specialities_state', payload);
+    triggerISRRevalidation(['/specialities', '/']);
     res.json(payload);
   } catch (err) {
     next(err);
