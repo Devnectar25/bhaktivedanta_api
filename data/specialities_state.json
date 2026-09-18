@@ -349,52 +349,6 @@
       ]
     },
     {
-      "id": "s1788416425200",
-      "categoryId": "c1",
-      "name": "XYZ",
-      "icon": "star",
-      "shortDescription": "abcdefghijklmnopqrstuvwxyz",
-      "bannerImage": "",
-      "thumbnailImage": "",
-      "status": true,
-      "adminId": "ADM-001",
-      "adminName": "Super Administrator",
-      "createdAt": "2026-09-03T06:20:25.2+00:00",
-      "updatedAt": "2026-09-18T09:04:38.269+00:00",
-      "tabs": [
-        {
-          "id": "t1",
-          "title": "Overview",
-          "content": "<p class=\"mb-4\">Welcome to the XYZ department. We provide comprehensive care and support tailored to each patient's needs.</p>",
-          "images": []
-        },
-        {
-          "id": "t2",
-          "title": "Why Choose Us",
-          "content": "<p class=\"mb-4\">Our department stands out for its experienced professionals, modern equipment, and dedicated compassionate care.</p>",
-          "images": []
-        },
-        {
-          "id": "t3",
-          "title": "Technology & Infrastructure",
-          "content": "<p class=\"mb-4\">We utilize advanced diagnostics and treatment facilities to deliver high-quality, precise clinical results.</p>",
-          "images": []
-        },
-        {
-          "id": "t4",
-          "title": "Services",
-          "content": "<p class=\"mb-4\">We offer a wide range of inpatient and outpatient services to cater to diverse medical requirements.</p>",
-          "images": []
-        },
-        {
-          "id": "t5",
-          "title": "Our Experts",
-          "content": "<p class=\"mb-4\">Meet our leading specialist physicians and support staff who work together to ensure your well-being. * Expert: Dr. Anand Sharma - MBBS, MD (Cardiology)</p>",
-          "images": []
-        }
-      ]
-    },
-    {
       "id": "s5",
       "categoryId": "c1",
       "name": "E.N.T",

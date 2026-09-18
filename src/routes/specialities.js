@@ -199,69 +199,93 @@ router.put('/', async (req, res, next) => {
     const payload = req.body || {};
     const now = new Date().toISOString();
 
-    const specialities = payload.specialities || [];
-    const categories = payload.categories || [];
+    const specialities = Array.isArray(payload.specialities) ? payload.specialities : [];
+    const categories = Array.isArray(payload.categories) ? payload.categories : [];
     const categoriesMap = {};
     categories.forEach(c => { categoriesMap[c.id] = c; });
 
     if (supabase) {
-      // 1. Sync Categories to bv_categories table
-      if (categories.length > 0) {
-        const catRowsToUpsert = categories.map(cat => ({
-          id: cat.id,
-          name: cat.name,
-          description: cat.description || '',
-          order: parseInt(cat.order) || 1,
-          status: cat.status !== false,
-          adminId: cat.adminId || 'ADM-001',
-          adminName: cat.adminName || 'Super Administrator',
-          created_at: cat.createdAt || now,
-          updated_at: now
-        }));
-
-        const { error: catError } = await supabase
-          .from('bv_categories')
-          .upsert(catRowsToUpsert, { onConflict: 'id' });
-
-        if (catError) {
-          console.error('[API] Error syncing categories to Supabase bv_categories:', catError);
-        } else {
-          console.log(`[API] Successfully synced ${catRowsToUpsert.length} categories to Supabase bv_categories.`);
+      try {
+        // 1. Sync Categories to bv_categories table (delete removed + upsert remaining)
+        const keptCatIds = categories.map(c => c.id);
+        const { data: existingCats } = await supabase.from('bv_categories').select('id');
+        if (existingCats && existingCats.length > 0) {
+          const catIdsToDelete = existingCats.map(r => r.id).filter(id => !keptCatIds.includes(id));
+          if (catIdsToDelete.length > 0) {
+            console.log('[API Specialities] Deleting removed categories from Supabase bv_categories:', catIdsToDelete);
+            await supabase.from('bv_categories').delete().in('id', catIdsToDelete);
+          }
         }
-      }
 
-      // 2. Sync Specialities to admin_specialities table
-      if (specialities.length > 0) {
-        const rowsToInsert = specialities.map(spec => {
-          const cat = categoriesMap[spec.categoryId] || {};
-          return {
-            id: spec.id,
-            speciality_name: spec.name,
-            icon: spec.icon || 'star',
-            short_description: spec.shortDescription || '',
-            banner_image: spec.bannerImage || '',
-            thumbnail_image: spec.thumbnailImage || '',
-            status: spec.status ? 'Live' : 'Hidden',
-            category_id: spec.categoryId || 'c1',
-            category_name: cat.name || 'Unassigned',
-            category_description: cat.description || '',
-            category_order: cat.order || 1,
-            category_status: cat.status !== false,
-            tabs_data: spec.tabs || [],
-            admin_id: spec.adminId || 'ADM-001',
-            admin_name: spec.adminName || 'Super Administrator',
-            created_at: spec.createdAt || now,
+        if (categories.length > 0) {
+          const catRowsToUpsert = categories.map(cat => ({
+            id: cat.id,
+            name: cat.name,
+            description: cat.description || '',
+            order: parseInt(cat.order) || 1,
+            status: cat.status !== false,
+            adminId: cat.adminId || 'ADM-001',
+            adminName: cat.adminName || 'Super Administrator',
+            created_at: cat.createdAt || now,
             updated_at: now
-          };
-        });
+          }));
 
-        const { error: upsertError } = await supabase
-          .from('admin_specialities')
-          .upsert(rowsToInsert, { onConflict: 'id' });
+          const { error: catError } = await supabase
+            .from('bv_categories')
+            .upsert(catRowsToUpsert, { onConflict: 'id' });
 
-        if (upsertError) {
-          console.error('Error syncing specialities state to Supabase:', upsertError);
+          if (catError) {
+            console.error('[API] Error syncing categories to Supabase bv_categories:', catError);
+          } else {
+            console.log(`[API] Successfully synced ${catRowsToUpsert.length} categories to Supabase bv_categories.`);
+          }
         }
+
+        // 2. Sync Specialities to admin_specialities table (delete removed + upsert remaining)
+        const keptSpecIds = specialities.map(s => s.id);
+        const { data: existingSpecs } = await supabase.from('admin_specialities').select('id');
+        if (existingSpecs && existingSpecs.length > 0) {
+          const specIdsToDelete = existingSpecs.map(r => r.id).filter(id => !keptSpecIds.includes(id));
+          if (specIdsToDelete.length > 0) {
+            console.log('[API Specialities] Deleting removed specialities from Supabase admin_specialities:', specIdsToDelete);
+            await supabase.from('admin_specialities').delete().in('id', specIdsToDelete);
+          }
+        }
+
+        if (specialities.length > 0) {
+          const rowsToInsert = specialities.map(spec => {
+            const cat = categoriesMap[spec.categoryId] || {};
+            return {
+              id: spec.id,
+              speciality_name: spec.name,
+              icon: spec.icon || 'star',
+              short_description: spec.shortDescription || '',
+              banner_image: spec.bannerImage || '',
+              thumbnail_image: spec.thumbnailImage || '',
+              status: spec.status ? 'Live' : 'Hidden',
+              category_id: spec.categoryId || 'c1',
+              category_name: cat.name || 'Unassigned',
+              category_description: cat.description || '',
+              category_order: cat.order || 1,
+              category_status: cat.status !== false,
+              tabs_data: spec.tabs || [],
+              admin_id: spec.adminId || 'ADM-001',
+              admin_name: spec.adminName || 'Super Administrator',
+              created_at: spec.createdAt || now,
+              updated_at: now
+            };
+          });
+
+          const { error: upsertError } = await supabase
+            .from('admin_specialities')
+            .upsert(rowsToInsert, { onConflict: 'id' });
+
+          if (upsertError) {
+            console.error('Error syncing specialities state to Supabase:', upsertError);
+          }
+        }
+      } catch (dbErr) {
+        console.error('[API Specialities] Supabase sync error in PUT /:', dbErr);
       }
     }
 
@@ -269,6 +293,60 @@ router.put('/', async (req, res, next) => {
     writeData('specialities_state', payload);
     triggerISRRevalidation(['/specialities', '/']);
     res.json(payload);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /categories/:id - Delete a single category
+router.delete('/categories/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    let state = readData('specialities_state') || { categories: [], specialities: [] };
+
+    state.categories = (state.categories || []).filter(c => c.id !== id);
+    state.specialities = (state.specialities || []).map(s => s.categoryId === id ? { ...s, categoryId: null } : s);
+    writeData('specialities_state', state);
+
+    if (supabase) {
+      try {
+        await supabase.from('bv_categories').delete().eq('id', id);
+      } catch (e) {
+        console.error('[API Specialities] Error deleting category from Supabase:', e);
+      }
+    }
+
+    triggerISRRevalidation(['/specialities', '/']);
+    res.json({ success: true, message: `Category ${id} deleted successfully`, state });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /:id - Delete a single speciality
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    let state = readData('specialities_state') || { categories: [], specialities: [] };
+
+    state.specialities = (state.specialities || []).filter(s => s.id !== id);
+    writeData('specialities_state', state);
+
+    if (supabase) {
+      try {
+        const { error } = await supabase.from('admin_specialities').delete().eq('id', id);
+        if (error) {
+          console.error('[API Specialities] Supabase delete error for id ' + id + ':', error.message);
+        } else {
+          console.log(`[API Specialities] Successfully deleted speciality ${id} from Supabase.`);
+        }
+      } catch (e) {
+        console.error('[API Specialities] Error deleting speciality from Supabase:', e);
+      }
+    }
+
+    triggerISRRevalidation(['/specialities', '/']);
+    res.json({ success: true, message: `Speciality ${id} deleted successfully`, state });
   } catch (err) {
     next(err);
   }

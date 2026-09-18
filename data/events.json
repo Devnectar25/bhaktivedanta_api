@@ -1,0 +1,20 @@
+[
+  {
+    "id": "EVT-101",
+    "title": "Free Heart Health Check-up Camp",
+    "date": "28 Oct, 2023",
+    "time": "09:00 AM - 04:00 PM",
+    "venue": "Hospital Ground Floor, OPD Block",
+    "status": "Upcoming",
+    "description": "Providing free ECG, blood pressure monitoring, and consultations with leading cardiologists."
+  },
+  {
+    "id": "EVT-102",
+    "title": "CME on Advanced Laparoscopic Surgery",
+    "date": "15 Nov, 2023",
+    "time": "11:00 AM - 02:00 PM",
+    "venue": "Seminar Hall, 4th Floor",
+    "status": "Scheduled",
+    "description": "A professional continuing medical education program for consulting surgeons and residents."
+  }
+]

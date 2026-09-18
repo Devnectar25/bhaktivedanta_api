@@ -167,13 +167,24 @@ async function triggerISRRevalidation(paths = ['/services', '/']) {
 // Helper to save state (sync with Supabase and JSON storage)
 async function saveFullState(state) {
   const now = new Date().toISOString();
-  const services = state.services || [];
-  const categories = state.categories || [];
+  const services = Array.isArray(state.services) ? state.services : [];
+  const categories = Array.isArray(state.categories) ? state.categories : [];
   const categoriesMap = {};
   categories.forEach(c => { categoriesMap[c.id] = c; });
 
   if (supabase) {
     try {
+      // 1. Sync Categories to bv_service_categories (delete removed + upsert remaining)
+      const keptCatIds = categories.map(c => c.id);
+      const { data: existingCats } = await supabase.from('bv_service_categories').select('id');
+      if (existingCats && existingCats.length > 0) {
+        const catIdsToDelete = existingCats.map(r => r.id).filter(id => !keptCatIds.includes(id));
+        if (catIdsToDelete.length > 0) {
+          console.log('[API Services] Deleting removed categories from Supabase bv_service_categories:', catIdsToDelete);
+          await supabase.from('bv_service_categories').delete().in('id', catIdsToDelete);
+        }
+      }
+
       if (categories.length > 0) {
         const catRowsToUpsert = categories.map(cat => ({
           id: cat.id,
@@ -188,6 +199,17 @@ async function saveFullState(state) {
         }));
 
         await supabase.from('bv_service_categories').upsert(catRowsToUpsert, { onConflict: 'id' });
+      }
+
+      // 2. Sync Services to admin_services (delete removed + upsert remaining)
+      const keptServiceIds = services.map(s => s.id);
+      const { data: existingServices } = await supabase.from('admin_services').select('id');
+      if (existingServices && existingServices.length > 0) {
+        const srvIdsToDelete = existingServices.map(r => r.id).filter(id => !keptServiceIds.includes(id));
+        if (srvIdsToDelete.length > 0) {
+          console.log('[API Services] Deleting removed services from Supabase admin_services:', srvIdsToDelete);
+          await supabase.from('admin_services').delete().in('id', srvIdsToDelete);
+        }
       }
 
       if (services.length > 0) {
@@ -218,7 +240,7 @@ async function saveFullState(state) {
         await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
       }
     } catch (e) {
-      console.error('[API] Supabase upsert error:', e);
+      console.error('[API Services] Supabase sync error in saveFullState:', e);
     }
   }
 
@@ -226,6 +248,62 @@ async function saveFullState(state) {
   triggerISRRevalidation(['/services', '/']);
   return state;
 }
+
+// ----------------------------------------------------
+// DELETE SINGLE SERVICE
+// ----------------------------------------------------
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const state = await getCurrentState();
+    const serviceIndex = (state.services || []).findIndex(s => s.id === id);
+
+    if (serviceIndex === -1) {
+      return res.status(404).json({ error: 'Service not found' });
+    }
+
+    state.services.splice(serviceIndex, 1);
+    await saveFullState(state);
+
+    if (supabase) {
+      try {
+        await supabase.from('admin_services').delete().eq('id', id);
+      } catch (e) {
+        console.error('[API Services] Supabase delete error:', e);
+      }
+    }
+
+    res.json({ success: true, message: `Service ${id} deleted successfully`, state });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ----------------------------------------------------
+// DELETE SERVICE CATEGORY
+// ----------------------------------------------------
+router.delete('/categories/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const state = await getCurrentState();
+    state.categories = (state.categories || []).filter(c => c.id !== id);
+    state.services = (state.services || []).map(s => s.categoryId === id ? { ...s, categoryId: null } : s);
+
+    await saveFullState(state);
+
+    if (supabase) {
+      try {
+        await supabase.from('bv_service_categories').delete().eq('id', id);
+      } catch (e) {
+        console.error('[API Services] Supabase category delete error:', e);
+      }
+    }
+
+    res.json({ success: true, message: `Service category ${id} deleted successfully`, state });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // ----------------------------------------------------
 // 1. GET ALL SERVICES STATE (Supports dynamic query params: ?categoryId=...&limit=... without hardcoded cutting)
