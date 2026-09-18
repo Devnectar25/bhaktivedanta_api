@@ -1433,3 +1433,160 @@ export function ensureStandardPatientCornerTabs(guide) {
 }
 
 defaultPatientCornerState.guides.forEach(ensureStandardPatientCornerTabs);
+
+export const defaultCareerJobs = [
+  {
+    id: 'JOB-101',
+    category: 'Consultant Vacancy',
+    title: 'Interventional Radiologist',
+    department: 'Radiology & Imaging',
+    positions: '01',
+    qualification: 'DNB (Radio Diagnosis), Fellowship in Interventional Radiology',
+    experience: '2-3 years of relevant experience',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Seeking a skilled Interventional Radiologist with experience in vascular and non-vascular interventions, fluoroscopy, and CT-guided procedures.',
+    postedDate: '2026-08-15'
+  },
+  {
+    id: 'JOB-102',
+    category: 'Consultant Vacancy',
+    title: 'Consultant Cardiologist',
+    department: 'Cardiology',
+    positions: '02',
+    qualification: 'DM / DNB (Cardiology)',
+    experience: '3-5 years of post-DM/DNB experience in clinical & interventional cardiology',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Full-time consultant required for our cardiac catheterization lab, echo cardiology, and OPD/IPD consultations.',
+    postedDate: '2026-08-18'
+  },
+  {
+    id: 'JOB-103',
+    category: 'Nursing Vacancy',
+    title: 'Senior Staff Nurse (ICU & Critical Care)',
+    department: 'Critical Care / ICU',
+    positions: '08',
+    qualification: 'B.Sc Nursing / GNM with MNC registration',
+    experience: '2+ years in Intensive Care Unit / Cardiac ICU',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Dedicated nursing professionals to deliver compassionate, skilled bedside care to critically ill patients.',
+    postedDate: '2026-08-20'
+  },
+  {
+    id: 'JOB-104',
+    category: 'Nursing Vacancy',
+    title: 'Staff Nurse (Operation Theatre - OT)',
+    department: 'Operation Theatre',
+    positions: '04',
+    qualification: 'B.Sc Nursing / GNM with MNC registration',
+    experience: '1-3 years of OT experience in multi-speciality setup',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Assisting surgical teams across Orthopedic, Cardiac, General Laparoscopic, and ENT surgical interventions.',
+    postedDate: '2026-08-22'
+  },
+  {
+    id: 'JOB-105',
+    category: 'Paramedical Vacancy',
+    title: 'Medical Laboratory Technologist (Pathology)',
+    department: 'Pathology & Blood Bank',
+    positions: '03',
+    qualification: 'B.Sc / M.Sc in Medical Laboratory Technology (MLT)',
+    experience: '1+ year experience in automated biochemistry and hematology',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Operating advanced hematology and biochemistry analyzers under NABL accredited quality guidelines.',
+    postedDate: '2026-08-25'
+  },
+  {
+    id: 'JOB-106',
+    category: 'Paramedical Vacancy',
+    title: 'Clinical Pharmacist',
+    department: 'Pharmacy',
+    positions: '03',
+    qualification: 'B.Pharm / Pharm.D with State Pharmacy Council registration',
+    experience: '1-2 years in hospital IPD/OPD dispensing',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Medication reconciliation, IPD prescription review, patient counselling, and inventory oversight.',
+    postedDate: '2026-08-28'
+  },
+  {
+    id: 'JOB-107',
+    category: 'Admin & Support Vacancy',
+    title: 'Patient Care Coordinator (Helpdesk & Admission)',
+    department: 'Front Office & Guest Relations',
+    positions: '04',
+    qualification: 'Any Graduate / Healthcare Administration diploma',
+    experience: '1-3 years in hospital reception, billing or patient coordination',
+    location: 'Mira Road, Mumbai',
+    status: 'Active',
+    description: 'Welcoming patients, managing admission procedures, insurance coordination, and addressing patient queries.',
+    postedDate: '2026-09-01'
+  }
+];
+
+export const defaultCareerApplications = [
+  {
+    id: 'APP-1001',
+    jobId: 'JOB-101',
+    position: 'Interventional Radiologist',
+    fullName: 'Dr. Rohan Deshmukh',
+    email: 'rohan.deshmukh@gmail.com',
+    phone: '+91 98201 44521',
+    qualification: 'DNB (Radio Diagnosis)',
+    experience: '3.5 Years',
+    currentCtc: '22 LPA',
+    expectedCtc: '28 LPA',
+    noticePeriod: '30 Days',
+    city: 'Mumbai',
+    resumeUrl: 'https://example.com/resumes/rohan_deshmukh_cv.pdf',
+    resumeName: 'Dr_Rohan_Deshmukh_CV.pdf',
+    coverNote: 'Experienced in peripheral and neurovascular interventions with fellowship from KEM Hospital.',
+    status: 'Shortlisted',
+    appliedDate: '2026-09-02',
+    hrNotes: 'Credentials verified with MMC. Scheduled preliminary interview with HOD Radiology for next Tuesday.'
+  },
+  {
+    id: 'APP-1002',
+    jobId: 'JOB-103',
+    position: 'Senior Staff Nurse (ICU & Critical Care)',
+    fullName: 'Sneha Mary Varghese',
+    email: 'sneha.varghese@yahoo.com',
+    phone: '+91 97692 88123',
+    qualification: 'B.Sc Nursing (MNC Reg: 148922)',
+    experience: '4 Years',
+    currentCtc: '4.2 LPA',
+    expectedCtc: '5.5 LPA',
+    noticePeriod: '15 Days',
+    city: 'Thane',
+    resumeUrl: 'https://example.com/resumes/sneha_varghese_cv.pdf',
+    resumeName: 'Sneha_Varghese_Resume.pdf',
+    coverNote: 'Over 4 years of solid experience handling ventilator patients, arterial lines, and post-CABG cardiac monitoring.',
+    status: 'Under Review',
+    appliedDate: '2026-09-05',
+    hrNotes: 'Good experience in tertiary hospital ICU. Nursing Superintendent to review shift availability.'
+  },
+  {
+    id: 'APP-1003',
+    jobId: 'JOB-106',
+    position: 'Clinical Pharmacist',
+    fullName: 'Amitesh Patil',
+    email: 'amitesh.patil@outlook.com',
+    phone: '+91 91370 55670',
+    qualification: 'Pharm.D',
+    experience: '2 Years',
+    currentCtc: '3.6 LPA',
+    expectedCtc: '4.8 LPA',
+    noticePeriod: 'Immediate',
+    city: 'Mumbai',
+    resumeUrl: 'https://example.com/resumes/amitesh_patil_cv.pdf',
+    resumeName: 'Amitesh_Patil_PharmD.pdf',
+    coverNote: 'Keen interest in antibiotic stewardship, clinical medication charting and NABH pharmacy documentation.',
+    status: 'New',
+    appliedDate: '2026-09-10',
+    hrNotes: ''
+  }
+];

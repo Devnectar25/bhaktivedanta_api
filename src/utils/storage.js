@@ -47,6 +47,8 @@ export function readData(key) {
     else if (key === 'specialities_state') seedData = seeds.defaultSpecialitiesState;
     else if (key === 'services_state') seedData = seeds.defaultServicesState;
     else if (key === 'patient_corner_state') seedData = seeds.defaultPatientCornerState;
+    else if (key === 'career_jobs') seedData = seeds.defaultCareerJobs;
+    else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
 
     // Write seed data
     try {
