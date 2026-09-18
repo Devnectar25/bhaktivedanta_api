@@ -1,0 +1,41 @@
+[
+  {
+    "id": "HD-801",
+    "ticketNo": "TCK-1001",
+    "requesterName": "Ramesh Gupta",
+    "requesterEmail": "ramesh.gupta@gmail.com",
+    "category": "Appointment Issue",
+    "priority": "High",
+    "status": "In Progress",
+    "subject": "Unable to reschedule appointment for Cardiology",
+    "description": "I tried to modify my booking for Thursday 3 PM but the portal threw a payment verification timeout.",
+    "created": "2026-08-25 14:30",
+    "response": "Assigned to Support Specialist. Contacted patient for booking reference."
+  },
+  {
+    "id": "HD-802",
+    "ticketNo": "TCK-1002",
+    "requesterName": "Pooja Verma",
+    "requesterEmail": "pooja.verma@yahoo.com",
+    "category": "Portal Access",
+    "priority": "Medium",
+    "status": "Pending",
+    "subject": "OTP not received during login",
+    "description": "SMS verification codes are arriving with a 15-minute delay on Airtel numbers.",
+    "created": "2026-08-26 09:15",
+    "response": ""
+  },
+  {
+    "id": "HD-803",
+    "ticketNo": "TCK-1003",
+    "requesterName": "Dr. S. K. Joshi",
+    "requesterEmail": "dr.joshi@bhaktivedanta.com",
+    "category": "IT Infrastructure",
+    "priority": "Urgent",
+    "status": "Resolved",
+    "subject": "OPD Printer offline in Room 204",
+    "description": "Thermal receipt printer disconnected from LAN network.",
+    "created": "2026-08-24 11:00",
+    "response": "Network cable replaced and printer driver reinstalled. Verified working."
+  }
+]

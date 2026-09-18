@@ -5,7 +5,9 @@ import * as seeds from './seeds.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.join(__dirname, '..', 'data');
+const ROOT_DIR = path.join(__dirname, '..', '..');
+const DATA_DIR = path.join(ROOT_DIR, 'data');
+const LEGACY_SRC_DATA_DIR = path.join(__dirname, '..', 'data');
 
 // Ensure database directory exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -16,7 +18,16 @@ if (!fs.existsSync(DATA_DIR)) {
  * Get absolute path for a data file.
  */
 function getFilePath(key) {
-  return path.join(DATA_DIR, `${key}.json`);
+  const rootPath = path.join(DATA_DIR, `${key}.json`);
+  if (!fs.existsSync(rootPath)) {
+    const legacyPath = path.join(LEGACY_SRC_DATA_DIR, `${key}.json`);
+    if (fs.existsSync(legacyPath)) {
+      try {
+        fs.copyFileSync(legacyPath, rootPath);
+      } catch (e) { }
+    }
+  }
+  return rootPath;
 }
 
 const memoryCache = {};
@@ -72,18 +83,26 @@ export function readData(key) {
 }
 
 /**
- * Write data back to a key's JSON file.
+ * Write data back to memory cache and fallback JSON file if Supabase is offline.
  */
 export function writeData(key, data) {
   memoryCache[key] = data;
+
+  const isSupabaseActive = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+  if (isSupabaseActive) {
+    // Supabase is the primary persistent store; memoryCache serves as in-process cache
+    return true;
+  }
+
+  // Fallback mode without Supabase: save to disk
   const filePath = getFilePath(key);
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-    return true;
   } catch (err) {
-    console.warn(`Error writing database file for ${key} (ignoring since memory is updated):`, err.message);
-    return true; // Return true so client API doesn't get error
+    console.warn(`Error writing database file for ${key}:`, err.message);
   }
+
+  return true;
 }
 
 // Pre-initialize all seed data

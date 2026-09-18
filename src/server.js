@@ -1,3 +1,4 @@
+// Bhaktivedanta API Server
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -19,6 +20,7 @@ import appErrorsRouter from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
+import spiritualCareRouter from './routes/spiritualCare.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -57,6 +59,14 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
+
+// Ensure dynamic endpoints are never cached by proxies / browsers
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
 
 // Initialize JSON database storage & seeding
 initializeDatabase();
@@ -113,6 +123,8 @@ app.use('/api/services', servicesRouter);
 app.use('/api/patient-corner-state', patientCornerRouter);
 app.use('/api/patient-corner', patientCornerRouter);
 app.use('/api/careers', careersRouter);
+app.use('/api/spiritual-care-state', spiritualCareRouter);
+app.use('/api/spiritual-care', spiritualCareRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
