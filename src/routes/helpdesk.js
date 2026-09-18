@@ -5,11 +5,45 @@ import { readData, writeData } from '../utils/storage.js';
 const router = express.Router();
 
 // GET all tickets
+// Helper to normalize ticket object for frontend and database compatibility
+const normalizeTicket = (t) => {
+  if (!t) return t;
+  const subject = t.subject || t.ticketSubject || '';
+  const description = t.description || t.ticketDescription || '';
+  const requesterName = t.requesterName || t.submittedBy || 'Anonymous';
+  const requesterEmail = t.requesterEmail || t.submittedEmail || '';
+  const ticketNo = t.ticketNo || t.id || '';
+  const status = t.status || 'Pending';
+  const priority = t.priority || 'Medium';
+  const category = t.category || 'General Support';
+  const created = t.created || (t.created_at ? new Date(t.created_at).toLocaleString() : new Date().toLocaleString());
+
+  return {
+    ...t,
+    id: t.id || ticketNo,
+    ticketNo,
+    subject,
+    ticketSubject: subject,
+    description,
+    ticketDescription: description,
+    requesterName,
+    submittedBy: requesterName,
+    requesterEmail,
+    submittedEmail: requesterEmail,
+    status,
+    priority,
+    category,
+    created
+  };
+};
+
+// GET all tickets
 router.get('/', async (req, res, next) => {
   try {
+    let tickets = [];
     if (!supabase) {
-      const helpdesk = readData('helpdesk');
-      return res.json(helpdesk);
+      tickets = readData('helpdesk') || [];
+      return res.json(tickets.map(normalizeTicket));
     }
 
     const { data, error } = await supabase
@@ -19,11 +53,12 @@ router.get('/', async (req, res, next) => {
 
     if (error) {
       console.error('Supabase get helpdesk error, fallback to local storage:', error.message);
-      const helpdesk = readData('helpdesk');
-      return res.json(helpdesk);
+      tickets = readData('helpdesk') || [];
+      return res.json(tickets.map(normalizeTicket));
     }
 
-    res.json(data || []);
+    const result = (data || []).map(normalizeTicket);
+    res.json(result);
   } catch (err) {
     next(err);
   }
@@ -32,8 +67,9 @@ router.get('/', async (req, res, next) => {
 // PUT bulk update tickets
 router.put('/', async (req, res, next) => {
   try {
-    writeData('helpdesk', req.body);
-    res.json(req.body);
+    const list = Array.isArray(req.body) ? req.body.map(normalizeTicket) : req.body;
+    writeData('helpdesk', list);
+    res.json(list);
   } catch (err) {
     next(err);
   }
@@ -42,13 +78,19 @@ router.put('/', async (req, res, next) => {
 // POST create ticket
 router.post('/', async (req, res, next) => {
   try {
+    const subject = req.body.subject || req.body.ticketSubject || '';
+    const description = req.body.description || req.body.ticketDescription || '';
+    const requesterName = req.body.requesterName || req.body.submittedBy || 'Anonymous';
+    const requesterEmail = req.body.requesterEmail || req.body.submittedEmail || '';
+    const ticketNo = req.body.ticketNo || `TCK-${Math.floor(1000 + Math.random() * 9000)}`;
+
     const newTicket = {
       id: req.body.id || `TK-${Math.floor(100 + Math.random() * 900)}`,
-      ticketSubject: req.body.ticketSubject || '',
-      ticketDescription: req.body.ticketDescription || '',
-      submittedBy: req.body.submittedBy || '',
-      submittedEmail: req.body.submittedEmail || '',
-      status: req.body.status || 'Open',
+      ticketSubject: subject,
+      ticketDescription: description,
+      submittedBy: requesterName,
+      submittedEmail: requesterEmail,
+      status: req.body.status || 'Pending',
       priority: req.body.priority || 'Medium'
     };
 
@@ -61,14 +103,15 @@ router.post('/', async (req, res, next) => {
       if (error) {
         console.error('Supabase helpdesk insert error:', error.message);
       } else if (data && data.length > 0) {
-        return res.status(201).json(data[0]);
+        return res.status(201).json(normalizeTicket({ ...data[0], ticketNo, subject, description, requesterName, requesterEmail }));
       }
     }
 
-    const helpdesk = readData('helpdesk');
-    helpdesk.unshift(newTicket);
+    const helpdesk = readData('helpdesk') || [];
+    const normalized = normalizeTicket({ ...newTicket, ticketNo, subject, description, requesterName, requesterEmail });
+    helpdesk.unshift(normalized);
     writeData('helpdesk', helpdesk);
-    res.status(201).json(newTicket);
+    res.status(201).json(normalized);
   } catch (err) {
     next(err);
   }
@@ -78,24 +121,29 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
+    const subject = req.body.subject || req.body.ticketSubject || '';
+    const description = req.body.description || req.body.ticketDescription || '';
+    const requesterName = req.body.requesterName || req.body.submittedBy || 'Anonymous';
+    const requesterEmail = req.body.requesterEmail || req.body.submittedEmail || '';
+
     const updateData = {
-      ticketSubject: req.body.ticketSubject,
-      ticketDescription: req.body.ticketDescription,
-      submittedBy: req.body.submittedBy,
-      submittedEmail: req.body.submittedEmail,
+      ticketSubject: subject,
+      ticketDescription: description,
+      submittedBy: requesterName,
+      submittedEmail: requesterEmail,
       status: req.body.status,
       priority: req.body.priority
     };
 
-    const helpdesk = readData('helpdesk');
+    const helpdesk = readData('helpdesk') || [];
     const index = helpdesk.findIndex(h => h.id === id);
 
     if (index !== -1) {
-      helpdesk[index] = {
+      helpdesk[index] = normalizeTicket({
         ...helpdesk[index],
         ...req.body,
         id
-      };
+      });
       writeData('helpdesk', helpdesk);
     }
 
@@ -110,7 +158,7 @@ router.put('/:id', async (req, res, next) => {
       }
     }
 
-    res.json(helpdesk[index] || req.body);
+    res.json(helpdesk[index] ? normalizeTicket(helpdesk[index]) : normalizeTicket({ ...updateData, id, ...req.body }));
   } catch (err) {
     next(err);
   }

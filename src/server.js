@@ -18,6 +18,7 @@ import helpdeskRouter from './routes/helpdesk.js';
 import appErrorsRouter from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
+import careersRouter from './routes/careers.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -36,10 +37,13 @@ app.use(cors({
       FRONTEND_URL,
       'http://localhost:5173',
       'http://127.0.0.1:5173',
+      'http://localhost:5174',
+      'http://127.0.0.1:5174',
       'http://localhost:3000'
     ];
 
     const isAllowed = allowed.some(url => url && origin.startsWith(url)) ||
+      /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin) ||
       origin.includes('bhaktivedanta') ||
       origin.includes('vercel.app');
 
@@ -108,6 +112,7 @@ app.use('/api/services-state', servicesRouter);
 app.use('/api/services', servicesRouter);
 app.use('/api/patient-corner-state', patientCornerRouter);
 app.use('/api/patient-corner', patientCornerRouter);
+app.use('/api/careers', careersRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {

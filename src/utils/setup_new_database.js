@@ -575,6 +575,53 @@ async function setup() {
       console.log('Successfully seeded queries into bv_queries table!');
     }
 
+    // Create table bv_career_jobs
+    console.log('Creating table bv_career_jobs...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_career_jobs (
+        id TEXT PRIMARY KEY,
+        category TEXT NOT NULL DEFAULT 'Consultant Vacancy',
+        title TEXT NOT NULL,
+        department TEXT,
+        positions TEXT DEFAULT '01',
+        qualification TEXT,
+        experience TEXT,
+        location TEXT DEFAULT 'Mira Road, Mumbai',
+        status TEXT DEFAULT 'Active',
+        description TEXT,
+        "postedDate" TEXT,
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
+    // Create table bv_career_applications
+    console.log('Creating table bv_career_applications...');
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS bv_career_applications (
+        id TEXT PRIMARY KEY,
+        "jobId" TEXT DEFAULT 'GENERAL',
+        position TEXT NOT NULL,
+        "fullName" TEXT NOT NULL,
+        email TEXT NOT NULL,
+        phone TEXT NOT NULL,
+        qualification TEXT,
+        experience TEXT,
+        "currentCtc" TEXT,
+        "expectedCtc" TEXT,
+        "noticePeriod" TEXT,
+        city TEXT,
+        "resumeUrl" TEXT,
+        "resumeName" TEXT,
+        "coverNote" TEXT,
+        status TEXT DEFAULT 'New',
+        "appliedDate" TEXT,
+        "hrNotes" TEXT DEFAULT '',
+        created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
     const tablesRes = await client.query(`
       SELECT table_name 
       FROM information_schema.tables 
