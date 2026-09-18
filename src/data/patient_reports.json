@@ -1,0 +1,345 @@
+[
+  {
+    "id": "RPT-7821",
+    "patientName": "Anjali Pravin Khairnar",
+    "patientPhone": "9665122041",
+    "uhid": "BVH-2026-0982",
+    "age": "34",
+    "gender": "Female",
+    "testName": "Complete Blood Count (CBC) with Differential",
+    "department": "Pathology & Laboratory",
+    "doctorName": "Dr. Kshama Shah",
+    "sampleDate": "12 Sep 2026, 08:30 AM",
+    "reportDate": "12 Sep 2026, 02:45 PM",
+    "status": "Ready",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "Hemoglobin (Hb)",
+        "value": "13.2",
+        "unit": "g/dL",
+        "normalRange": "12.0 - 15.5",
+        "status": "Normal"
+      },
+      {
+        "name": "Total WBC Count",
+        "value": "7,200",
+        "unit": "/cumm",
+        "normalRange": "4,000 - 11,000",
+        "status": "Normal"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "2.5",
+        "unit": "Lakh/cumm",
+        "normalRange": "1.5 - 4.5",
+        "status": "Normal"
+      },
+      {
+        "name": "RBC Count",
+        "value": "4.5",
+        "unit": "million/uL",
+        "normalRange": "3.8 - 5.2",
+        "status": "Normal"
+      },
+      {
+        "name": "ESR (Westergren)",
+        "value": "12",
+        "unit": "mm/hr",
+        "normalRange": "0 - 20",
+        "status": "Normal"
+      }
+    ],
+    "summary": "Normal hemogram. Red blood cells show normocytic normochromic morphology. No abnormal cells or parasites seen.",
+    "pathologist": "Dr. Shilpa Mangesh Tiwaskar, MD (Pathology)"
+  },
+  {
+    "id": "RPT-7822",
+    "patientName": "Kuldeep Mahajan",
+    "patientPhone": "1234567899",
+    "uhid": "BVH-2026-1104",
+    "age": "28",
+    "gender": "Male",
+    "testName": "Magnetic Resonance Imaging (MRI) - Brain",
+    "department": "Radiology & Neuro-Imaging",
+    "doctorName": "Dr. Vivek Kulkarni",
+    "sampleDate": "14 Sep 2026, 11:00 AM",
+    "reportDate": "14 Sep 2026, 06:15 PM",
+    "status": "Ready",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "Ventricular System",
+        "value": "Normal",
+        "unit": "",
+        "normalRange": "Symmetrical",
+        "status": "Normal"
+      },
+      {
+        "name": "Basal Ganglia & Thalami",
+        "value": "Normal",
+        "unit": "",
+        "normalRange": "Normal signals",
+        "status": "Normal"
+      },
+      {
+        "name": "White Matter Tracts",
+        "value": "Intact",
+        "unit": "",
+        "normalRange": "Intact",
+        "status": "Normal"
+      },
+      {
+        "name": "Major Intracranial Vessels",
+        "value": "Patent",
+        "unit": "",
+        "normalRange": "Flow voids intact",
+        "status": "Normal"
+      }
+    ],
+    "summary": "No acute intracranial hemorrhage, territorial infarction or mass effect identified. Sella, cerebellopontine angles and orbits appear unremarkable.",
+    "pathologist": "Dr. Rahul Ranade, MD (Radiodiagnosis)"
+  },
+  {
+    "id": "RPT-7823",
+    "patientName": "Suresh Patil",
+    "patientPhone": "9820154321",
+    "uhid": "BVH-2026-0451",
+    "age": "52",
+    "gender": "Male",
+    "testName": "Lipid Profile & Glycated Hemoglobin (HbA1c)",
+    "department": "Biochemistry",
+    "doctorName": "Dr. Dhaval Dalal",
+    "sampleDate": "15 Sep 2026, 07:45 AM",
+    "reportDate": "15 Sep 2026, 01:20 PM",
+    "status": "Ready",
+    "critical": true,
+    "parameters": [
+      {
+        "name": "HbA1c",
+        "value": "6.9",
+        "unit": "%",
+        "normalRange": "< 5.7 (Normal), 5.7-6.4 (Prediabetes)",
+        "status": "High"
+      },
+      {
+        "name": "Fasting Blood Sugar",
+        "value": "124",
+        "unit": "mg/dL",
+        "normalRange": "70 - 100",
+        "status": "High"
+      },
+      {
+        "name": "Total Cholesterol",
+        "value": "215",
+        "unit": "mg/dL",
+        "normalRange": "< 200",
+        "status": "High"
+      },
+      {
+        "name": "Triglycerides",
+        "value": "172",
+        "unit": "mg/dL",
+        "normalRange": "< 150",
+        "status": "High"
+      },
+      {
+        "name": "HDL (Good Cholesterol)",
+        "value": "42",
+        "unit": "mg/dL",
+        "normalRange": "> 40",
+        "status": "Normal"
+      },
+      {
+        "name": "LDL (Bad Cholesterol)",
+        "value": "138",
+        "unit": "mg/dL",
+        "normalRange": "< 100",
+        "status": "High"
+      }
+    ],
+    "summary": "Dyslipidemia with impaired glycemic control noted. Patient advised medical lifestyle modification, dietary consultation, and endocrinologist review.",
+    "pathologist": "Dr. Suraj Purushotthaman, HOD Internal Medicine & Pathology"
+  },
+  {
+    "id": "RPT-7824",
+    "patientName": "Meena Rao",
+    "patientPhone": "9920887766",
+    "uhid": "BVH-2026-1402",
+    "age": "46",
+    "gender": "Female",
+    "testName": "Digital Chest X-Ray (PA View)",
+    "department": "Radiology",
+    "doctorName": "Dr. Suraj Purushotthaman",
+    "sampleDate": "16 Sep 2026, 10:15 AM",
+    "reportDate": "16 Sep 2026, 03:00 PM",
+    "status": "Ready",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "Bilateral Lung Fields",
+        "value": "Clear",
+        "unit": "",
+        "normalRange": "Clear",
+        "status": "Normal"
+      },
+      {
+        "name": "Cardiothoracic Ratio",
+        "value": "< 0.5",
+        "unit": "",
+        "normalRange": "< 0.5",
+        "status": "Normal"
+      },
+      {
+        "name": "Costophrenic Angles",
+        "value": "Sharp",
+        "unit": "",
+        "normalRange": "Sharp",
+        "status": "Normal"
+      },
+      {
+        "name": "Bony Thorax & Ribs",
+        "value": "Intact",
+        "unit": "",
+        "normalRange": "Intact",
+        "status": "Normal"
+      }
+    ],
+    "summary": "Chest radiograph reveals no active parenchymal lesion or pleural effusion. Heart size is within normal physiological limits.",
+    "pathologist": "Dr. Rahul Ranade, MD (Radiodiagnosis)"
+  },
+  {
+    "id": "RPT-7825",
+    "patientName": "Amit Sharma",
+    "patientPhone": "9876543210",
+    "uhid": "BVH-2026-0873",
+    "age": "41",
+    "gender": "Male",
+    "testName": "2D Echocardiography & Color Doppler Study",
+    "department": "Cardiology",
+    "doctorName": "Dr. Ajay Kumar",
+    "sampleDate": "17 Sep 2026, 02:00 PM",
+    "reportDate": "17 Sep 2026, 06:00 PM",
+    "status": "Under Process",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "LV Ejection Fraction",
+        "value": "62",
+        "unit": "%",
+        "normalRange": "55 - 70",
+        "status": "Normal"
+      },
+      {
+        "name": "Left Ventricular Systolic Function",
+        "value": "Normal",
+        "unit": "",
+        "normalRange": "Normal",
+        "status": "Normal"
+      },
+      {
+        "name": "Regional Wall Motion",
+        "value": "None",
+        "unit": "",
+        "normalRange": "None",
+        "status": "Normal"
+      },
+      {
+        "name": "Aortic & Mitral Valves",
+        "value": "Awaiting Signoff",
+        "unit": "",
+        "normalRange": "Intact",
+        "status": "Pending"
+      }
+    ],
+    "summary": "Echocardiographic scan completed. Color Doppler trace recorded, awaiting final review and verification by Senior Interventional Cardiologist.",
+    "pathologist": "Dr. Ajay Kumar, Cardiac Specialist"
+  },
+  {
+    "id": "RPT-7826",
+    "patientName": "Priya Kapoor",
+    "patientPhone": "8877655443",
+    "uhid": "BVH-2026-1890",
+    "age": "29",
+    "gender": "Female",
+    "testName": "Comprehensive Thyroid Panel (TSH, FT3, FT4)",
+    "department": "Endocrinology & Biochemistry",
+    "doctorName": "Dr. Priyanka Reddy",
+    "sampleDate": "18 Sep 2026, 09:00 AM",
+    "reportDate": "18 Sep 2026, 01:30 PM",
+    "status": "Ready",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "TSH (Ultrasensitive)",
+        "value": "2.45",
+        "unit": "uIU/mL",
+        "normalRange": "0.40 - 4.50",
+        "status": "Normal"
+      },
+      {
+        "name": "Free Triiodothyronine (FT3)",
+        "value": "3.1",
+        "unit": "pg/mL",
+        "normalRange": "2.3 - 4.2",
+        "status": "Normal"
+      },
+      {
+        "name": "Free Thyroxine (FT4)",
+        "value": "1.24",
+        "unit": "ng/dL",
+        "normalRange": "0.80 - 1.80",
+        "status": "Normal"
+      }
+    ],
+    "summary": "Thyroid function test within normal biological reference interval. Clinically euthyroid profile.",
+    "pathologist": "Dr. Jyotsna Karande, Consultant Biochemist"
+  },
+  {
+    "id": "RPT-7827",
+    "patientName": "Rohan Joshi",
+    "patientPhone": "7766544332",
+    "uhid": "BVH-2026-0312",
+    "age": "63",
+    "gender": "Male",
+    "testName": "Renal Function Test (RFT) & Serum Electrolytes",
+    "department": "Nephrology & Biochemistry",
+    "doctorName": "Dr. Chintan Shah",
+    "sampleDate": "18 Sep 2026, 11:30 AM",
+    "reportDate": "18 Sep 2026, 04:45 PM",
+    "status": "Under Process",
+    "critical": false,
+    "parameters": [
+      {
+        "name": "Blood Urea Nitrogen",
+        "value": "18",
+        "unit": "mg/dL",
+        "normalRange": "7 - 20",
+        "status": "Normal"
+      },
+      {
+        "name": "Serum Creatinine",
+        "value": "1.02",
+        "unit": "mg/dL",
+        "normalRange": "0.70 - 1.30",
+        "status": "Normal"
+      },
+      {
+        "name": "Serum Sodium (Na+)",
+        "value": "Processing",
+        "unit": "mEq/L",
+        "normalRange": "135 - 145",
+        "status": "Pending"
+      },
+      {
+        "name": "Serum Potassium (K+)",
+        "value": "Processing",
+        "unit": "mEq/L",
+        "normalRange": "3.5 - 5.1",
+        "status": "Pending"
+      }
+    ],
+    "summary": "Specimen under automated spectrophotometric analysis. Quality control check in progress.",
+    "pathologist": "Dr. Chintan Shah, Consultant Nephrologist"
+  }
+]
