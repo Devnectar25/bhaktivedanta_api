@@ -20,6 +20,7 @@ import appErrorsRouter from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
+import educationResearchRouter from './routes/educationResearch.js';
 import spiritualCareRouter from './routes/spiritualCare.js';
 
 // Load Environment Configuration
@@ -91,7 +92,9 @@ app.get('/', (req, res) => {
       helpdesk: '/api/helpdesk',
       appErrors: '/api/app-errors',
       services: '/api/services-state',
-      patientCorner: '/api/patient-corner-state'
+      patientCorner: '/api/patient-corner-state',
+      spiritualCare: '/api/spiritual-care-state',
+      educationResearch: '/api/education-research'
     }
   });
 });
@@ -125,6 +128,7 @@ app.use('/api/patient-corner', patientCornerRouter);
 app.use('/api/careers', careersRouter);
 app.use('/api/spiritual-care-state', spiritualCareRouter);
 app.use('/api/spiritual-care', spiritualCareRouter);
+app.use('/api/education-research', educationResearchRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
@@ -133,9 +137,17 @@ app.use((req, res, next) => {
 
 // Global Error Handler
 app.use((err, req, res, next) => {
+  // Gracefully handle malformed JSON payload errors from body-parser
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    return res.status(400).json({
+      error: 'Bad Request',
+      message: 'Invalid JSON payload format'
+    });
+  }
+
   console.error('Unhandled server error:', err);
-  res.status(500).json({
-    error: 'Internal server error',
+  res.status(err.status || err.statusCode || 500).json({
+    error: err.name || 'Internal server error',
     message: err.message || 'An unexpected error occurred'
   });
 });

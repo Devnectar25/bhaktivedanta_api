@@ -60,6 +60,8 @@ export function readData(key) {
     else if (key === 'patient_corner_state') seedData = seeds.defaultPatientCornerState;
     else if (key === 'career_jobs') seedData = seeds.defaultCareerJobs;
     else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
+    else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
+    else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
 
     // Write seed data
     try {
@@ -88,19 +90,21 @@ export function readData(key) {
 export function writeData(key, data) {
   memoryCache[key] = data;
 
-  const isSupabaseActive = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
-  if (isSupabaseActive) {
-    // Supabase is the primary persistent store; memoryCache serves as in-process cache
-    return true;
-  }
-
-  // Fallback mode without Supabase: save to disk
+  // Always persist to primary database file on disk so changes are never lost
   const filePath = getFilePath(key);
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
   } catch (err) {
     console.warn(`Error writing database file for ${key}:`, err.message);
   }
+
+  // Also sync to legacy src/data folder if it exists
+  try {
+    const legacyPath = path.join(LEGACY_SRC_DATA_DIR, `${key}.json`);
+    if (fs.existsSync(legacyPath)) {
+      fs.writeFileSync(legacyPath, JSON.stringify(data, null, 2), 'utf-8');
+    }
+  } catch (e) { }
 
   return true;
 }
@@ -120,7 +124,11 @@ export function initializeDatabase() {
     'app_errors',
     'specialities_state',
     'services_state',
-    'patient_corner_state'
+    'patient_corner_state',
+    'career_jobs',
+    'career_applications',
+    'education_research_state',
+    'dnb_inquiries'
   ];
 
   for (const entity of entities) {

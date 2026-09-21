@@ -1,0 +1,974 @@
+{
+  "quote": "Our institute is one of the best DNB colleges in Maharashtra state. Our program aims to thoroughly equip DNB students to provide preventive, promotive, curative and rehabilitative medical care in their respective specialties.",
+  "title": "DNB Program",
+  "research": {
+    "pillars": [
+      {
+        "desc": "Translational clinical investigations and preventive health protocols",
+        "title": "Biomedical & Health Research"
+      },
+      {
+        "desc": "International and domestic GCP-compliant clinical drug and device trials",
+        "title": "Clinical Trials (Phase II-IV)"
+      },
+      {
+        "desc": "Registered with CDSCO and DHR for biomedical and health research",
+        "title": "Ethics Committee Oversight"
+      },
+      {
+        "desc": "Rigorous epidemiological thesis training for every DNB resident",
+        "title": "Post Graduate Academic Thesis"
+      }
+    ],
+    "overview": "The research activities of the institute are supported and managed by the Medical Research Department. It provides guidance, administrative and managerial support for all kinds of research undertaken by the institute (clinical trials, Investigator Initiated studies, DNB thesis, and high-impact publications). The department also facilitates interaction with external agencies, both at national and international levels. It promotes institute-industry interactions, externally funded research and development projects, as well as patents and IP rights. The department is a state-of-the-art facility which undertakes and promotes ethical research projects for better healthcare outcomes.",
+    "publications": [
+      {
+        "sr": 1,
+        "year": "2012",
+        "title": "Epidemiology of lung cancer in India: focus on the differences between non-smokers and smokers",
+        "journal": "Journal of Thoracic Oncology, 7(7):1135-40",
+        "citation": "Noronha V, Dikshit R, Raut N, Joshi A, Pramesh CS, George K, et al."
+      },
+      {
+        "sr": 2,
+        "year": "2019",
+        "title": "Outcome of Level III Neonatal Intensive Care in a Charitable Tertiary Hospital of Suburban Mumbai",
+        "journal": "Indian Journal of Pediatrics, 86(4):342-348",
+        "citation": "Sankhe A, Patel G, et al."
+      },
+      {
+        "sr": 3,
+        "year": "2021",
+        "title": "Comparative Efficacy of Holmium Laser Enucleation of Prostate (HoLEP) vs Transurethral Resection",
+        "journal": "Urology International, 105(2):189-195",
+        "citation": "Yande S, Doshi S, et al."
+      },
+      {
+        "sr": 4,
+        "year": "2022",
+        "title": "Visual Outcomes and Complication Rates in High-Volume SICS in Community Eye Camps",
+        "journal": "Journal of Clinical Ophthalmology & Research, 10(1):23-29",
+        "citation": "Bhagde SP, Narang SK, et al."
+      }
+    ],
+    "ethicsCommittee": [
+      {
+        "sr": 1,
+        "name": "Dr. Raakhi K Tripathi",
+        "role": "Chairperson",
+        "qualification": "MBBS, MD (Pharmacology)"
+      },
+      {
+        "sr": 2,
+        "name": "Dr. Suraj Prakash Bhagde",
+        "role": "Member Secretary",
+        "qualification": "MBBS, MS (Ophthalmology)"
+      },
+      {
+        "sr": 3,
+        "name": "Dr. Tejal Dalal",
+        "role": "Basic Medical Scientist",
+        "qualification": "MD (Pathology)"
+      },
+      {
+        "sr": 4,
+        "name": "Adv. Rameshwar Sharma",
+        "role": "Legal Expert",
+        "qualification": "B.Com, LL.B"
+      },
+      {
+        "sr": 5,
+        "name": "Mrs. Jayashree Kulkarni",
+        "role": "Social Scientist",
+        "qualification": "MA (Sociology)"
+      },
+      {
+        "sr": 6,
+        "name": "Mr. Arvind Joshi",
+        "role": "Lay Person",
+        "qualification": "B.Sc"
+      }
+    ],
+    "scientificCommittee": [
+      {
+        "sr": 1,
+        "name": "Dr. Ajay Sankhe",
+        "role": "Chairperson (Head of Institute)",
+        "qualification": "MD (Pediatrics)"
+      },
+      {
+        "sr": 2,
+        "name": "Dr. Siva Prasad Gourabathini",
+        "role": "Member Secretary & Research Coordinator",
+        "qualification": "Ph.D (Life Sciences)"
+      },
+      {
+        "sr": 3,
+        "name": "Dr. Dhaval Dalal",
+        "role": "Senior Clinical Faculty",
+        "qualification": "MD (Medicine)"
+      },
+      {
+        "sr": 4,
+        "name": "Dr. Shirish Yande",
+        "role": "Surgical Academic Representative",
+        "qualification": "MS, M.Ch (Urology)"
+      }
+    ]
+  },
+  "heroIntro": "Bhaktivedanta Hospital & Research Institute successfully conducts post graduate and post-doctoral courses in various medical and allied specialities and super specialities to create high quality healthcare professionals. We currently offer DNB programs in Medicine, Paediatric, Radiology, Ophthalmology, Obstetrics & Gynaecology, Urology & Anesthesiology. Our teaching faculty includes senior and experienced doctors who help students gain knowledge of specialities and sub-specialities practically and theoretically. Our teaching programme includes case presentations, seminars, grand round presentations by departments and sub-specialties, clinical audit, conference and many more. In addition to existing DNB programs, we would be adding Cardiology soon.",
+  "cmeProgram": {
+    "title": "Continuing Medical Education (CME)",
+    "overview": "Bhaktivedanta Hospital & Research Institute regularly organizes high-impact Continuing Medical Education (CME) conferences, clinical symposia, and grand rounds. All programs are accredited by the Maharashtra Medical Council (MMC), granting credit hours to attending physicians, surgeons, and postgraduate residents. Renowned national and international faculties share breakthroughs in evidence-based medicine.",
+    "subtitle": "Knowledge Sharing & Clinical Skills Upgrade for Medical Practitioners",
+    "totalAnnualEvents": "16+ Conferences Annually",
+    "upcomingAndRecent": [
+      {
+        "date": "March 2024",
+        "topic": "CME on Advances in Critical Care Medicine & Sepsis Management",
+        "faculty": "Dr. Nikhil Raut & Dr. Suraj Purushotthaman",
+        "creditHours": "2 MMC Points"
+      },
+      {
+        "date": "January 2024",
+        "topic": "National Conclave on Chronic Obstructive Pulmonary Diseases (COPD)",
+        "faculty": "Dr. Nikhil Raut",
+        "creditHours": "3 MMC Points"
+      },
+      {
+        "date": "November 2023",
+        "topic": "Updates in High-Risk Obstetrics & Fetal Doppler Ultrasound",
+        "faculty": "Dr. Veena Sankhe & Dr. Sujata Dalal",
+        "creditHours": "2 MMC Points"
+      },
+      {
+        "date": "July 2023",
+        "topic": "Kidney Transplant & Immunosuppressive Therapy Update 2023",
+        "faculty": "Dr. Shirish Yande & Dr. Samit Doshi",
+        "creditHours": "4 MMC Points"
+      },
+      {
+        "date": "May 2023",
+        "topic": "GOTO National Conference (Growth, Obesity, Thyroid & Osteoporosis)",
+        "faculty": "Dr. Ajay Sankhe & Department of Pediatrics",
+        "creditHours": "4 MMC Points"
+      },
+      {
+        "date": "April 2023",
+        "topic": "Pediatric Emergencies & Neonatal Resuscitation Program (NRP)",
+        "faculty": "Dr. Girish Patel & Dr. Mayur Agarwal",
+        "creditHours": "2 MMC Points"
+      }
+    ],
+    "accreditationBadge": "Maharashtra Medical Council (MMC) Accredited",
+    "averageCreditPoints": "2 to 4 MMC Credit Hours per Event"
+  },
+  "cneProgram": {
+    "title": "Continuing Nursing Education (CNE)",
+    "overview": "The Department of Nursing at Bhaktivedanta Hospital conducts specialized Continuing Nursing Education (CNE) workshops. Recognized with credit points by the Maharashtra Nursing Council (MNC), these sessions empower staff nurses, ward in-charges, and nurse educators with modern clinical protocols, patient safety standards, infection control, and empathetic bedside communication.",
+    "subtitle": "Advancing Professional Competencies & Compassionate Nursing Care",
+    "focusAreas": [
+      {
+        "desc": "Invasive arterial line care, ABG interpretation, ventilator waveforms, and hemodynamic stability.",
+        "title": "Critical Care & Ventilator Nursing"
+      },
+      {
+        "desc": "Central line bundle (CLABSI), catheter bundle (CAUTI), hand hygiene surveillance, and biomedical waste.",
+        "title": "Infection Prevention & NABH Bundles"
+      },
+      {
+        "desc": "High-quality CPR, defibrillation protocols, rapid response activation, and code blue simulation.",
+        "title": "Emergency Resuscitation (BLS/ACLS)"
+      },
+      {
+        "desc": "Neonatal resuscitation, kangaroo mother care, phototherapy management, and lactation counseling.",
+        "title": "Maternal-Neonatal Resuscitation"
+      }
+    ],
+    "eligibility": "All Registered Nurses (GNM, B.Sc, M.Sc) holding valid State Nursing Council registration",
+    "accreditationBadge": "Maharashtra Nursing Council (MNC) Accredited"
+  },
+  "facilities": [
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/classroom 1.jpg",
+      "title": "Classroom",
+      "caption": "Smart audio-visual enabled lecture room for interactive clinical seminars"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Library.jpg",
+      "title": "Library",
+      "caption": "Extensive repository of indexed medical textbooks and international journals"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Library 1.jpg",
+      "title": "Library & Reading Room",
+      "caption": "Quiet dedicated study cubicles open round-the-clock for post-graduate students"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Canteen.jpg",
+      "title": "Canteen",
+      "caption": "Wholesome, hygienic, vegetarian dining providing nutritious meals for staff & students"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Canteen1.jpg",
+      "title": "Dining Hall",
+      "caption": "Spacious dining facility with fresh hygienic catering throughout the day"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Hostel.jpg",
+      "title": "Resident Hostel",
+      "caption": "Well-furnished on-campus accommodation with security and high-speed Wi-Fi"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Hostel2.jpg",
+      "title": "Hostel Rooms",
+      "caption": "Comfortable living spaces equipped for medical residents and fellows"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Lecture theatre.jpg",
+      "title": "Lecture Theatre",
+      "caption": "Tiered seating lecture theatre for hospital-wide clinical academic meetings"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Lecture theatre1.jpg.jpg",
+      "title": "Lecture Theatre 2",
+      "caption": "Equipped with dual projectors and live broadcast capability for surgical workshops"
+    },
+    {
+      "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Auditorium.jpg",
+      "title": "Auditorium",
+      "caption": "Large state-of-the-art auditorium hosting national conferences and symposiums"
+    }
+  ],
+  "cmeList2023": [
+    "CME on Chronic Obstructive Pulmonary Diseases (COPD)",
+    "CME on Growth, Obesity, Thyroid & Osteoporosis (GOTO) Update",
+    "CME on Medico-legal Aspects of Anesthesiology",
+    "CME on NRP Course Advance (Neonatal Resuscitation Program)",
+    "CME on Kidney Transplant Update 2023",
+    "CME on Case Presentation on Paediatrics Dilemma",
+    "CME on GOTO National Conference",
+    "CME on PulmoSleep Diagnostic Update",
+    "CME on Genetics & Genetic Counselling in Clinical Practice",
+    "CME on Critical Care & Infectious Disease Symposium (Pfizer Forth)",
+    "CME on Latest Trends in High-Risk Pregnancy & Delivery",
+    "CME on Acute Coronary Syndrome Conclave",
+    "CME on Pediatric Emergencies & Resuscitation Updates",
+    "CME on Chronic Kidney Disease Update for Primary Physicians",
+    "CME on Urolithiasis & Endourological Updates",
+    "CME on Critical Care & Multi-Drug Resistant Infections"
+  ],
+  "seatsMatrix": [
+    {
+      "id": 1,
+      "seats": 2,
+      "specialty": "DNB General Medicine"
+    },
+    {
+      "id": 2,
+      "seats": 3,
+      "specialty": "DNB Paediatrics"
+    },
+    {
+      "id": 3,
+      "seats": 4,
+      "specialty": "DNB Ophthalmology"
+    },
+    {
+      "id": 4,
+      "seats": 2,
+      "specialty": "DNB Obstetrics & Gynaecology"
+    },
+    {
+      "id": 5,
+      "seats": 2,
+      "specialty": "Diploma in Radio Diagnosis"
+    },
+    {
+      "id": 6,
+      "seats": 1,
+      "specialty": "DNB Urology"
+    },
+    {
+      "id": 7,
+      "seats": 2,
+      "specialty": "DNB Anesthesiology"
+    }
+  ],
+  "publications": {
+    "title": "Publications & Research Output",
+    "overview": "Our faculty, consultants, and postgraduate DNB scholars consistently contribute to peer-reviewed international and indexed national medical journals. The hospital promotes ethical, investigator-initiated clinical studies that advance healthcare methodologies and patient outcomes.",
+    "subtitle": "Scientific Evidence & High-Impact Clinical Contributions"
+  },
+  "specialities": [
+    {
+      "id": "dnb-gm",
+      "about": "The Department of Internal Medicine at the Bhaktivedanta Hospital & Research Institute believes in treating each patient uniquely by harmonizing mainstream medical protocols along with a variety of other scientifically testified modalities to bring about maximum curative, promotive and rehabilitative transformation in the patient’s medical condition. Experience has shown that this integrative approach is not only more acceptable by the patients but also more satisfying in the disease outcome. This is true especially for complicated multiorgan disorders and chronic conditions.",
+      "seats": 2,
+      "title": "DNB General Medicine",
+      "videos": [
+        "https://www.youtube.com/embed/4kpZUG9pJfU",
+        "https://www.youtube.com/embed/UoTDwm14bg0"
+      ],
+      "faculties": [
+        {
+          "name": "Dr. Dhaval Dalal",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684020335156.png",
+          "experience": "32 years+",
+          "designation": "HOD of Internal Medicine & Senior Consultant Internal Medicine",
+          "qualification": "MD (Internal Medicine)"
+        },
+        {
+          "name": "Dr. Suraj Purushotthaman",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684020608010.png",
+          "experience": "12 years+",
+          "designation": "Consultant Physician & Intensivist",
+          "qualification": "MD (General Medicine)"
+        },
+        {
+          "name": "Dr. Ajay Shankhe",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16923328479408.png",
+          "experience": "30 years+",
+          "designation": "Director & Senior Consultant",
+          "qualification": "MD (Medicine), DNB"
+        },
+        {
+          "name": "Dr. Nikhil Raut",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684021079177.png",
+          "experience": "14 years+",
+          "designation": "Consultant Pulmonologist & Critical Care Specialist",
+          "qualification": "DNB (Respiratory Diseases), FCCP"
+        }
+      ],
+      "aboutHighlight": "Our department comprises a good blend of young physicians with academic excellence along with senior physicians who have rich clinical experience of over 30 years. Our physicians address every patient concern as well as provide comprehensive care to IPD patients suffering from a broad range of ailments.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "Bedside Clinics & Basic Ward Rounds"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "Intra-departmental Meet, Grand Rounds & Case Presentation"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Faculty Teaching, Central Session, Guest Lecture & Clinical Audit"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Basic Rounds, Critical Care Symposia & Mortality Meet"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Seminar Symposia"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Thesis Update, Skills Lab & Interventional Procedures"
+        }
+      ],
+      "integratedMedicine": "At our facility, we pride ourselves on offering integrated medicine, a holistic approach that centers around the well-being of the whole person rather than merely addressing specific illnesses. Integrated Medicine (IM) recognizes the intricate connection between physical, mental, emotional, and spiritual aspects, advocating for evidence-based alternative modalities like Ayurveda, Yoga, and Nutrition alongside conventional medical therapies."
+    },
+    {
+      "id": "dnb-paed",
+      "about": "The Department of Pediatrics at the Bhaktivedanta Hospital & Research Institute was started on 11 Jan 1998 under the leadership of Dr. Ajay Sankhe. Over the years, the department has grown into a comprehensive child healthcare center providing tertiary-level neonatal care (Level III NICU), pediatric intensive care (PICU), and a full spectrum of pediatric sub-specialties.",
+      "seats": 3,
+      "title": "DNB Paediatrics",
+      "faculties": [
+        {
+          "name": "Dr. Ajay Sankhe",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16779476303741.png",
+          "experience": "34 years+",
+          "designation": "Director of Hospital, Pediatrician & Neonatologist",
+          "qualification": "MD (Pediatrics)"
+        },
+        {
+          "name": "Dr. Girish Patel",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16779476415699.png",
+          "experience": "22 years+",
+          "designation": "Senior Consultant Pediatrician & Neonatologist",
+          "qualification": "MD (Pediatrics), DNB"
+        },
+        {
+          "name": "Dr. Mayur Agarwal",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16779476625691.png",
+          "experience": "11 years+",
+          "designation": "Consultant Pediatric Intensivist",
+          "qualification": "MD, Fellowship in PICU"
+        }
+      ],
+      "aboutHighlight": "The department features state-of-the-art Level III NICU with advanced multi-parameter monitors, conventional and high-frequency ventilators, nitric oxide therapy, LED phototherapy units, and specialized neonatology transport.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "NICU / PICU Bedside Clinical Teaching"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "Pediatric Case Discussion & OSCE Training"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Pediatric Sub-specialty Clinic & Faculty Lecture"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Grand Rounds & Neonatal Resuscitation Drill"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Research Methodology"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Clinical Seminar & Procedural Skill Workshop"
+        }
+      ],
+      "integratedMedicine": "Pediatric sub-specialties include Pediatric Cardiology, Pediatric Nephrology, Pediatric Neurology, Developmental Pediatrics, Genetic Clinic, and Child Guidance Clinic ensuring integrated developmental well-being."
+    },
+    {
+      "id": "dnb-ophthalmology",
+      "about": "The Eye Care Centre at Bhaktivedanta Hospital & Research Institute (Lions Juhu Aruna Abhey Oswal Super Speciality Eye Centre) is equipped with advanced technology for diagnostic, refractive, surgical, and therapeutic eye care. It conducts extensive cataract surgeries, vitreo-retinal procedures, corneal transplants, glaucoma management, and pediatric ophthalmology.",
+      "seats": 4,
+      "title": "DNB Ophthalmology",
+      "faculties": [
+        {
+          "name": "Dr. Suraj Prakash Bhagde",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684949258105.png",
+          "experience": "24 years+",
+          "designation": "HOD & Senior Consultant Eye Care",
+          "qualification": "MBBS, MS (Ophthalmology)"
+        },
+        {
+          "name": "Dr. S. K. Narang",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684949707082.png",
+          "experience": "20 years+",
+          "designation": "Senior Consultant Vitreo-Retina & Cataract",
+          "qualification": "MS, DNB, FICO"
+        }
+      ],
+      "aboutHighlight": "The residency program emphasizes high surgical volume hands-on phacoemulsification training, retinal laser therapies, keratoplasty, and extensive community outreach eye camps in rural Maharashtra.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "OPD Clinical Evaluation & Slit Lamp Skills"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "OT Hands-on Surgical Training (Phaco & SICS)"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Vitreo-Retina & Cornea Sub-specialty Rounds"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Case Presentation & Refraction Practice"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Community Field Screening Review"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Surgical Video Review & Wet Lab Procedures"
+        }
+      ],
+      "integratedMedicine": "Comprehensive vision rehabilitation, eye yoga, and preventive community ophthalmology are integrated into daily clinical training."
+    },
+    {
+      "id": "dnb-obgyn",
+      "about": "The Department of Obstetrics & Gynaecology offers round-the-clock comprehensive care for expectant mothers, high-risk pregnancies, gynecological oncology, endoscopic surgeries (laparoscopy & hysteroscopy), and adolescent gynecology.",
+      "seats": 2,
+      "title": "DNB Obstetrics & Gynaecology",
+      "faculties": [
+        {
+          "name": "Dr. Veena Sankhe",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684030714837.png",
+          "experience": "30 years+",
+          "designation": "Senior Consultant Obstetrician & Gynecologist",
+          "qualification": "MD, DGO, FCPS"
+        },
+        {
+          "name": "Dr. Sujata Dalal",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684021843703.png",
+          "experience": "22 years+",
+          "designation": "Consultant Laparoscopic Surgeon & Gynecologist",
+          "qualification": "MS (OBGYN), Fellowship in Endoscopy"
+        }
+      ],
+      "aboutHighlight": "Equipped with state-of-the-art labor rooms, dedicated maternity OT, fetal medicine scanning, and seamless integration with Level III NICU for high-risk maternal-fetal outcomes.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "Antenatal & High-Risk Pregnancy Clinics"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "Major Gynecological Laparoscopic Surgery OT"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Faculty Clinical Lecture & CTG Tracing Rounds"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Obstetric Emergency Drills & Grand Rounds"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Perinatal Mortality Audit"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Colposcopy & Pelvic Floor Ultrasound Workshop"
+        }
+      ],
+      "integratedMedicine": "Garbha Sanskar, prenatal spiritual care, maternal yoga, and holistic lifestyle mentorship are uniquely imparted to residents alongside modern obstetrics protocols."
+    },
+    {
+      "id": "dnb-urology",
+      "about": "The Urology Centre at Bhaktivedanta Hospital & Research Institute is a super-speciality centre of excellence with cutting-edge endourology, laser prostate enucleation (HoLEP/ThuLEP), flexible ureteroscopy (RIRS), laparoscopic urological oncology, and renal transplantation.",
+      "seats": 1,
+      "title": "DNB Urology",
+      "faculties": [
+        {
+          "name": "Dr. Shirish Yande",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684021592797.png",
+          "experience": "28 years+",
+          "designation": "Director & Senior Consultant Urologist",
+          "qualification": "MS, M.Ch (Urology), DNB"
+        },
+        {
+          "name": "Dr. Samit Doshi",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Samit Doshi.png",
+          "experience": "8 years+",
+          "designation": "Consultant Endourologist & Andrologist",
+          "qualification": "DNB (Urology)"
+        }
+      ],
+      "aboutHighlight": "Residents gain extensive hands-on operative experience with high definition laparoscopy, holmium laser suites, and comprehensive stone clinic management with lithotripsy.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "Endourology OT & Urodynamic Study Clinics"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "Bedside Urological Rounds & Pre-op Planning"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Faculty Didactic Lecture & Stone Registry Review"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Advanced Laparoscopic / Transplant OT"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Urological Oncology Meet"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Morbidity & Mortality Audit & Simulation Skills"
+        }
+      ],
+      "integratedMedicine": "Holistic management of chronic pelvic pain, recurrent urolithiasis dietary prevention, and lifestyle modifications complement modern uro-surgical care."
+    },
+    {
+      "id": "dnb-anaesthesia",
+      "about": "Recognized by the National Board of Examinations in Medical Sciences, the Department of Anaesthesiology manages high-volume peri-operative care across 8 modular operating theatres, acute pain management services, difficult airway management, and critical care units.",
+      "seats": 2,
+      "title": "DNB Anaesthesiology",
+      "faculties": [
+        {
+          "name": "Dr. Nilesh Patel",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684021338506.png",
+          "experience": "25 years+",
+          "designation": "HOD & Senior Consultant Anaesthesiologist",
+          "qualification": "MD (Anaesthesia), DA"
+        },
+        {
+          "name": "Dr. Pratibha Dalal",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16684021843703.png",
+          "experience": "22 years+",
+          "designation": "Senior Consultant Neuro & Onco Anaesthetist",
+          "qualification": "MD (Anaesthesiology)"
+        }
+      ],
+      "aboutHighlight": "Residents are thoroughly trained in ultrasound-guided regional nerve blocks, invasive arterial and central venous monitoring, neuro-anaesthesia, pediatric anaesthesia, and onco-surgical resuscitation.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "Pre-Anaesthetic Check-up (PAC) Clinic & Rounds"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "Modular OT Anaesthetic Management"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Ultrasound Guided Nerve Block Workshop"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Difficult Airway Management Simulation"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Critical Care Case Presentation & Journal Club"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Mortality & Incident Audit & Equipment Check"
+        }
+      ],
+      "integratedMedicine": "Residents also learn holistic pain relief protocols, patient mindfulness calming techniques, and post-operative music and spiritual comfort modalities."
+    },
+    {
+      "id": "dnb-radiology",
+      "about": "The Department of Radiology at Bhaktivedanta Hospital & Research Institute offers a wide range of advanced diagnostic and interventional imaging modalities, featuring 1.5 Tesla MRI, 128-slice Multidetector CT, 3D/4D Ultrasound, Color Doppler, Digital Mammography, and Digital Radiography.",
+      "seats": 2,
+      "title": "Diploma in Radio Diagnosis",
+      "faculties": [
+        {
+          "name": "Dr. Rajesh Sharma",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/1677947650714.png",
+          "experience": "26 years+",
+          "designation": "HOD & Senior Consultant Radiologist",
+          "qualification": "MD (Radio Diagnosis)"
+        },
+        {
+          "name": "Dr. Snehal Vaidya",
+          "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/experts/16779476842063.png",
+          "experience": "14 years+",
+          "designation": "Consultant Radiologist & Cross-Sectional Imaging Specialist",
+          "qualification": "DNB (Radio Diagnosis)"
+        }
+      ],
+      "aboutHighlight": "Residents undergo systematic rotation through Neuroradiology, Abdominal Imaging, Musculoskeletal MRI, Fetal Medicine, and Vascular Interventional Radiology procedures.",
+      "academicSchedule": [
+        {
+          "day": "Monday",
+          "schedule": "CT Scan Case Reporting & Protocolling"
+        },
+        {
+          "day": "Tuesday",
+          "schedule": "MRI Physics & Neuro-Imaging Review"
+        },
+        {
+          "day": "Wednesday",
+          "schedule": "Ultrasound & Interventional Biopsy Procedures"
+        },
+        {
+          "day": "Thursday",
+          "schedule": "Clinico-Radiological Multidisciplinary Conference"
+        },
+        {
+          "day": "Friday",
+          "schedule": "Journal Club & Spotter Quiz Sessions"
+        },
+        {
+          "day": "Saturday",
+          "schedule": "Emergency Radiology Rounds & Audit"
+        }
+      ],
+      "integratedMedicine": "Emphasis on low-radiation ALARA protocols, empathetic patient communication, and multidisciplinary radiological-pathological correlative meetings."
+    }
+  ],
+  "testimonials": {
+    "video": "https://www.youtube.com/embed/CEbtKtiDW-o",
+    "achievements": [
+      {
+        "id": 1,
+        "award": "Won 3rd Prize for Poster Presentation at Nephrology Semiweek Conference held on 7th – 9th July, 2023",
+        "photo": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/photo.png",
+        "certificate": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/certificate.png",
+        "studentName": "Dr. Makbool Ali Agharia"
+      },
+      {
+        "id": 2,
+        "award": "Won 2nd Prize in Bi-Monthly Scientific Meeting of Mumbai Urological Society held on 25th February 2024",
+        "photo": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Samit Doshi.png",
+        "certificate": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Samit Doshi certificate.png",
+        "studentName": "Dr. Samit Doshi"
+      }
+    ]
+  },
+  "directorVideo": {
+    "title": "From the Director's Desk | DNB Program at Bhaktivedanta Hospital & Research Institute",
+    "embedUrl": "https://www.youtube.com/embed/cSSpKTRgR2Q"
+  },
+  "clinicalTrials": {
+    "stats": {
+      "accreditation": "NABH Accredited Clinical Trial Site",
+      "gcpTrainedStaff": "25+ Certified Principal Investigators",
+      "trialsConducted": "45+ Global & Domestic Trials",
+      "regulatoryAudits": "Zero 483 / Warning Letters from Regulatory Audits"
+    },
+    "title": "Clinical Trials Centre of Excellence",
+    "overview": "Bhaktivedanta Hospital & Research Institute has been a distinguished site for global and domestic clinical trials since 2013. We are proud to be the first in Maharashtra and the second hospital in India to achieve NABH Accreditation for Clinical Trials. Our dedicated multidisciplinary research team has successfully executed multiple Phase II, III, and IV trials for international pharmaceutical sponsors and CROs.",
+    "subtitle": "NABH Accredited GCP-Compliant Research Infrastructure Since 2013",
+    "infrastructure": [
+      {
+        "details": "Spacious patient consultation rooms, infusion chairs, and private exam suites.",
+        "facility": "Dedicated Clinical Research Unit (CRU)"
+      },
+      {
+        "details": "-80°C and -20°C deep freezers with 24/7 temperature logging and backup power.",
+        "facility": "Calibrated Sample Cold Storage"
+      },
+      {
+        "details": "Access-controlled investigational product (IP) room with digital temperature & humidity mapping.",
+        "facility": "Secure Drug Storage & Dispensing Room"
+      },
+      {
+        "details": "High-speed internet, dedicated workstations, and scanner facilities for monitor and auditor visits.",
+        "facility": "CRA Monitoring & Audit Rooms"
+      },
+      {
+        "details": "Fire-safe, pest-controlled, access-logged archiving preserving records for 15+ years.",
+        "facility": "Long-term Regulatory Archival Facility"
+      }
+    ],
+    "therapeuticAreas": [
+      "Medical Oncology & Chemotherapy Protocols",
+      "Interventional Cardiology & Antiplatelet Therapies",
+      "Nephrology & Renal Dialysis Complications",
+      "Pediatrics & Neonatal Anti-infective Studies",
+      "Endourology & Minimally Invasive Devices",
+      "Pulmonology & Respiratory Medicine",
+      "General Surgery & Wound Healing Biologics"
+    ]
+  },
+  "customPrograms": [
+    {
+      "id": "edu-prog-1789992131641",
+      "title": "abcd",
+      "slug": "abcd",
+      "category": "Allied Health Science",
+      "badge": "Accredited",
+      "duration": "1 Year",
+      "seats": 2,
+      "eligibility": "cghjknmbvghjkm,nvghjknm",
+      "overview": "hvgfgyhjnbvgfhjnbvgfh",
+      "curriculum": [],
+      "faculties": [],
+      "highlights": [],
+      "contactInfo": {
+        "phone": "022 2845 8000",
+        "email": "education@bhaktivedantahospital.com"
+      },
+      "status": "Active",
+      "createdAt": "2026-09-21T12:02:11.641Z"
+    }
+  ],
+  "digitalLibrary": {
+    "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/library.jpg",
+    "title": "Digital Library",
+    "description": "Our Digital Library provides high-speed internet workstations with subscriptions to major international biomedical databases, PubMed Central, UpToDate, ScienceDirect, and the National Medical Library e-consortium."
+  },
+  "nursingProgram": {
+    "badge": "Recognized by MNC & INC",
+    "title": "Rosalind S. Teton School of Nursing",
+    "courses": [
+      {
+        "name": "General Nursing & Midwifery (G.N.M.)",
+        "seats": 30,
+        "duration": "3 Years",
+        "description": "Comprehensive 3-year diploma imparting bedside nursing skills, anatomy, maternal-child health, community healthcare, and emergency life support.",
+        "eligibility": "10+2 with minimum 40% aggregate marks (Science, Arts or Commerce). Registered ANM with pass marks are also eligible."
+      },
+      {
+        "name": "Post Basic B.Sc. Nursing (P.B.B.Sc.)",
+        "seats": 20,
+        "duration": "2 Years",
+        "description": "Advanced degree course upgrading registered nurses in leadership, nursing administration, research methodology, and specialized critical care.",
+        "eligibility": "Passed G.N.M. diploma and registered as nurse with State Nursing Registration Council."
+      }
+    ],
+    "duration": "3 Years (Full Time)",
+    "overview": "Rosalind S. Teton School of Nursing was established in the year 2005 under the aegis of Shri Chaitanya Health and Care Trust at Bhaktivedanta Hospital & Research Institute. The school was founded with the sacred mission to educate, train, and mold compassionate nursing professionals who blend modern clinical proficiency with genuine spiritual empathy. In 2014, the school was conferred the prestigious 'Excellence in Nursing Education' award by the Indus Foundation, USA.",
+    "subtitle": "Excellence in Nursing Education & Clinical Compassion",
+    "affiliation": "Maharashtra Nursing Council (MNC) & Indian Nursing Council (INC)",
+    "bannerImage": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Hostel.jpg",
+    "contactInfo": {
+      "email": "bhaktinursingschool@yahoo.co.in / nursing.school@yahoo.co.in",
+      "phone": "8291103508 / 022 2811 0000",
+      "campus": "Sheth P. V. Doshi Hospital, Poonam Nagar, Shanti Park, Mira Road (East), Thane - 401107"
+    },
+    "established": "2005",
+    "intakeSeats": 30,
+    "keyFeatures": [
+      {
+        "desc": "Direct clinical rotations inside Bhaktivedanta Hospital 100+ bedded super-speciality facility.",
+        "title": "Hands-on Hospital Training"
+      },
+      {
+        "desc": "Equipped with cardiopulmonary manikins, maternal-fetal models, and intravenous training arms.",
+        "title": "Advanced Simulation Skills Lab"
+      },
+      {
+        "desc": "Unique training in compassionate communication, patient counseling, and stress-coping.",
+        "title": "Holistic & Value-Based Education"
+      },
+      {
+        "desc": "Opportunity for direct absorption in hospital departments or esteemed partner healthcare networks.",
+        "title": "100% Placement Assistance"
+      }
+    ]
+  },
+  "ethicsCommittee": {
+    "title": "Institutional Ethics Committees (IEC)",
+    "overview": "Bhaktivedanta Hospital & Research Institute maintains two separate, independent, and multidisciplinary Institutional Ethics Committees registered with national statutory authorities to review and monitor biomedical and clinical research protocols.",
+    "subtitle": "Safeguarding Participant Safety, Dignity & Scientific Integrity",
+    "committees": [
+      {
+        "id": "iec-ct",
+        "name": "Institutional Ethics Committee for Clinical Trials",
+        "mandate": "Reviews and oversees all Phase II, III, and IV drug and medical device clinical trials under New Drugs and Clinical Trials Rules 2019.",
+        "regNumber": "ECR/282/Inst/MH/2013/RR-19",
+        "regAuthority": "Registered with Central Drugs Standard Control Organization (CDSCO) / DCGI"
+      },
+      {
+        "id": "iec-bm",
+        "name": "Institutional Ethics Committee for Biomedical & Health Research",
+        "mandate": "Reviews and oversees investigator-initiated observational studies, DNB academic postgraduate theses, and epidemiological research.",
+        "regNumber": "DHR/ICMR/BHR-2020",
+        "regAuthority": "Registered with Department of Health Research (DHR), Ministry of Health & Family Welfare"
+      }
+    ],
+    "guidingPrinciples": [
+      "ICH Harmonised Tripartite Guideline for Good Clinical Practice (ICH-GCP E6 R2)",
+      "Declaration of Helsinki (Ethical Principles for Medical Research Involving Human Subjects)",
+      "ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017)",
+      "New Drugs and Clinical Trials Rules, 2019 (Govt. of India Gazette)"
+    ]
+  },
+  "holisticProgram": {
+    "intro": "Along with a robust training program in clinical medicine, the founders of Bhaktivedanta Hospital & Research Institute feel morally responsible to educate students into the tenets of a holistic lifestyle. Doctors who are sturdy physically, endowed with a high emotional quotient, and grounded in a strong spiritual foundation are a decisive force to navigate society through healthcare challenges.",
+    "title": "Complete Doctor Course Certificate Program (CDCC)",
+    "subtitle": "Holistic Program for Doctor Leadership",
+    "objectives": [
+      {
+        "title": "Physical Well-Being & Resilience",
+        "description": "Cultivating stamina, nutritional discipline, and stress-coping regimens essential for intensive clinical careers."
+      },
+      {
+        "title": "High Emotional Quotient (EQ)",
+        "description": "Empathetic bedside manners, conflict resolution, dealing gracefully with patient grief and critical emergencies."
+      },
+      {
+        "title": "Spiritual Foundation & Ethical Anchor",
+        "description": "Internal peace, selfless service attitude (Seva Bhavana), and ethical clarity preventing physician burnout."
+      },
+      {
+        "title": "Compassionate Patient-Centric Care",
+        "description": "Treating the patient as an integrated physical, psychological, and spiritual individual rather than just a medical pathology."
+      }
+    ],
+    "sacredMission": "At Bhaktivedanta Hospital and Research Institute, this mentorship is not an administrative chore but a sacred mission."
+  },
+  "spiritualCareCourse": {
+    "quote": "Spiritual care is not a ritual or dogma; it is addressing the deepest spiritual yearnings of hope, meaning, and love during human suffering.",
+    "title": "Spiritual Care Certificate Course",
+    "duration": "6 Months (Hybrid / Weekend Modules with Hospital Practical Rotations)",
+    "overview": "Introduced in 2010 by the Department of Spiritual Care, this internationally acclaimed certificate course equips doctors, nurses, and paramedical professionals to integrate spiritual well-being into modern medical practice. Recognizing that healing encompasses the physical, mental, emotional, and spiritual dimensions of human existence, the program provides comprehensive theoretical grounding and practical bedside mentorship.",
+    "subtitle": "Pioneering Holistic Healing for Healthcare Professionals Since 2010",
+    "dimensions": [
+      {
+        "desc": "Understanding psychosomatic medicine, pain relief, and evidence-based lifestyle modifications.",
+        "title": "Physical Dimension"
+      },
+      {
+        "desc": "Cultivating emotional intelligence, handling patient grief, empathy, and mitigating physician burnout.",
+        "title": "Emotional Dimension"
+      },
+      {
+        "desc": "Bioethical principles, truth-telling in terminal diagnoses, and ethical decision-making in end-of-life care.",
+        "title": "Intellectual Dimension"
+      },
+      {
+        "desc": "Spiritual assessment tools (FICA/HOPE), prayer, mindfulness, meaning-making, and eternal purpose.",
+        "title": "Spiritual Dimension"
+      }
+    ],
+    "eligibility": "Registered Healthcare Professionals globally: MBBS/MD Doctors, AYUSH Practitioners, Nursing Officers, Medical Social Workers, and Healthcare Counselors.",
+    "introducedYear": "2010"
+  },
+  "clinicalResearchCourse": {
+    "title": "Post Graduate Certificate in Clinical Research (PGCR)",
+    "modules": [
+      {
+        "desc": "Drug discovery pipeline, preclinical pharmacology, and phases of clinical trials (Phase I-IV).",
+        "title": "Introduction to Clinical Research & Drug Development",
+        "moduleNo": 1
+      },
+      {
+        "desc": "ICH-GCP guidelines, Declaration of Helsinki, New Drugs & Clinical Trials Rules 2019, and US FDA / EMA regulations.",
+        "title": "Ethical & Regulatory Frameworks",
+        "moduleNo": 2
+      },
+      {
+        "desc": "Protocol review, informed consent process, compensation for clinical trial injury, and ongoing safety oversight.",
+        "title": "Institutional Ethics Committee Operations",
+        "moduleNo": 3
+      },
+      {
+        "desc": "Study startup, investigator site file, source documentation, monitoring visits, and auditor inspection readiness.",
+        "title": "Clinical Trial Operations & Site Management",
+        "moduleNo": 4
+      },
+      {
+        "desc": "eCRF design, EDC systems, clinical query resolution, database lock, and statistical analysis plans.",
+        "title": "Clinical Data Management & Biostatistics",
+        "moduleNo": 5
+      },
+      {
+        "desc": "Adverse event reporting, SAE narratives, CIOMS forms, investigator brochure, and clinical study reports (CSR).",
+        "title": "Pharmacovigilance & Medical Writing",
+        "moduleNo": 6
+      }
+    ],
+    "duration": "15 Months (Classroom Modules + Live Hospital Internship)",
+    "overview": "The Medical Research Department conducts the Post Graduation in Clinical Research (PGCR) program, designed to groom future leaders in clinical research and drug development. Combining classroom lectures, interactive case studies, and extensive hands-on internships inside Bhaktivedanta Hospital's active Clinical Research Unit, students gain real-world proficiency across international regulatory guidelines.",
+    "subtitle": "15-Month Comprehensive Program with Live Hospital Campus Internship",
+    "eligibility": "Graduates/Post-graduates in Medicine (MBBS, BDS, BAMS, BHMS), Pharmacy (B.Pharm, M.Pharm), Life Sciences (B.Sc, M.Sc Biotechnology/Microbiology/Biochemistry), and Nursing.",
+    "admissionsOpen": "February Every Year",
+    "placementSupport": "100% placement support with leading CROs (Quintiles/IQVIA, Parexel, Syneos Health, Cognizant) and hospital research sites.",
+    "internshipHighlights": "Guaranteed 6-month hands-on internship in hospital-sponsored and multi-national pharmaceutical clinical trials."
+  },
+  "governmentAccreditation": {
+    "title": "Government & National Accreditations",
+    "badges": [
+      {
+        "title": "NABH Accreditation for Clinical Trials",
+        "detail": "First hospital in Maharashtra and 2nd in all of India to receive prestigious NABH certification for Clinical Trial site and Ethics Committee.",
+        "authority": "National Accreditation Board for Hospitals & Healthcare Providers"
+      },
+      {
+        "title": "DCGI / CDSCO Ethics Committee Registration",
+        "detail": "Registered under New Drugs and Clinical Trials Rules (Reg No: ECR/282/Inst/MH/2013/RR-19).",
+        "authority": "Drugs Controller General of India / Central Drugs Standard Control Organization"
+      },
+      {
+        "title": "Department of Health Research (DHR) Registration",
+        "detail": "Formal recognition for Biomedical and Health Research Ethics Committee oversight.",
+        "authority": "Department of Health Research, Ministry of Health & Family Welfare, Govt. of India"
+      },
+      {
+        "title": "NBEMS Postgraduate Accreditation",
+        "detail": "Accredited institution conducting DNB and Post-Doctoral residency courses in 7 medical specialties.",
+        "authority": "National Board of Examinations in Medical Sciences (NBEMS)"
+      },
+      {
+        "title": "Maharashtra Medical Council (MMC) & Nursing Council (MNC)",
+        "detail": "Accredited center for conducting credit-point eligible Continuing Medical Education (CME) and Continuing Nursing Education (CNE).",
+        "authority": "State Regulatory Councils"
+      }
+    ],
+    "overview": "Bhaktivedanta Hospital & Research Institute operates under stringent statutory compliances, holding prestigious government registrations and quality accreditations for healthcare delivery, postgraduate medical education, and clinical research.",
+    "subtitle": "Highest Benchmarks of Regulatory Compliance & Institutional Trust"
+  }
+}
