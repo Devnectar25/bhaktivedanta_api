@@ -49,6 +49,8 @@ export function readData(key) {
     else if (key === 'patient_corner_state') seedData = seeds.defaultPatientCornerState;
     else if (key === 'career_jobs') seedData = seeds.defaultCareerJobs;
     else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
+    else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
+    else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
 
     // Write seed data
     try {
@@ -101,7 +103,11 @@ export function initializeDatabase() {
     'app_errors',
     'specialities_state',
     'services_state',
-    'patient_corner_state'
+    'patient_corner_state',
+    'career_jobs',
+    'career_applications',
+    'education_research_state',
+    'dnb_inquiries'
   ];
 
   for (const entity of entities) {
