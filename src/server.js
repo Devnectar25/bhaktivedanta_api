@@ -12,6 +12,7 @@ import specialitiesRouter from './routes/specialities.js';
 import eventsRouter from './routes/events.js';
 import testimonialsRouter from './routes/testimonials.js';
 import newsRouter from './routes/news.js';
+import blogsRouter from './routes/blogs.js';
 import galleryRouter from './routes/gallery.js';
 import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
@@ -20,6 +21,7 @@ import appErrorsRouter from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
+import educationResearchRouter from './routes/educationResearch.js';
 import spiritualCareRouter from './routes/spiritualCare.js';
 
 // Load Environment Configuration
@@ -91,7 +93,9 @@ app.get('/', (req, res) => {
       helpdesk: '/api/helpdesk',
       appErrors: '/api/app-errors',
       services: '/api/services-state',
-      patientCorner: '/api/patient-corner-state'
+      patientCorner: '/api/patient-corner-state',
+      spiritualCare: '/api/spiritual-care-state',
+      educationResearch: '/api/education-research'
     }
   });
 });
@@ -113,6 +117,7 @@ app.use('/api/specialities', specialitiesRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/news', newsRouter);
+app.use('/api/blogs', blogsRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/queries', queriesRouter);
 app.use('/api/subadmins', subadminsRouter);
@@ -125,6 +130,7 @@ app.use('/api/patient-corner', patientCornerRouter);
 app.use('/api/careers', careersRouter);
 app.use('/api/spiritual-care-state', spiritualCareRouter);
 app.use('/api/spiritual-care', spiritualCareRouter);
+app.use('/api/education-research', educationResearchRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
@@ -133,18 +139,46 @@ app.use((req, res, next) => {
 
 // Global Error Handler
 app.use((err, req, res, next) => {
+  // Gracefully handle malformed JSON payload errors from body-parser
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    return res.status(400).json({
+      error: 'Bad Request',
+      message: 'Invalid JSON payload format'
+    });
+  }
+
   console.error('Unhandled server error:', err);
-  res.status(500).json({
-    error: 'Internal server error',
+  res.status(err.status || err.statusCode || 500).json({
+    error: err.name || 'Internal server error',
     message: err.message || 'An unexpected error occurred'
   });
 });
 
 // Start listening
 if (!process.env.VERCEL) {
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`CORS allowed origins: ${FRONTEND_URL}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`Port ${PORT} is busy, retrying listener...`);
+      setTimeout(() => {
+        try {
+          server.close();
+        } catch (e) { }
+        server.listen(PORT);
+      }, 1000);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+
+  process.once('SIGUSR2', () => {
+    server.close(() => {
+      process.kill(process.pid, 'SIGUSR2');
+    });
   });
 }
 

@@ -174,70 +174,101 @@ async function saveFullState(state) {
 
   if (supabase) {
     try {
-      // 1. Sync Categories to bv_service_categories (delete removed + upsert remaining)
-      const keptCatIds = categories.map(c => c.id);
-      const { data: existingCats } = await supabase.from('bv_service_categories').select('id');
-      if (existingCats && existingCats.length > 0) {
-        const catIdsToDelete = existingCats.map(r => r.id).filter(id => !keptCatIds.includes(id));
-        if (catIdsToDelete.length > 0) {
-          console.log('[API Services] Deleting removed categories from Supabase bv_service_categories:', catIdsToDelete);
-          await supabase.from('bv_service_categories').delete().in('id', catIdsToDelete);
+      if (Array.isArray(state.categories)) {
+        const keptCatIds = categories.map(c => c.id);
+        const { data: existingCats } = await supabase.from('bv_service_categories').select('id');
+        if (existingCats && existingCats.length > 0) {
+          const catIdsToDelete = existingCats.map(r => r.id).filter(id => !keptCatIds.includes(id));
+          if (catIdsToDelete.length > 0) {
+            console.log('[API Services] Deleting removed categories from Supabase bv_service_categories:', catIdsToDelete);
+            await supabase.from('bv_service_categories').delete().in('id', catIdsToDelete);
+          }
         }
-      }
 
-      if (categories.length > 0) {
-        const catRowsToUpsert = categories.map(cat => ({
-          id: cat.id,
-          name: cat.name,
-          description: cat.description || '',
-          order: parseInt(cat.order) || 1,
-          status: cat.status !== false,
-          adminId: cat.adminId || 'ADM-001',
-          adminName: cat.adminName || 'Super Administrator',
-          created_at: cat.createdAt || now,
-          updated_at: now
-        }));
-
-        await supabase.from('bv_service_categories').upsert(catRowsToUpsert, { onConflict: 'id' });
-      }
-
-      // 2. Sync Services to admin_services (delete removed + upsert remaining)
-      const keptServiceIds = services.map(s => s.id);
-      const { data: existingServices } = await supabase.from('admin_services').select('id');
-      if (existingServices && existingServices.length > 0) {
-        const srvIdsToDelete = existingServices.map(r => r.id).filter(id => !keptServiceIds.includes(id));
-        if (srvIdsToDelete.length > 0) {
-          console.log('[API Services] Deleting removed services from Supabase admin_services:', srvIdsToDelete);
-          await supabase.from('admin_services').delete().in('id', srvIdsToDelete);
-        }
-      }
-
-      if (services.length > 0) {
-        const rowsToInsert = services.map(srv => {
-          const cat = categoriesMap[srv.categoryId] || {};
-          return {
-            id: srv.id,
-            service_name: srv.name,
-            icon: srv.icon || 'medical_services',
-            short_description: srv.shortDescription || srv.description || '',
-            banner_image: srv.bannerImage || '',
-            thumbnail_image: srv.thumbnailImage || '',
-            slug: srv.slug || '',
-            status: srv.status ? 'Active' : 'Draft',
-            category_id: srv.categoryId || 'c1',
-            category_name: cat.name || 'Unassigned',
-            category_description: cat.description || '',
-            category_order: cat.order || 1,
-            category_status: cat.status !== false,
-            tabs_data: srv.tabs || [],
-            admin_id: srv.adminId || 'ADM-001',
-            admin_name: srv.adminName || 'Super Administrator',
-            created_at: srv.createdAt || now,
+        if (categories.length > 0) {
+          const catRowsToUpsert = categories.map(cat => ({
+            id: cat.id,
+            name: cat.name,
+            description: cat.description || '',
+            order: parseInt(cat.order) || 1,
+            status: cat.status !== false,
+            adminId: cat.adminId || 'ADM-001',
+            adminName: cat.adminName || 'Super Administrator',
+            created_at: cat.createdAt || now,
             updated_at: now
-          };
-        });
+          }));
 
-        await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
+          await supabase.from('bv_service_categories').upsert(catRowsToUpsert, { onConflict: 'id' });
+        }
+      }
+
+      if (Array.isArray(state.services)) {
+        const keptServiceIds = services.map(s => s.id);
+        const { data: existingServices } = await supabase.from('admin_services').select('id');
+        if (existingServices && existingServices.length > 0) {
+          const srvIdsToDelete = existingServices.map(r => r.id).filter(id => !keptServiceIds.includes(id));
+          if (srvIdsToDelete.length > 0) {
+            console.log('[API Services] Deleting removed services from Supabase admin_services:', srvIdsToDelete);
+            await supabase.from('admin_services').delete().in('id', srvIdsToDelete);
+          }
+        }
+
+        if (services.length > 0) {
+          const rowsToInsert = services.map(srv => {
+            const cat = categoriesMap[srv.categoryId] || {};
+            return {
+              id: srv.id,
+              service_name: srv.name,
+              icon: srv.icon || 'medical_services',
+              short_description: srv.shortDescription || srv.description || '',
+              banner_image: srv.bannerImage || '',
+              thumbnail_image: srv.thumbnailImage || '',
+              slug: srv.slug || '',
+              status: srv.status ? 'Active' : 'Draft',
+              category_id: srv.categoryId || 'c1',
+              category_name: cat.name || 'Unassigned',
+              category_description: cat.description || '',
+              category_order: cat.order || 1,
+              category_status: cat.status !== false,
+              tabs_data: srv.tabs || [],
+              admin_id: srv.adminId || 'ADM-001',
+              admin_name: srv.adminName || 'Super Administrator',
+              created_at: srv.createdAt || now,
+              updated_at: now
+            };
+          });
+
+          await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
+        }
+      }
+
+        if (services.length > 0) {
+          const rowsToInsert = services.map(srv => {
+            const cat = categoriesMap[srv.categoryId] || {};
+            return {
+              id: srv.id,
+              service_name: srv.name,
+              icon: srv.icon || 'medical_services',
+              short_description: srv.shortDescription || srv.description || '',
+              banner_image: srv.bannerImage || '',
+              thumbnail_image: srv.thumbnailImage || '',
+              slug: srv.slug || '',
+              status: srv.status ? 'Active' : 'Draft',
+              category_id: srv.categoryId || 'c1',
+              category_name: cat.name || 'Unassigned',
+              category_description: cat.description || '',
+              category_order: cat.order || 1,
+              category_status: cat.status !== false,
+              tabs_data: srv.tabs || [],
+              admin_id: srv.adminId || 'ADM-001',
+              admin_name: srv.adminName || 'Super Administrator',
+              created_at: srv.createdAt || now,
+              updated_at: now
+            };
+          });
+
+          await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
+        }
       }
     } catch (e) {
       console.error('[API Services] Supabase sync error in saveFullState:', e);
