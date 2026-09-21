@@ -661,579 +661,318 @@ export const defaultPatientCornerState = {
             }
           ]
         },
-        {
-          id: 'tab-pc1-3',
-          title: 'Billing',
-          type: 'steps',
-          order: 3,
-          enabled: true,
-          content: '<p>The TPA and Insurance Helpdesk facilitates pre-authorization and cashless claim processing for empanelled insurance providers.</p>',
-          steps: [
-            { step: 1, title: 'Pre-Authorization Request', description: 'Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission.' },
-            { step: 2, title: 'Insurer Approval', description: 'TPA/Insurance provider verifies coverage and sends initial approval amount.' },
-            { step: 3, title: 'Final Bill Settlement', description: 'Upon discharge, final bill and medical records are sent to TPA for final authorization.' }
-          ],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-bill-1',
-              title: 'Charges for Indoor Patients',
-              type: 'rich_text',
-              order: 1,
-              enabled: true,
-              content: '<p>Inpatient room tariffs, consultant visit fees, investigation charges, and nursing care are billed as per standardized hospital tariff schedules based on the chosen room category.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            },
-            {
-              id: 'sec-bill-2',
-              title: 'Mode of Payment',
-              type: 'rich_text',
-              order: 2,
-              enabled: true,
-              content: '<p>Payments can be made via UPI, Debit/Credit Cards, Net Banking, Demand Drafts, Cash (as per statutory limits), or cashless authorization through empanelled TPAs and insurance partners.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            },
-            {
-              id: 'sec-bill-3',
-              title: 'Transfer of Patient',
-              type: 'rich_text',
-              order: 3,
-              enabled: true,
-              content: '<p>When a patient transfers from one room category to another (e.g. Ward to ICU or Single Room to Deluxe), applicable billing tariffs transition from the effective time of transfer as per hospital policy.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            },
-            {
-              id: 'sec-bill-4',
-              title: 'Refund',
-              type: 'rich_text',
-              order: 4,
-              enabled: true,
-              content: '<p>Any excess advance deposit remaining after final bill settlement is processed for refund to the original payment mode or bank account within statutory banking timelines.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pc1-4',
-          title: 'Discharge',
-          type: 'steps',
-          order: 4,
-          enabled: true,
-          content: '<p>Our streamlined discharge workflow ensures all summaries, reports, and medication instructions are handed over smoothly.</p>',
-          steps: [
-            { step: 1, title: 'Doctor Clearance', description: 'Treating consultant certifies patient readiness for discharge and prepares discharge summary.' },
-            { step: 2, title: 'Billing Clearance', description: 'Pharmacy and ward supplies clearance sent to billing desk for final invoice generation.' },
-            { step: 3, title: 'Medication Counseling', description: 'Pharmacist and nurse explain discharge medications, dosage schedules, and dietary restrictions.' },
-            { step: 4, title: 'Discharge Summary Handover', description: 'Handover of discharge summary, investigation reports, and follow-up appointment date.' }
-          ],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-disch-1',
-              title: 'Discharge Workflow',
-              type: 'steps',
-              order: 1,
-              enabled: true,
-              content: '<p>Our streamlined discharge workflow ensures all summaries, reports, and medication instructions are handed over smoothly.</p>',
-              steps: [
-                { step: 1, title: 'Doctor Clearance', description: 'Treating consultant certifies patient readiness for discharge and prepares discharge summary.' },
-                { step: 2, title: 'Billing Clearance', description: 'Pharmacy and ward supplies clearance sent to billing desk for final invoice generation.' },
-                { step: 3, title: 'Medication Counseling', description: 'Pharmacist and nurse explain discharge medications, dosage schedules, and dietary restrictions.' },
-                { step: 4, title: 'Discharge Summary Handover', description: 'Handover of discharge summary, investigation reports, and follow-up appointment date.' }
-              ],
-              items: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        }
       ]
     },
     {
-      id: 'pc-rights',
-      categoryId: 'cat-inpatient',
-      category: 'Inpatient Guide',
-      title: 'Patients Rights & Responsibilities',
-      slug: 'patients-rights-responsibilities',
-      shortDescription: 'Core values of ethical care, patient privacy, informed consent, and responsibilities.',
-      bannerImage: '',
-      status: 'Published',
-      displayOrder: 2,
-      adminId: 'ADM-001',
-      adminName: 'Super Administrator',
-      createdAt: '2026-08-01T10:00:00.000Z',
-      updatedAt: '2026-08-20T10:00:00.000Z',
-      tabs: [
-        {
-          id: 'tab-pcr-1',
-          title: 'Patient Rights',
-          type: 'checklist',
-          order: 1,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [
-            { text: 'Right to considerate, respectful, and non-discriminatory medical care', checked: true, note: 'Fundamental right' },
-            { text: 'Right to receive complete, clear information regarding diagnosis, plan of care, and prognosis', checked: true, note: 'Transparency' },
-            { text: 'Right to informed consent prior to any non-emergency procedure or surgery', checked: true, note: 'Autonomy' },
-            { text: 'Right to complete confidentiality and privacy of medical records and physical examination', checked: true, note: 'Privacy' },
-            { text: 'Right to seek a second opinion and receive itemized billing explanations', checked: true, note: 'Clarity' }
-          ],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-pcr-rights',
-              title: 'Charter of Patient Rights',
-              type: 'checklist',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [
-                { text: 'Right to considerate, respectful, and non-discriminatory medical care', checked: true, note: 'Fundamental right' },
-                { text: 'Right to receive complete, clear information regarding diagnosis, plan of care, and prognosis', checked: true, note: 'Transparency' },
-                { text: 'Right to informed consent prior to any non-emergency procedure or surgery', checked: true, note: 'Autonomy' },
-                { text: 'Right to complete confidentiality and privacy of medical records and physical examination', checked: true, note: 'Privacy' },
-                { text: 'Right to seek a second opinion and receive itemized billing explanations', checked: true, note: 'Clarity' }
-              ],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pcr-2',
-          title: 'Patient Responsibilities',
-          type: 'checklist',
-          order: 2,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [
-            { text: 'Provide accurate, complete medical history and current medication details', checked: true, note: 'Disclosure' },
-            { text: 'Follow agreed treatment plan, medical prescriptions, and clinical instructions', checked: true, note: 'Compliance' },
-            { text: 'Respect hospital quiet hours, infection control guidelines, and no-smoking policy', checked: true, note: 'Hospital rules' },
-            { text: 'Meet financial commitments and complete insurance documentation in a timely manner', checked: true, note: 'Administrative' }
-          ],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-pcr-resp',
-              title: 'Patient & Family Responsibilities',
-              type: 'checklist',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [
-                { text: 'Provide accurate, complete medical history and current medication details', checked: true, note: 'Disclosure' },
-                { text: 'Follow agreed treatment plan, medical prescriptions, and clinical instructions', checked: true, note: 'Compliance' },
-                { text: 'Respect hospital quiet hours, infection control guidelines, and no-smoking policy', checked: true, note: 'Hospital rules' },
-                { text: 'Meet financial commitments and complete insurance documentation in a timely manner', checked: true, note: 'Administrative' }
-              ],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pcr-3',
-          title: 'FAQs',
-          type: 'faq',
-          order: 3,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [
-            { question: 'Who can I contact if I have questions about my clinical care or rights?', answer: 'You can contact the Patient Relations Officer (PRO) or Nursing Supervisor on duty on your floor.' },
-            { question: 'How can I obtain a copy of my medical records after discharge?', answer: 'Submit a formal request along with valid photo ID at the Medical Records Department (MRD) during OPD hours.' }
-          ],
-          sections: [
-            {
-              id: 'sec-pcr-faq',
-              title: 'Rights & Feedback Questions',
-              type: 'faq',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [
-                { question: 'Who can I contact if I have questions about my clinical care or rights?', answer: 'You can contact the Patient Relations Officer (PRO) or Nursing Supervisor on duty on your floor.' },
-                { question: 'How can I obtain a copy of my medical records after discharge?', answer: 'Submit a formal request along with valid photo ID at the Medical Records Department (MRD) during OPD hours.' }
-              ],
-              settings: {}
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'pc-intl',
-      categoryId: 'cat-inpatient',
-      category: 'Inpatient Guide',
-      title: 'International Patient',
-      slug: 'international-patient',
-      shortDescription: 'Dedicated assistance for international patients including visa, airport transfer, and language interpretation.',
-      bannerImage: '',
-      status: 'Published',
+      id: "pc-3",
+      categoryId: "cat-billing",
+      category: "Billing Help",
+      title: "Empanelled Corporate / TPA / Insurances",
+      slug: "empanelled-corporate-tpa-insurances",
+      shortDescription: "Comprehensive directory of empanelled corporate organizations, health insurance providers, and Third Party Administrators (TPAs) offering cashless hospitalization services.",
+      bannerImage: "",
+      status: "Published",
       displayOrder: 3,
-      adminId: 'ADM-001',
-      adminName: 'Super Administrator',
-      createdAt: '2026-08-01T10:00:00.000Z',
-      updatedAt: '2026-08-20T10:00:00.000Z',
+      adminId: "ADM-001",
+      adminName: "Super Administrator",
+      createdAt: "2026-08-01T10:00:00.000Z",
+      updatedAt: "2026-09-15T10:00:00.000Z",
       tabs: [
-        {
-          id: 'tab-intl-1',
-          title: 'Overview',
-          type: 'rich_text',
-          order: 1,
-          enabled: true,
-          content: '<p>Bhaktivedanta Hospital & Research Institute welcomes patients from across the world. Our International Patient Services desk ensures compassionate, end-to-end support from pre-arrival medical consultation to post-treatment recovery.</p>',
-          steps: [],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
             {
-              id: 'sec-intl-overview',
-              title: 'Global Patient Care Overview',
-              type: 'rich_text',
-              order: 1,
-              enabled: true,
-              content: '<p>Bhaktivedanta Hospital & Research Institute welcomes patients from across the world. Our International Patient Services desk ensures compassionate, end-to-end support from pre-arrival medical consultation to post-treatment recovery.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-intl-2',
-          title: 'Services Offered',
-          type: 'checklist',
-          order: 2,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [
-            { text: 'Medical Visa invitation letter and documentation support', checked: true, note: 'Visa Assistance' },
-            { text: 'Complimentary airport pickup and drop assistance', checked: true, note: 'Logistics' },
-            { text: 'Dedicated relationship manager and language assistance', checked: true, note: 'Personalized care' },
-            { text: 'Assistance with nearby hotel/guest house accommodation for attendants', checked: true, note: 'Stay support' },
-            { text: 'Tele-consultation follow-up with treating specialists upon return home', checked: true, note: 'Continuous care' }
-          ],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
+                  id: "tab-pc3-1",
+                  title: "List of Corporates / TPA's / Insurance Companies",
+                  type: "accordion",
+                  order: 1,
+                  enabled: true,
+                  content: "<p>Bhaktivedanta Hospital & Research Institute is empanelled with leading corporate entities, national and private health insurance companies, and Third Party Administrators (TPAs) to facilitate hassle-free cashless hospitalization and credit services for patients and their beneficiaries.</p>",
+                  steps: [],
+                  items: [],
+                  cards: [],
+                  galleryImages: [],
+                  faqs: [],
+                  logos: [],
+                  sections: [
+                        {
+                              id: "sec-empanelled-accordion",
+                              title: "Empanelled Corporate / TPA / Insurance Companies",
+                              type: "accordion",
+                              order: 1,
+                              enabled: true,
+                              content: "",
+                              accordionItems: [
+                                    {
+                                          id: "acc-item-corp",
+                                          title: "Corporates",
+                                          contentType: "logo_grid",
+                                          enabled: true,
+                                          logos: [
+                                                {
+                                                      id: "logo-c1",
+                                                      name: "Tata Consultancy Services (TCS)",
+                                                      imageUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=300&auto=format&fit=crop&q=80",
+                                                      order: 1,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-c2",
+                                                      name: "Larsen & Toubro (L&T)",
+                                                      imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&auto=format&fit=crop&q=80",
+                                                      order: 2,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-c3",
+                                                      name: "Reliance Industries Limited",
+                                                      imageUrl: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=300&auto=format&fit=crop&q=80",
+                                                      order: 3,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-c4",
+                                                      name: "Mahindra & Mahindra",
+                                                      imageUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=300&auto=format&fit=crop&q=80",
+                                                      order: 4,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-c5",
+                                                      name: "Godrej Group",
+                                                      imageUrl: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&auto=format&fit=crop&q=80",
+                                                      order: 5,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-c6",
+                                                      name: "Infosys Limited",
+                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                                                      order: 6,
+                                                      enabled: true
+                                                }
+                                          ]
+                                    },
+                                    {
+                                          id: "acc-item-ins",
+                                          title: "Insurance Company",
+                                          contentType: "logo_grid",
+                                          enabled: true,
+                                          logos: [
+                                                {
+                                                      id: "logo-i1",
+                                                      name: "Star Health and Allied Insurance",
+                                                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
+                                                      order: 1,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i2",
+                                                      name: "HDFC ERGO General Insurance",
+                                                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
+                                                      order: 2,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i3",
+                                                      name: "ICICI Lombard General Insurance",
+                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                                                      order: 3,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i4",
+                                                      name: "Bajaj Allianz General Insurance",
+                                                      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&auto=format&fit=crop&q=80",
+                                                      order: 4,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i5",
+                                                      name: "Niva Bupa Health Insurance",
+                                                      imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&auto=format&fit=crop&q=80",
+                                                      order: 5,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i6",
+                                                      name: "National Insurance Company",
+                                                      imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&auto=format&fit=crop&q=80",
+                                                      order: 6,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i7",
+                                                      name: "The New India Assurance Co. Ltd.",
+                                                      imageUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=300&auto=format&fit=crop&q=80",
+                                                      order: 7,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i8",
+                                                      name: "Oriental Insurance Company",
+                                                      imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&auto=format&fit=crop&q=80",
+                                                      order: 8,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-i9",
+                                                      name: "United India Insurance Co.",
+                                                      imageUrl: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=300&auto=format&fit=crop&q=80",
+                                                      order: 9,
+                                                      enabled: true
+                                                }
+                                          ]
+                                    },
+                                    {
+                                          id: "acc-item-tpa",
+                                          title: "TPA's (Third Party Administrator)",
+                                          contentType: "logo_grid",
+                                          enabled: true,
+                                          logos: [
+                                                {
+                                                      id: "logo-t1",
+                                                      name: "Medi Assist Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&auto=format&fit=crop&q=80",
+                                                      order: 1,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-t2",
+                                                      name: "Paramount Health Services & Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&auto=format&fit=crop&q=80",
+                                                      order: 2,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-t3",
+                                                      name: "MDIndia Health Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=300&auto=format&fit=crop&q=80",
+                                                      order: 3,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-t4",
+                                                      name: "Vidal Health Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
+                                                      order: 4,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-t5",
+                                                      name: "Heritage Health Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                                                      order: 5,
+                                                      enabled: true
+                                                },
+                                                {
+                                                      id: "logo-t6",
+                                                      name: "Raksha Health Insurance TPA",
+                                                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
+                                                      order: 6,
+                                                      enabled: true
+                                                }
+                                          ]
+                                    }
+                              ],
+                              items: [],
+                              steps: [],
+                              cards: [],
+                              galleryImages: [],
+                              faqs: [],
+                              settings: {}
+                        }
+                  ]
+            },
             {
-              id: 'sec-intl-services',
-              title: 'International Patient Care Desk',
-              type: 'checklist',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [
-                { text: 'Medical Visa invitation letter and documentation support', checked: true, note: 'Visa Assistance' },
-                { text: 'Complimentary airport pickup and drop assistance', checked: true, note: 'Logistics' },
-                { text: 'Dedicated relationship manager and language assistance', checked: true, note: 'Personalized care' },
-                { text: 'Assistance with nearby hotel/guest house accommodation for attendants', checked: true, note: 'Stay support' },
-                { text: 'Tele-consultation follow-up with treating specialists upon return home', checked: true, note: 'Continuous care' }
-              ],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
+                  id: "tab-pc3-2",
+                  title: "Cashless Claim Process",
+                  type: "steps",
+                  order: 2,
+                  enabled: true,
+                  content: "",
+                  steps: [
+                        {
+                              step: 1,
+                              title: "Pre-Authorization Request",
+                              description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
+                        },
+                        {
+                              step: 2,
+                              title: "Insurer Approval",
+                              description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
+                        },
+                        {
+                              step: 3,
+                              title: "Final Bill Settlement",
+                              description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
+                        }
+                  ],
+                  items: [],
+                  cards: [],
+                  galleryImages: [],
+                  faqs: [],
+                  sections: [
+                        {
+                              id: "sec-cashless-steps",
+                              title: "Cashless Claim Workflow",
+                              type: "steps",
+                              order: 1,
+                              enabled: true,
+                              content: "",
+                              items: [],
+                              steps: [
+                                    {
+                                          step: 1,
+                                          title: "Pre-Authorization Request",
+                                          description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
+                                    },
+                                    {
+                                          step: 2,
+                                          title: "Insurer Approval",
+                                          description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
+                                    },
+                                    {
+                                          step: 3,
+                                          title: "Final Bill Settlement",
+                                          description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
+                                    }
+                              ],
+                              cards: [],
+                              galleryImages: [],
+                              faqs: [],
+                              settings: {}
+                        }
+                  ]
+            },
+            {
+                  id: "tab-pc3-3",
+                  title: "TPA & Helpdesk Assistance",
+                  type: "rich_text",
+                  order: 3,
+                  enabled: true,
+                  content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
+                  steps: [],
+                  items: [],
+                  cards: [],
+                  galleryImages: [],
+                  faqs: [],
+                  sections: [
+                        {
+                              id: "sec-cashless-overview",
+                              title: "TPA Desk Assistance",
+                              type: "rich_text",
+                              order: 1,
+                              enabled: true,
+                              content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
+                              items: [],
+                              steps: [],
+                              cards: [],
+                              galleryImages: [],
+                              faqs: [],
+                              settings: {}
+                        }
+                  ]
             }
-          ]
-        }
       ]
-    },
-    {
-      id: 'pc-2',
-      categoryId: 'cat-visitor',
-      category: 'Visitor Rules',
-      title: 'Visiting Hours & ICU Guidelines',
-      slug: 'visiting-hours-icu-guidelines',
-      shortDescription: 'Guidelines for visitors, permitted visiting timings, ICU protocol, and safety precautions.',
-      bannerImage: '',
-      status: 'Published',
-      displayOrder: 2,
-      adminId: 'ADM-001',
-      adminName: 'Super Administrator',
-      createdAt: '2026-08-01T10:00:00.000Z',
-      updatedAt: '2026-08-15T10:00:00.000Z',
-      tabs: [
-        {
-          id: 'tab-pc2-1',
-          title: 'Visiting Hours',
-          type: 'rich_text',
-          order: 1,
-          enabled: true,
-          content: '<p>To ensure a quiet, healing environment for our patients, visitors are requested to follow designated visiting hours.</p>',
-          steps: [],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-vis-hours',
-              title: 'General Visiting Timings',
-              type: 'rich_text',
-              order: 1,
-              enabled: true,
-              content: '<p>To ensure a quiet, healing environment for our patients, visitors are requested to follow designated visiting hours.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pc2-2',
-          title: 'ICU Guidelines',
-          type: 'checklist',
-          order: 2,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [
-            { text: 'Only 1 visitor permitted at a time in the ICU area', checked: true, note: 'Mandatory' },
-            { text: 'Sanitize hands and wear shoe covers/masks before entering ICU', checked: true, note: 'Infection control' },
-            { text: 'Mobile phones must be kept on silent mode', checked: true, note: 'Strict silence' }
-          ],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-vis-icu',
-              title: 'Intensive Care Unit Entry Protocol',
-              type: 'checklist',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [
-                { text: 'Only 1 visitor permitted at a time in the ICU area', checked: true, note: 'Mandatory' },
-                { text: 'Sanitize hands and wear shoe covers/masks before entering ICU', checked: true, note: 'Infection control' },
-                { text: 'Mobile phones must be kept on silent mode', checked: true, note: 'Strict silence' }
-              ],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pc2-3',
-          title: 'Visitor Amenities',
-          type: 'cards',
-          order: 3,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [],
-          cards: [
-            { title: 'Cafeteria & Organic Shop', description: 'Fresh, healthy pure vegetarian meals and organic goods on premises.', icon: 'restaurant' },
-            { title: 'Spiritual Care Desk', description: 'Counseling and spiritual wellness support for attendants and families.', icon: 'self_improvement' }
-          ],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-vis-amenities',
-              title: 'Campus Amenities',
-              type: 'cards',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [],
-              steps: [],
-              cards: [
-                { title: 'Cafeteria & Organic Shop', description: 'Fresh, healthy pure vegetarian meals and organic goods on premises.', icon: 'restaurant' },
-                { title: 'Spiritual Care Desk', description: 'Counseling and spiritual wellness support for attendants and families.', icon: 'self_improvement' }
-              ],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'pc-3',
-      categoryId: 'cat-billing',
-      category: 'Billing Help',
-      title: 'Insurance & Cashless Desk Procedure',
-      slug: 'insurance-cashless-desk-procedure',
-      shortDescription: 'Instructions for cashless hospitalization, TPA approvals, and reimbursement claims.',
-      bannerImage: '',
-      status: 'Published',
-      displayOrder: 3,
-      adminId: 'ADM-001',
-      adminName: 'Super Administrator',
-      createdAt: '2026-08-01T10:00:00.000Z',
-      updatedAt: '2026-08-10T10:00:00.000Z',
-      tabs: [
-        {
-          id: 'tab-pc3-1',
-          title: 'Cashless Desk Overview',
-          type: 'rich_text',
-          order: 1,
-          enabled: true,
-          content: '<p>The TPA and Insurance Helpdesk facilitates pre-authorization and cashless claim processing for empanelled insurance providers.</p>',
-          steps: [],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-cashless-overview',
-              title: 'TPA Desk Assistance',
-              type: 'rich_text',
-              order: 1,
-              enabled: true,
-              content: '<p>The TPA and Insurance Helpdesk facilitates pre-authorization and cashless claim processing for empanelled insurance providers.</p>',
-              items: [],
-              steps: [],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pc3-2',
-          title: 'Cashless Claim Process',
-          type: 'steps',
-          order: 2,
-          enabled: true,
-          content: '',
-          steps: [
-            { step: 1, title: 'Pre-Authorization Request', description: 'Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission.' },
-            { step: 2, title: 'Insurer Approval', description: 'TPA/Insurance provider verifies coverage and sends initial approval amount.' },
-            { step: 3, title: 'Final Bill Settlement', description: 'Upon discharge, final bill and medical records are sent to TPA for final authorization.' }
-          ],
-          items: [],
-          cards: [],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-cashless-steps',
-              title: 'Cashless Claim Workflow',
-              type: 'steps',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [],
-              steps: [
-                { step: 1, title: 'Pre-Authorization Request', description: 'Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission.' },
-                { step: 2, title: 'Insurer Approval', description: 'TPA/Insurance provider verifies coverage and sends initial approval amount.' },
-                { step: 3, title: 'Final Bill Settlement', description: 'Upon discharge, final bill and medical records are sent to TPA for final authorization.' }
-              ],
-              cards: [],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        },
-        {
-          id: 'tab-pc3-3',
-          title: 'Empanelled Insurances & TPAs',
-          type: 'cards',
-          order: 3,
-          enabled: true,
-          content: '',
-          steps: [],
-          items: [],
-          cards: [
-            { title: 'Leading Private Insurers', description: 'Empanelled with major private health insurance providers across India.', icon: 'verified_user' },
-            { title: 'Public Sector Insurers', description: 'Cashless assistance for National Insurance, New India Assurance, Oriental, United India.', icon: 'account_balance' },
-            { title: 'Corporate TPAs', description: 'Tie-ups with Medi Assist, Paramount TPA, Vidal Health, MDIndia, and more.', icon: 'business' }
-          ],
-          galleryImages: [],
-          faqs: [],
-          sections: [
-            {
-              id: 'sec-empanelled-cards',
-              title: 'Partner Network',
-              type: 'cards',
-              order: 1,
-              enabled: true,
-              content: '',
-              items: [],
-              steps: [],
-              cards: [
-                { title: 'Leading Private Insurers', description: 'Empanelled with major private health insurance providers across India.', icon: 'verified_user' },
-                { title: 'Public Sector Insurers', description: 'Cashless assistance for National Insurance, New India Assurance, Oriental, United India.', icon: 'account_balance' },
-                { title: 'Corporate TPAs', description: 'Tie-ups with Medi Assist, Paramount TPA, Vidal Health, MDIndia, and more.', icon: 'business' }
-              ],
-              galleryImages: [],
-              faqs: [],
-              settings: {}
-            }
-          ]
-        }
-      ]
-    },
+},
     {
       id: 'pc-4',
       categoryId: 'cat-discharge',
