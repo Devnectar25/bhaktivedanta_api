@@ -63,6 +63,7 @@ export function readData(key) {
     else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
     else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
     else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
+    else if (key === 'statutory_compliances_state') seedData = seeds.defaultStatutoryCompliancesState;
 
     // Write seed data
     try {
@@ -130,7 +131,8 @@ export function initializeDatabase() {
     'career_jobs',
     'career_applications',
     'education_research_state',
-    'dnb_inquiries'
+    'dnb_inquiries',
+    'statutory_compliances_state'
   ];
 
   for (const entity of entities) {

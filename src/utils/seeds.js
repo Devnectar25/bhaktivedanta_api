@@ -2358,3 +2358,35 @@ export const defaultEducationResearchState = {
 };
 
 export const defaultDnbInquiries = [];
+
+export const defaultStatutoryCompliancesState = {
+  compliances: [
+    {
+      id: 'comp-1',
+      title: 'Coronary Stent Prices',
+      icon: 'HeartPulse',
+      pdfUrl: '',
+      order: 1,
+      updatedAt: new Date().toISOString()
+    },
+    {
+      id: 'comp-2',
+      title: 'Knee Implant Prices',
+      icon: 'Bone',
+      pdfUrl: '',
+      order: 2,
+      updatedAt: new Date().toISOString()
+    },
+    {
+      id: 'comp-3',
+      title: 'Indigent and Weaker Section Category',
+      icon: 'BedDouble',
+      pdfUrl: '',
+      order: 3,
+      updatedAt: new Date().toISOString()
+    }
+  ],
+  siteMapPdfUrl: '',
+  siteMapFileName: '',
+  updatedAt: new Date().toISOString()
+};
