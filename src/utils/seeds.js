@@ -1985,7 +1985,304 @@ export const defaultEducationResearchState = {
         "description": "Treating the patient as an integrated physical, psychological, and spiritual individual rather than just a medical pathology."
       }
     ]
-  }
+  },
+  "nursingProgram": {
+    "title": "Rosalind S. Teton School of Nursing",
+    "subtitle": "Excellence in Nursing Education & Clinical Compassion",
+    "badge": "Recognized by MNC & INC",
+    "overview": "Rosalind S. Teton School of Nursing was established in the year 2005 under the aegis of Shri Chaitanya Health and Care Trust at Bhaktivedanta Hospital & Research Institute. The school was founded with the sacred mission to educate, train, and mold compassionate nursing professionals who blend modern clinical proficiency with genuine spiritual empathy. In 2014, the school was conferred the prestigious 'Excellence in Nursing Education' award by the Indus Foundation, USA.",
+    "bannerImage": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/Hostel.jpg",
+    "established": "2005",
+    "intakeSeats": 30,
+    "duration": "3 Years (Full Time)",
+    "affiliation": "Maharashtra Nursing Council (MNC) & Indian Nursing Council (INC)",
+    "courses": [
+      {
+        "name": "General Nursing & Midwifery (G.N.M.)",
+        "duration": "3 Years",
+        "seats": 30,
+        "eligibility": "10+2 with minimum 40% aggregate marks (Science, Arts or Commerce). Registered ANM with pass marks are also eligible.",
+        "description": "Comprehensive 3-year diploma imparting bedside nursing skills, anatomy, maternal-child health, community healthcare, and emergency life support."
+      },
+      {
+        "name": "Post Basic B.Sc. Nursing (P.B.B.Sc.)",
+        "duration": "2 Years",
+        "seats": 20,
+        "eligibility": "Passed G.N.M. diploma and registered as nurse with State Nursing Registration Council.",
+        "description": "Advanced degree course upgrading registered nurses in leadership, nursing administration, research methodology, and specialized critical care."
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "Hands-on Hospital Training",
+        "desc": "Direct clinical rotations inside Bhaktivedanta Hospital 100+ bedded super-speciality facility."
+      },
+      {
+        "title": "Advanced Simulation Skills Lab",
+        "desc": "Equipped with cardiopulmonary manikins, maternal-fetal models, and intravenous training arms."
+      },
+      {
+        "title": "Holistic & Value-Based Education",
+        "desc": "Unique training in compassionate communication, patient counseling, and stress-coping."
+      },
+      {
+        "title": "100% Placement Assistance",
+        "desc": "Opportunity for direct absorption in hospital departments or esteemed partner healthcare networks."
+      }
+    ],
+    "contactInfo": {
+      "campus": "Sheth P. V. Doshi Hospital, Poonam Nagar, Shanti Park, Mira Road (East), Thane - 401107",
+      "phone": "8291103508 / 022 2811 0000",
+      "email": "bhaktinursingschool@yahoo.co.in / nursing.school@yahoo.co.in"
+    }
+  },
+  "cmeProgram": {
+    "title": "Continuing Medical Education (CME)",
+    "subtitle": "Knowledge Sharing & Clinical Skills Upgrade for Medical Practitioners",
+    "overview": "Bhaktivedanta Hospital & Research Institute regularly organizes high-impact Continuing Medical Education (CME) conferences, clinical symposia, and grand rounds. All programs are accredited by the Maharashtra Medical Council (MMC), granting credit hours to attending physicians, surgeons, and postgraduate residents. Renowned national and international faculties share breakthroughs in evidence-based medicine.",
+    "accreditationBadge": "Maharashtra Medical Council (MMC) Accredited",
+    "totalAnnualEvents": "16+ Conferences Annually",
+    "averageCreditPoints": "2 to 4 MMC Credit Hours per Event",
+    "upcomingAndRecent": [
+      {
+        "topic": "CME on Advances in Critical Care Medicine & Sepsis Management",
+        "date": "March 2024",
+        "creditHours": "2 MMC Points",
+        "faculty": "Dr. Nikhil Raut & Dr. Suraj Purushotthaman"
+      },
+      {
+        "topic": "National Conclave on Chronic Obstructive Pulmonary Diseases (COPD)",
+        "date": "January 2024",
+        "creditHours": "3 MMC Points",
+        "faculty": "Dr. Nikhil Raut"
+      },
+      {
+        "topic": "Updates in High-Risk Obstetrics & Fetal Doppler Ultrasound",
+        "date": "November 2023",
+        "creditHours": "2 MMC Points",
+        "faculty": "Dr. Veena Sankhe & Dr. Sujata Dalal"
+      },
+      {
+        "topic": "Kidney Transplant & Immunosuppressive Therapy Update 2023",
+        "date": "July 2023",
+        "creditHours": "4 MMC Points",
+        "faculty": "Dr. Shirish Yande & Dr. Samit Doshi"
+      },
+      {
+        "topic": "GOTO National Conference (Growth, Obesity, Thyroid & Osteoporosis)",
+        "date": "May 2023",
+        "creditHours": "4 MMC Points",
+        "faculty": "Dr. Ajay Sankhe & Department of Pediatrics"
+      },
+      {
+        "topic": "Pediatric Emergencies & Neonatal Resuscitation Program (NRP)",
+        "date": "April 2023",
+        "creditHours": "2 MMC Points",
+        "faculty": "Dr. Girish Patel & Dr. Mayur Agarwal"
+      }
+    ]
+  },
+  "cneProgram": {
+    "title": "Continuing Nursing Education (CNE)",
+    "subtitle": "Advancing Professional Competencies & Compassionate Nursing Care",
+    "overview": "The Department of Nursing at Bhaktivedanta Hospital conducts specialized Continuing Nursing Education (CNE) workshops. Recognized with credit points by the Maharashtra Nursing Council (MNC), these sessions empower staff nurses, ward in-charges, and nurse educators with modern clinical protocols, patient safety standards, infection control, and empathetic bedside communication.",
+    "accreditationBadge": "Maharashtra Nursing Council (MNC) Accredited",
+    "eligibility": "All Registered Nurses (GNM, B.Sc, M.Sc) holding valid State Nursing Council registration",
+    "focusAreas": [
+      {
+        "title": "Critical Care & Ventilator Nursing",
+        "desc": "Invasive arterial line care, ABG interpretation, ventilator waveforms, and hemodynamic stability."
+      },
+      {
+        "title": "Infection Prevention & NABH Bundles",
+        "desc": "Central line bundle (CLABSI), catheter bundle (CAUTI), hand hygiene surveillance, and biomedical waste."
+      },
+      {
+        "title": "Emergency Resuscitation (BLS/ACLS)",
+        "desc": "High-quality CPR, defibrillation protocols, rapid response activation, and code blue simulation."
+      },
+      {
+        "title": "Maternal-Neonatal Resuscitation",
+        "desc": "Neonatal resuscitation, kangaroo mother care, phototherapy management, and lactation counseling."
+      }
+    ]
+  },
+  "spiritualCareCourse": {
+    "title": "Spiritual Care Certificate Course",
+    "subtitle": "Pioneering Holistic Healing for Healthcare Professionals Since 2010",
+    "overview": "Introduced in 2010 by the Department of Spiritual Care, this internationally acclaimed certificate course equips doctors, nurses, and paramedical professionals to integrate spiritual well-being into modern medical practice. Recognizing that healing encompasses the physical, mental, emotional, and spiritual dimensions of human existence, the program provides comprehensive theoretical grounding and practical bedside mentorship.",
+    "introducedYear": "2010",
+    "duration": "6 Months (Hybrid / Weekend Modules with Hospital Practical Rotations)",
+    "eligibility": "Registered Healthcare Professionals globally: MBBS/MD Doctors, AYUSH Practitioners, Nursing Officers, Medical Social Workers, and Healthcare Counselors.",
+    "dimensions": [
+      {
+        "title": "Physical Dimension",
+        "desc": "Understanding psychosomatic medicine, pain relief, and evidence-based lifestyle modifications."
+      },
+      {
+        "title": "Emotional Dimension",
+        "desc": "Cultivating emotional intelligence, handling patient grief, empathy, and mitigating physician burnout."
+      },
+      {
+        "title": "Intellectual Dimension",
+        "desc": "Bioethical principles, truth-telling in terminal diagnoses, and ethical decision-making in end-of-life care."
+      },
+      {
+        "title": "Spiritual Dimension",
+        "desc": "Spiritual assessment tools (FICA/HOPE), prayer, mindfulness, meaning-making, and eternal purpose."
+      }
+    ],
+    "quote": "Spiritual care is not a ritual or dogma; it is addressing the deepest spiritual yearnings of hope, meaning, and love during human suffering."
+  },
+  "clinicalResearchCourse": {
+    "title": "Post Graduate Certificate in Clinical Research (PGCR)",
+    "subtitle": "15-Month Comprehensive Program with Live Hospital Campus Internship",
+    "overview": "The Medical Research Department conducts the Post Graduation in Clinical Research (PGCR) program, designed to groom future leaders in clinical research and drug development. Combining classroom lectures, interactive case studies, and extensive hands-on internships inside Bhaktivedanta Hospital's active Clinical Research Unit, students gain real-world proficiency across international regulatory guidelines.",
+    "duration": "15 Months (Classroom Modules + Live Hospital Internship)",
+    "admissionsOpen": "February Every Year",
+    "eligibility": "Graduates/Post-graduates in Medicine (MBBS, BDS, BAMS, BHMS), Pharmacy (B.Pharm, M.Pharm), Life Sciences (B.Sc, M.Sc Biotechnology/Microbiology/Biochemistry), and Nursing.",
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Clinical Research & Drug Development",
+        "desc": "Drug discovery pipeline, preclinical pharmacology, and phases of clinical trials (Phase I-IV)."
+      },
+      {
+        "moduleNo": 2,
+        "title": "Ethical & Regulatory Frameworks",
+        "desc": "ICH-GCP guidelines, Declaration of Helsinki, New Drugs & Clinical Trials Rules 2019, and US FDA / EMA regulations."
+      },
+      {
+        "moduleNo": 3,
+        "title": "Institutional Ethics Committee Operations",
+        "desc": "Protocol review, informed consent process, compensation for clinical trial injury, and ongoing safety oversight."
+      },
+      {
+        "moduleNo": 4,
+        "title": "Clinical Trial Operations & Site Management",
+        "desc": "Study startup, investigator site file, source documentation, monitoring visits, and auditor inspection readiness."
+      },
+      {
+        "moduleNo": 5,
+        "title": "Clinical Data Management & Biostatistics",
+        "desc": "eCRF design, EDC systems, clinical query resolution, database lock, and statistical analysis plans."
+      },
+      {
+        "moduleNo": 6,
+        "title": "Pharmacovigilance & Medical Writing",
+        "desc": "Adverse event reporting, SAE narratives, CIOMS forms, investigator brochure, and clinical study reports (CSR)."
+      }
+    ],
+    "internshipHighlights": "Guaranteed 6-month hands-on internship in hospital-sponsored and multi-national pharmaceutical clinical trials.",
+    "placementSupport": "100% placement support with leading CROs (Quintiles/IQVIA, Parexel, Syneos Health, Cognizant) and hospital research sites."
+  },
+  "clinicalTrials": {
+    "title": "Clinical Trials Centre of Excellence",
+    "subtitle": "NABH Accredited GCP-Compliant Research Infrastructure Since 2013",
+    "overview": "Bhaktivedanta Hospital & Research Institute has been a distinguished site for global and domestic clinical trials since 2013. We are proud to be the first in Maharashtra and the second hospital in India to achieve NABH Accreditation for Clinical Trials. Our dedicated multidisciplinary research team has successfully executed multiple Phase II, III, and IV trials for international pharmaceutical sponsors and CROs.",
+    "stats": {
+      "trialsConducted": "45+ Global & Domestic Trials",
+      "accreditation": "NABH Accredited Clinical Trial Site",
+      "gcpTrainedStaff": "25+ Certified Principal Investigators",
+      "regulatoryAudits": "Zero 483 / Warning Letters from Regulatory Audits"
+    },
+    "therapeuticAreas": [
+      "Medical Oncology & Chemotherapy Protocols",
+      "Interventional Cardiology & Antiplatelet Therapies",
+      "Nephrology & Renal Dialysis Complications",
+      "Pediatrics & Neonatal Anti-infective Studies",
+      "Endourology & Minimally Invasive Devices",
+      "Pulmonology & Respiratory Medicine",
+      "General Surgery & Wound Healing Biologics"
+    ],
+    "infrastructure": [
+      {
+        "facility": "Dedicated Clinical Research Unit (CRU)",
+        "details": "Spacious patient consultation rooms, infusion chairs, and private exam suites."
+      },
+      {
+        "facility": "Calibrated Sample Cold Storage",
+        "details": "-80°C and -20°C deep freezers with 24/7 temperature logging and backup power."
+      },
+      {
+        "facility": "Secure Drug Storage & Dispensing Room",
+        "details": "Access-controlled investigational product (IP) room with digital temperature & humidity mapping."
+      },
+      {
+        "facility": "CRA Monitoring & Audit Rooms",
+        "details": "High-speed internet, dedicated workstations, and scanner facilities for monitor and auditor visits."
+      },
+      {
+        "facility": "Long-term Regulatory Archival Facility",
+        "details": "Fire-safe, pest-controlled, access-logged archiving preserving records for 15+ years."
+      }
+    ]
+  },
+  "ethicsCommittee": {
+    "title": "Institutional Ethics Committees (IEC)",
+    "subtitle": "Safeguarding Participant Safety, Dignity & Scientific Integrity",
+    "overview": "Bhaktivedanta Hospital & Research Institute maintains two separate, independent, and multidisciplinary Institutional Ethics Committees registered with national statutory authorities to review and monitor biomedical and clinical research protocols.",
+    "committees": [
+      {
+        "id": "iec-ct",
+        "name": "Institutional Ethics Committee for Clinical Trials",
+        "regAuthority": "Registered with Central Drugs Standard Control Organization (CDSCO) / DCGI",
+        "regNumber": "ECR/282/Inst/MH/2013/RR-19",
+        "mandate": "Reviews and oversees all Phase II, III, and IV drug and medical device clinical trials under New Drugs and Clinical Trials Rules 2019."
+      },
+      {
+        "id": "iec-bm",
+        "name": "Institutional Ethics Committee for Biomedical & Health Research",
+        "regAuthority": "Registered with Department of Health Research (DHR), Ministry of Health & Family Welfare",
+        "regNumber": "DHR/ICMR/BHR-2020",
+        "mandate": "Reviews and oversees investigator-initiated observational studies, DNB academic postgraduate theses, and epidemiological research."
+      }
+    ],
+    "guidingPrinciples": [
+      "ICH Harmonised Tripartite Guideline for Good Clinical Practice (ICH-GCP E6 R2)",
+      "Declaration of Helsinki (Ethical Principles for Medical Research Involving Human Subjects)",
+      "ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017)",
+      "New Drugs and Clinical Trials Rules, 2019 (Govt. of India Gazette)"
+    ]
+  },
+  "publications": {
+    "title": "Publications & Research Output",
+    "subtitle": "Scientific Evidence & High-Impact Clinical Contributions",
+    "overview": "Our faculty, consultants, and postgraduate DNB scholars consistently contribute to peer-reviewed international and indexed national medical journals. The hospital promotes ethical, investigator-initiated clinical studies that advance healthcare methodologies and patient outcomes."
+  },
+  "governmentAccreditation": {
+    "title": "Government & National Accreditations",
+    "subtitle": "Highest Benchmarks of Regulatory Compliance & Institutional Trust",
+    "overview": "Bhaktivedanta Hospital & Research Institute operates under stringent statutory compliances, holding prestigious government registrations and quality accreditations for healthcare delivery, postgraduate medical education, and clinical research.",
+    "badges": [
+      {
+        "title": "NABH Accreditation for Clinical Trials",
+        "authority": "National Accreditation Board for Hospitals & Healthcare Providers",
+        "detail": "First hospital in Maharashtra and 2nd in all of India to receive prestigious NABH certification for Clinical Trial site and Ethics Committee."
+      },
+      {
+        "title": "DCGI / CDSCO Ethics Committee Registration",
+        "authority": "Drugs Controller General of India / Central Drugs Standard Control Organization",
+        "detail": "Registered under New Drugs and Clinical Trials Rules (Reg No: ECR/282/Inst/MH/2013/RR-19)."
+      },
+      {
+        "title": "Department of Health Research (DHR) Registration",
+        "authority": "Department of Health Research, Ministry of Health & Family Welfare, Govt. of India",
+        "detail": "Formal recognition for Biomedical and Health Research Ethics Committee oversight."
+      },
+      {
+        "title": "NBEMS Postgraduate Accreditation",
+        "authority": "National Board of Examinations in Medical Sciences (NBEMS)",
+        "detail": "Accredited institution conducting DNB and Post-Doctoral residency courses in 7 medical specialties."
+      },
+      {
+        "title": "Maharashtra Medical Council (MMC) & Nursing Council (MNC)",
+        "authority": "State Regulatory Councils",
+        "detail": "Accredited center for conducting credit-point eligible Continuing Medical Education (CME) and Continuing Nursing Education (CNE)."
+      }
+    ]
+  },
+  "customPrograms": []
 };
 
 export const defaultDnbInquiries = [];
