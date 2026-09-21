@@ -1,12 +1,71 @@
 import express from 'express';
+import { supabase } from '../utils/supabase.js';
 import { readData, writeData } from '../utils/storage.js';
 
 const router = express.Router();
 
 /**
- * Helper to retrieve current patient corner state
+ * Helper to convert Supabase rows to the exact frontend state shape
+ */
+function rowsToPatientCornerState(categoryRows = [], guideRows = []) {
+  const categories = categoryRows.map(c => ({
+    id: c.id,
+    name: c.name || 'Unassigned',
+    slug: c.slug || (c.name ? c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : c.id),
+    description: c.description || '',
+    order: c.order || 1,
+    status: c.status !== false,
+    max_items: c.max_items !== undefined ? parseInt(c.max_items, 10) : 6,
+    maxItems: c.max_items !== undefined ? parseInt(c.max_items, 10) : 6,
+    adminId: c.adminId || 'ADM-001',
+    adminName: c.adminName || 'Super Administrator',
+    createdAt: c.created_at || new Date().toISOString(),
+    updatedAt: c.updated_at || new Date().toISOString()
+  })).sort((a, b) => (a.order || 0) - (b.order || 0));
+
+  const guides = guideRows.map(g => ({
+    id: g.id,
+    categoryId: g.category_id || 'pc-cat-guide',
+    category: g.category_name || 'Patient Guide',
+    title: g.title || 'Untitled Guide',
+    name: g.title || 'Untitled Guide',
+    slug: g.slug || (g.title ? g.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : g.id),
+    shortDescription: g.short_description || '',
+    bannerImage: g.banner_image || '',
+    status: g.status || 'Published',
+    displayOrder: g.display_order || 1,
+    order: g.display_order || 1,
+    tabs: Array.isArray(g.tabs) ? g.tabs : [],
+    adminId: g.admin_id || 'ADM-001',
+    adminName: g.admin_name || 'Super Administrator',
+    createdAt: g.created_at || new Date().toISOString(),
+    updatedAt: g.updated_at || new Date().toISOString()
+  })).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+
+  return { categories, guides };
+}
+
+/**
+ * Retrieve current Patient Corner state (from Supabase, with JSON file fallback)
  */
 async function getCurrentState() {
+  if (supabase) {
+    try {
+      const [catsRes, guidesRes] = await Promise.all([
+        supabase.from('bv_patient_corner_categories').select('*').order('order', { ascending: true }),
+        supabase.from('admin_patient_corner_guides').select('*').order('display_order', { ascending: true })
+      ]);
+
+      if (!catsRes.error && !guidesRes.error) {
+        return rowsToPatientCornerState(catsRes.data || [], guidesRes.data || []);
+      }
+      console.warn('Supabase patient corner query warning:', catsRes.error?.message, guidesRes.error?.message);
+    } catch (err) {
+      console.warn('Supabase fetch error, using local fallback:', err.message);
+    }
+  }
+
+  // Local JSON fallback
   const state = readData('patient_corner_state');
   if (state && typeof state === 'object' && Array.isArray(state.guides)) {
     return state;
@@ -15,10 +74,57 @@ async function getCurrentState() {
 }
 
 /**
- * Helper to persist full patient corner state
+ * Save full state (sync to Supabase & backup JSON file)
  */
 async function saveFullState(state) {
-  writeData('patient_corner_state', state);
+  // Sync to local JSON backup
+  try {
+    writeData('patient_corner_state', state);
+  } catch (e) {
+    console.warn('Local backup write warning:', e.message);
+  }
+
+  if (supabase) {
+    try {
+      // 1. Sync Categories
+      if (Array.isArray(state.categories)) {
+        for (const cat of state.categories) {
+          await supabase.from('bv_patient_corner_categories').upsert({
+            id: cat.id,
+            name: cat.name || 'Unassigned',
+            description: cat.description || '',
+            order: cat.order || 1,
+            status: cat.status !== false,
+            adminId: cat.adminId || 'ADM-001',
+            adminName: cat.adminName || 'Super Administrator',
+            updated_at: new Date().toISOString()
+          }, { onConflict: 'id' });
+        }
+      }
+
+      // 2. Sync Guides
+      if (Array.isArray(state.guides)) {
+        for (const guide of state.guides) {
+          await supabase.from('admin_patient_corner_guides').upsert({
+            id: guide.id,
+            title: guide.title || 'Untitled Guide',
+            slug: (guide.slug || guide.title || guide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+            category_id: guide.categoryId || 'pc-cat-guide',
+            category_name: guide.category || 'Patient Guide',
+            status: guide.status || 'Published',
+            display_order: parseInt(guide.displayOrder || guide.order, 10) || 1,
+            tabs: Array.isArray(guide.tabs) ? guide.tabs : [],
+            admin_id: guide.adminId || 'ADM-001',
+            admin_name: guide.adminName || 'Super Administrator',
+            updated_at: new Date().toISOString()
+          }, { onConflict: 'id' });
+        }
+      }
+    } catch (err) {
+      console.error('Error syncing patient corner to Supabase:', err.message);
+    }
+  }
+
   return state;
 }
 
@@ -77,6 +183,46 @@ router.put('/', async (req, res, next) => {
   }
 });
 
+/**
+ * Helper to validate maximum guides per category
+ */
+async function checkCategoryLimit(categoryId, excludeGuideId = null) {
+  const targetCatId = categoryId || 'pc-cat-guide';
+  let maxItems = 6;
+  let currentCount = 0;
+
+  if (supabase) {
+    const [catRes, guidesRes] = await Promise.all([
+      supabase.from('bv_patient_corner_categories').select('max_items').eq('id', targetCatId).maybeSingle(),
+      supabase.from('admin_patient_corner_guides').select('id').eq('category_id', targetCatId)
+    ]);
+    maxItems = catRes.data?.max_items !== undefined ? parseInt(catRes.data.max_items, 10) : 6;
+    const existingGuides = guidesRes.data || [];
+    currentCount = excludeGuideId
+      ? existingGuides.filter(g => g.id !== excludeGuideId).length
+      : existingGuides.length;
+  } else {
+    const state = await getCurrentState();
+    const cat = (state.categories || []).find(c => c.id === targetCatId);
+    maxItems = cat?.max_items !== undefined ? parseInt(cat.max_items, 10) : (cat?.maxItems !== undefined ? parseInt(cat.maxItems, 10) : 6);
+    const existingGuides = (state.guides || []).filter(g => g.categoryId === targetCatId || g.category_id === targetCatId);
+    currentCount = excludeGuideId
+      ? existingGuides.filter(g => g.id !== excludeGuideId).length
+      : existingGuides.length;
+  }
+
+  if (currentCount >= maxItems) {
+    return {
+      allowed: false,
+      error: `Is category me already ${maxItems} guides hain (maximum limit). Pehle koi guide hatao ya dusri category chuno.`,
+      currentCount,
+      maxItems
+    };
+  }
+
+  return { allowed: true, currentCount, maxItems };
+}
+
 // ----------------------------------------------------
 // 3. POST CREATE A NEW GUIDE
 // Supports POST /guides or POST /
@@ -102,6 +248,12 @@ const handleCreateGuide = async (req, res, next) => {
       return res.status(400).json({ error: 'Guide title is required' });
     }
 
+    const targetCatId = categoryId || 'pc-cat-guide';
+    const limitCheck = await checkCategoryLimit(targetCatId);
+    if (!limitCheck.allowed) {
+      return res.status(400).json({ error: limitCheck.error });
+    }
+
     const state = await getCurrentState();
     const cleanSlug = (slug || guideTitle)
       .toLowerCase()
@@ -112,9 +264,10 @@ const handleCreateGuide = async (req, res, next) => {
     const now = new Date().toISOString();
     const newGuide = {
       id: `pc-${Date.now()}`,
-      categoryId: categoryId || 'cat-inpatient',
+      categoryId: targetCatId,
       category: category || 'Inpatient Guide',
       title: guideTitle,
+      name: guideTitle,
       slug: cleanSlug,
       shortDescription: shortDescription || '',
       bannerImage: bannerImage || '',
@@ -127,8 +280,26 @@ const handleCreateGuide = async (req, res, next) => {
       tabs: Array.isArray(tabs) ? tabs : []
     };
 
+    if (supabase) {
+      const { error: dbErr } = await supabase.from('admin_patient_corner_guides').insert({
+        id: newGuide.id,
+        title: newGuide.title,
+        slug: newGuide.slug,
+        category_id: newGuide.categoryId,
+        category_name: newGuide.category,
+        status: newGuide.status,
+        display_order: newGuide.displayOrder,
+        tabs: newGuide.tabs,
+        admin_id: newGuide.adminId,
+        admin_name: newGuide.adminName,
+        created_at: now,
+        updated_at: now
+      });
+      if (dbErr) console.warn('Supabase insert guide error:', dbErr.message);
+    }
+
     state.guides.push(newGuide);
-    await saveFullState(state);
+    try { writeData('patient_corner_state', state); } catch (e) {}
 
     res.status(201).json({ success: true, guide: newGuide });
   } catch (err) {
@@ -183,15 +354,41 @@ const handleUpdateGuide = async (req, res, next) => {
     }
 
     const currentGuide = state.guides[index];
+    const newCatId = updates.categoryId || updates.category_id || currentGuide.categoryId || currentGuide.category_id;
+    const oldCatId = currentGuide.categoryId || currentGuide.category_id;
+
+    if (newCatId && newCatId !== oldCatId) {
+      const limitCheck = await checkCategoryLimit(newCatId, currentGuide.id);
+      if (!limitCheck.allowed) {
+        return res.status(400).json({ error: limitCheck.error });
+      }
+    }
+
+    const now = new Date().toISOString();
     const updatedGuide = {
       ...currentGuide,
       ...updates,
-      id: currentGuide.id, // Preserve immutable ID
-      updatedAt: new Date().toISOString()
+      id: currentGuide.id,
+      updatedAt: now
     };
 
+    if (supabase) {
+      const { error: dbErr } = await supabase.from('admin_patient_corner_guides').update({
+        title: updatedGuide.title,
+        slug: (updatedGuide.slug || updatedGuide.title || updatedGuide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+        category_id: updatedGuide.categoryId || 'pc-cat-guide',
+        category_name: updatedGuide.category || 'Patient Guide',
+        status: updatedGuide.status || 'Published',
+        display_order: parseInt(updatedGuide.displayOrder || updatedGuide.order, 10) || 1,
+        tabs: Array.isArray(updatedGuide.tabs) ? updatedGuide.tabs : [],
+        updated_at: now
+      }).eq('id', currentGuide.id);
+
+      if (dbErr) console.warn('Supabase update guide error:', dbErr.message);
+    }
+
     state.guides[index] = updatedGuide;
-    await saveFullState(state);
+    try { writeData('patient_corner_state', state); } catch (e) {}
 
     res.json({ success: true, guide: updatedGuide });
   } catch (err) {
@@ -219,7 +416,13 @@ const handleDeleteGuide = async (req, res, next) => {
     }
 
     const removed = state.guides.splice(index, 1)[0];
-    await saveFullState(state);
+
+    if (supabase) {
+      const { error: dbErr } = await supabase.from('admin_patient_corner_guides').delete().eq('id', removed.id);
+      if (dbErr) console.warn('Supabase delete guide error:', dbErr.message);
+    }
+
+    try { writeData('patient_corner_state', state); } catch (e) {}
 
     res.json({ success: true, message: 'Guide deleted successfully', guide: removed });
   } catch (err) {
@@ -230,47 +433,24 @@ const handleDeleteGuide = async (req, res, next) => {
 router.delete('/guides/:id', handleDeleteGuide);
 
 // ----------------------------------------------------
-// 7. POST ADD A NEW TAB TO A GUIDE
-// Supports POST /guides/:id/tabs and POST /:id/tabs
+// 7. TAB & SECTION MANIPULATION HELPERS
 // ----------------------------------------------------
-const handleAddTab = async (req, res, next) => {
+// Tab Add
+router.post('/guides/:id/tabs', async (req, res, next) => {
   try {
     const { id } = req.params;
-    const {
-      title,
-      type = 'rich_text',
-      enabled = true,
-      content = '',
-      steps = [],
-      items = [],
-      cards = [],
-      galleryImages = [],
-      faqs = [],
-      testimonials = [],
-      sections = []
-    } = req.body;
-
-    if (!title || !title.trim()) {
-      return res.status(400).json({ error: 'Tab title is required' });
-    }
+    const { title, type = 'rich_text', enabled = true, content = '', steps = [], items = [], cards = [], galleryImages = [], faqs = [], testimonials = [], sections = [] } = req.body;
+    if (!title || !title.trim()) return res.status(400).json({ error: 'Tab title is required' });
 
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
-
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
-
-    const guide = state.guides[guideIndex];
-    const currentTabs = guide.tabs || [];
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
     const newTab = {
       id: `tab_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
       title: title.trim(),
-      type, // 'rich_text' | 'steps' | 'checklist' | 'list' | 'cards' | 'gallery' | 'faq' | 'testimonials'
-      order: currentTabs.length + 1,
+      type,
+      order: (guide.tabs || []).length + 1,
       enabled: enabled !== false,
       content: content || '',
       steps: Array.isArray(steps) ? steps : [],
@@ -282,7 +462,7 @@ const handleAddTab = async (req, res, next) => {
       sections: Array.isArray(sections) ? sections : []
     };
 
-    guide.tabs = [...currentTabs, newTab];
+    guide.tabs = [...(guide.tabs || []), newTab];
     guide.updatedAt = new Date().toISOString();
 
     await saveFullState(state);
@@ -290,52 +470,28 @@ const handleAddTab = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.post('/guides/:id/tabs', handleAddTab);
-router.post('/:id/tabs', handleAddTab);
-
-// ----------------------------------------------------
-// 8. PUT REORDER TABS ON A GUIDE
-// Supports PUT /guides/:id/tabs/reorder and PUT /:id/tabs/reorder
-// ----------------------------------------------------
-const handleReorderTabs = async (req, res, next) => {
+// Tab Reorder
+router.put('/guides/:id/tabs/reorder', async (req, res, next) => {
   try {
     const { id } = req.params;
     const { tabIds } = req.body;
-
-    if (!Array.isArray(tabIds)) {
-      return res.status(400).json({ error: 'tabIds array is required' });
-    }
+    if (!Array.isArray(tabIds)) return res.status(400).json({ error: 'tabIds array is required' });
 
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
-
-    const guide = state.guides[guideIndex];
     const currentTabs = guide.tabs || [];
     const tabMap = new Map(currentTabs.map(t => [t.id, t]));
+    const reorderedTabs = tabIds.map((tId, idx) => {
+      const t = tabMap.get(tId);
+      return t ? { ...t, order: idx + 1 } : null;
+    }).filter(Boolean);
 
-    const reorderedTabs = tabIds
-      .map((tabId, index) => {
-        const tab = tabMap.get(tabId);
-        if (tab) {
-          return { ...tab, order: index + 1 };
-        }
-        return null;
-      })
-      .filter(Boolean);
-
-    // Keep any existing tabs that weren't included in the tabIds list
-    currentTabs.forEach(tab => {
-      if (!tabIds.includes(tab.id)) {
-        reorderedTabs.push({ ...tab, order: reorderedTabs.length + 1 });
-      }
+    currentTabs.forEach(t => {
+      if (!tabIds.includes(t.id)) reorderedTabs.push({ ...t, order: reorderedTabs.length + 1 });
     });
 
     guide.tabs = reorderedTabs;
@@ -346,143 +502,69 @@ const handleReorderTabs = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.put('/guides/:id/tabs/reorder', handleReorderTabs);
-router.put('/:id/tabs/reorder', handleReorderTabs);
-
-// ----------------------------------------------------
-// 9. PUT UPDATE A SPECIFIC TAB
-// Supports PUT /guides/:id/tabs/:tabId and PUT /:id/tabs/:tabId
-// ----------------------------------------------------
-const handleUpdateTab = async (req, res, next) => {
+// Tab Update
+router.put('/guides/:id/tabs/:tabId', async (req, res, next) => {
   try {
     const { id, tabId } = req.params;
     const updates = req.body || {};
 
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
+    const tabs = guide.tabs || [];
+    const tabIdx = tabs.findIndex(t => t.id === tabId);
+    if (tabIdx === -1) return res.status(404).json({ error: 'Tab not found' });
 
-    const guide = state.guides[guideIndex];
-    const currentTabs = guide.tabs || [];
-    const tabIndex = currentTabs.findIndex(t => t.id === tabId);
-
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    currentTabs[tabIndex] = {
-      ...currentTabs[tabIndex],
-      ...updates,
-      id: tabId // Preserve original tab id
-    };
-
-    guide.tabs = currentTabs;
+    tabs[tabIdx] = { ...tabs[tabIdx], ...updates, id: tabId };
+    guide.tabs = tabs;
     guide.updatedAt = new Date().toISOString();
 
     await saveFullState(state);
-    res.json({ success: true, tab: currentTabs[tabIndex], guide });
+    res.json({ success: true, tab: tabs[tabIdx], guide });
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.put('/guides/:id/tabs/:tabId', handleUpdateTab);
-router.put('/:id/tabs/:tabId', handleUpdateTab);
-
-// ----------------------------------------------------
-// 10. DELETE A TAB FROM A GUIDE
-// Supports DELETE /guides/:id/tabs/:tabId and DELETE /:id/tabs/:tabId
-// ----------------------------------------------------
-const handleDeleteTab = async (req, res, next) => {
+// Tab Delete
+router.delete('/guides/:id/tabs/:tabId', async (req, res, next) => {
   try {
     const { id, tabId } = req.params;
-
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
-
-    const guide = state.guides[guideIndex];
-    const currentTabs = guide.tabs || [];
-
-    const filteredTabs = currentTabs
-      .filter(t => t.id !== tabId)
-      .map((t, idx) => ({ ...t, order: idx + 1 }));
-
-    guide.tabs = filteredTabs;
+    guide.tabs = (guide.tabs || []).filter(t => t.id !== tabId).map((t, idx) => ({ ...t, order: idx + 1 }));
     guide.updatedAt = new Date().toISOString();
 
     await saveFullState(state);
-    res.json({ success: true, tabs: filteredTabs, guide });
+    res.json({ success: true, tabs: guide.tabs, guide });
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.delete('/guides/:id/tabs/:tabId', handleDeleteTab);
-router.delete('/:id/tabs/:tabId', handleDeleteTab);
-
-// ----------------------------------------------------
-// 11. POST ADD A SECTION TO A TAB
-// Supports POST /guides/:id/tabs/:tabId/sections and POST /:id/tabs/:tabId/sections
-// ----------------------------------------------------
-const handleAddSection = async (req, res, next) => {
+// Section Add
+router.post('/guides/:id/tabs/:tabId/sections', async (req, res, next) => {
   try {
     const { id, tabId } = req.params;
-    const {
-      title,
-      type = 'rich_text',
-      enabled = true,
-      content = '',
-      items = [],
-      steps = [],
-      cards = [],
-      galleryImages = [],
-      faqs = [],
-      settings = {},
-      config = {},
-      order
-    } = req.body;
+    const { title, type = 'rich_text', enabled = true, content = '', items = [], steps = [], cards = [], galleryImages = [], faqs = [], settings = {}, config = {}, order } = req.body;
 
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
+    const tab = (guide.tabs || []).find(t => t.id === tabId);
+    if (!tab) return res.status(404).json({ error: 'Tab not found' });
 
-    const guide = state.guides[guideIndex];
-    guide.tabs = guide.tabs || [];
-    const tabIndex = guide.tabs.findIndex(t => t.id === tabId);
-
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    const tab = guide.tabs[tabIndex];
     tab.sections = Array.isArray(tab.sections) ? tab.sections : [];
-
-    const sectionConfig = (typeof settings === 'object' && settings !== null && Object.keys(settings).length > 0)
-      ? settings
-      : (typeof config === 'object' && config !== null ? config : {});
-
     const newSection = {
       id: `sec_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
       title: (title || '').trim(),
-      type, // 'rich_text' | 'feature_list' | 'accordion' | 'steps' | 'cards' | 'checklist' | 'gallery' | 'faq' | 'table'
+      type,
       order: parseInt(order, 10) || (tab.sections.length + 1),
       enabled: enabled !== false,
       content: content || '',
@@ -491,7 +573,7 @@ const handleAddSection = async (req, res, next) => {
       cards: Array.isArray(cards) ? cards : [],
       galleryImages: Array.isArray(galleryImages) ? galleryImages : [],
       faqs: Array.isArray(faqs) ? faqs : [],
-      settings: sectionConfig
+      settings: (typeof settings === 'object' && Object.keys(settings).length > 0) ? settings : (config || {})
     };
 
     tab.sections.push(newSection);
@@ -502,225 +584,162 @@ const handleAddSection = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.post('/guides/:id/tabs/:tabId/sections', handleAddSection);
-router.post('/:id/tabs/:tabId/sections', handleAddSection);
-
-// ----------------------------------------------------
-// 12. PUT REORDER SECTIONS IN A TAB
-// Supports PUT /guides/:id/tabs/:tabId/sections/reorder and PUT /:id/tabs/:tabId/sections/reorder
-// ----------------------------------------------------
-const handleReorderSections = async (req, res, next) => {
-  try {
-    const { id, tabId } = req.params;
-    const { sectionIds } = req.body;
-
-    if (!Array.isArray(sectionIds)) {
-      return res.status(400).json({ error: 'sectionIds array is required' });
-    }
-
-    const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
-
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
-
-    const guide = state.guides[guideIndex];
-    guide.tabs = guide.tabs || [];
-    const tabIndex = guide.tabs.findIndex(t => t.id === tabId);
-
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    const tab = guide.tabs[tabIndex];
-    const currentSections = Array.isArray(tab.sections) ? tab.sections : [];
-    const sectionMap = new Map(currentSections.map(s => [s.id, s]));
-
-    const reorderedSections = sectionIds
-      .map((secId, index) => {
-        const sec = sectionMap.get(secId);
-        if (sec) {
-          return { ...sec, order: index + 1 };
-        }
-        return null;
-      })
-      .filter(Boolean);
-
-    // Keep any sections that were omitted in sectionIds list
-    currentSections.forEach(sec => {
-      if (!sectionIds.includes(sec.id)) {
-        reorderedSections.push({ ...sec, order: reorderedSections.length + 1 });
-      }
-    });
-
-    tab.sections = reorderedSections;
-    guide.updatedAt = new Date().toISOString();
-
-    await saveFullState(state);
-    res.json({ success: true, sections: reorderedSections, guide });
-  } catch (err) {
-    next(err);
-  }
-};
-
-router.put('/guides/:id/tabs/:tabId/sections/reorder', handleReorderSections);
-router.put('/:id/tabs/:tabId/sections/reorder', handleReorderSections);
-
-// ----------------------------------------------------
-// 13. PUT UPDATE A SPECIFIC SECTION
-// Supports PUT /guides/:id/tabs/:tabId/sections/:sectionId and PUT /:id/tabs/:tabId/sections/:sectionId
-// ----------------------------------------------------
-const handleUpdateSection = async (req, res, next) => {
+// Section Update
+router.put('/guides/:id/tabs/:tabId/sections/:sectionId', async (req, res, next) => {
   try {
     const { id, tabId, sectionId } = req.params;
     const updates = req.body || {};
 
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
-    }
+    const tab = (guide.tabs || []).find(t => t.id === tabId);
+    if (!tab) return res.status(404).json({ error: 'Tab not found' });
 
-    const guide = state.guides[guideIndex];
-    guide.tabs = guide.tabs || [];
-    const tabIndex = guide.tabs.findIndex(t => t.id === tabId);
-
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    const tab = guide.tabs[tabIndex];
     tab.sections = Array.isArray(tab.sections) ? tab.sections : [];
-    const secIndex = tab.sections.findIndex(s => s.id === sectionId);
+    const secIdx = tab.sections.findIndex(s => s.id === sectionId);
+    if (secIdx === -1) return res.status(404).json({ error: 'Section not found' });
 
-    if (secIndex === -1) {
-      return res.status(404).json({ error: 'Section not found' });
-    }
+    tab.sections[secIdx] = { ...tab.sections[secIdx], ...updates, id: sectionId };
+    guide.updatedAt = new Date().toISOString();
 
-    const existingSection = tab.sections[secIndex];
-    tab.sections[secIndex] = {
-      ...existingSection,
-      ...updates,
-      id: sectionId, // Preserve original section id
-      settings: updates.settings || updates.config || existingSection.settings || {}
+    await saveFullState(state);
+    res.json({ success: true, section: tab.sections[secIdx], guide });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Section Delete
+router.delete('/guides/:id/tabs/:tabId/sections/:sectionId', async (req, res, next) => {
+  try {
+    const { id, tabId, sectionId } = req.params;
+    const state = await getCurrentState();
+    const guide = state.guides.find(g => g.id === id || g.slug === id || g.slug === `/${id}`);
+    if (!guide) return res.status(404).json({ error: 'Patient guide not found' });
+
+    const tab = (guide.tabs || []).find(t => t.id === tabId);
+    if (!tab) return res.status(404).json({ error: 'Tab not found' });
+
+    tab.sections = (tab.sections || []).filter(s => s.id !== sectionId).map((s, idx) => ({ ...s, order: idx + 1 }));
+    guide.updatedAt = new Date().toISOString();
+
+    await saveFullState(state);
+    res.json({ success: true, sections: tab.sections, guide });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ----------------------------------------------------
+// 8. CATEGORY MANAGEMENT ENDPOINTS
+// ----------------------------------------------------
+router.post('/categories', async (req, res, next) => {
+  try {
+    const { name, description = '', order, max_items, maxItems } = req.body || {};
+    if (!name || !name.trim()) return res.status(400).json({ error: 'Category name is required' });
+
+    const state = await getCurrentState();
+    const newCategory = {
+      id: `cat-${Date.now()}`,
+      name: name.trim(),
+      slug: name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      description: description.trim(),
+      order: parseInt(order, 10) || (state.categories.length + 1),
+      status: true,
+      max_items: parseInt(max_items || maxItems, 10) || 6,
+      maxItems: parseInt(max_items || maxItems, 10) || 6,
+      adminId: 'ADM-001',
+      adminName: 'Super Administrator',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
 
-    guide.updatedAt = new Date().toISOString();
+    if (supabase) {
+      await supabase.from('bv_patient_corner_categories').insert({
+        id: newCategory.id,
+        name: newCategory.name,
+        description: newCategory.description,
+        order: newCategory.order,
+        status: newCategory.status,
+        max_items: newCategory.max_items,
+        adminId: newCategory.adminId,
+        adminName: newCategory.adminName,
+        created_at: newCategory.createdAt,
+        updated_at: newCategory.updatedAt
+      });
+    }
 
-    await saveFullState(state);
-    res.json({ success: true, section: tab.sections[secIndex], guide });
+    state.categories.push(newCategory);
+    try { writeData('patient_corner_state', state); } catch (e) {}
+
+    res.status(201).json({ success: true, category: newCategory, categories: state.categories });
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.put('/guides/:id/tabs/:tabId/sections/:sectionId', handleUpdateSection);
-router.put('/:id/tabs/:tabId/sections/:sectionId', handleUpdateSection);
-
-// ----------------------------------------------------
-// 14. PATCH TOGGLE / UPDATE SECTION STATUS
-// Supports PATCH /guides/:id/tabs/:tabId/sections/:sectionId/status
-// ----------------------------------------------------
-const handleToggleSectionStatus = async (req, res, next) => {
+router.put('/categories/:id', async (req, res, next) => {
   try {
-    const { id, tabId, sectionId } = req.params;
-    const { enabled } = req.body;
-
+    const { id } = req.params;
+    const updates = req.body || {};
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
+    const catIdx = state.categories.findIndex(c => c.id === id);
+    if (catIdx === -1) return res.status(404).json({ error: 'Category not found' });
+
+    const updatedCat = {
+      ...state.categories[catIdx],
+      ...updates,
+      id,
+      max_items: updates.max_items !== undefined ? parseInt(updates.max_items, 10) : (updates.maxItems !== undefined ? parseInt(updates.maxItems, 10) : (state.categories[catIdx].max_items || 6)),
+      maxItems: updates.max_items !== undefined ? parseInt(updates.max_items, 10) : (updates.maxItems !== undefined ? parseInt(updates.maxItems, 10) : (state.categories[catIdx].maxItems || 6)),
+      updatedAt: new Date().toISOString()
+    };
+    if (supabase) {
+      await supabase.from('bv_patient_corner_categories').update({
+        name: updatedCat.name,
+        description: updatedCat.description,
+        order: updatedCat.order,
+        status: updatedCat.status,
+        max_items: updatedCat.max_items,
+        updated_at: updatedCat.updatedAt
+      }).eq('id', id);
     }
 
-    const guide = state.guides[guideIndex];
-    guide.tabs = guide.tabs || [];
-    const tabIndex = guide.tabs.findIndex(t => t.id === tabId);
+    state.categories[catIdx] = updatedCat;
+    try { writeData('patient_corner_state', state); } catch (e) {}
 
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    const tab = guide.tabs[tabIndex];
-    tab.sections = Array.isArray(tab.sections) ? tab.sections : [];
-    const secIndex = tab.sections.findIndex(s => s.id === sectionId);
-
-    if (secIndex === -1) {
-      return res.status(404).json({ error: 'Section not found' });
-    }
-
-    const currentSection = tab.sections[secIndex];
-    currentSection.enabled = typeof enabled === 'boolean' ? enabled : !currentSection.enabled;
-    guide.updatedAt = new Date().toISOString();
-
-    await saveFullState(state);
-    res.json({ success: true, section: currentSection, guide });
+    res.json({ success: true, category: updatedCat, categories: state.categories });
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.patch('/guides/:id/tabs/:tabId/sections/:sectionId/status', handleToggleSectionStatus);
-router.patch('/:id/tabs/:tabId/sections/:sectionId/status', handleToggleSectionStatus);
-
-// ----------------------------------------------------
-// 15. DELETE A SECTION FROM A TAB
-// Supports DELETE /guides/:id/tabs/:tabId/sections/:sectionId and DELETE /:id/tabs/:tabId/sections/:sectionId
-// ----------------------------------------------------
-const handleDeleteSection = async (req, res, next) => {
+router.delete('/categories/:id', async (req, res, next) => {
   try {
-    const { id, tabId, sectionId } = req.params;
-
+    const { id } = req.params;
     const state = await getCurrentState();
-    const guideIndex = state.guides.findIndex(
-      g => g.id === id || g.slug === id || g.slug === `/${id}`
-    );
 
-    if (guideIndex === -1) {
-      return res.status(404).json({ error: 'Patient guide not found' });
+    const catIdx = state.categories.findIndex(c => c.id === id);
+    if (catIdx === -1) return res.status(404).json({ error: 'Category not found' });
+
+    const removed = state.categories.splice(catIdx, 1)[0];
+    if (supabase) {
+      await supabase.from('bv_patient_corner_categories').delete().eq('id', id);
     }
 
-    const guide = state.guides[guideIndex];
-    guide.tabs = guide.tabs || [];
-    const tabIndex = guide.tabs.findIndex(t => t.id === tabId);
-
-    if (tabIndex === -1) {
-      return res.status(404).json({ error: 'Tab not found' });
-    }
-
-    const tab = guide.tabs[tabIndex];
-    tab.sections = Array.isArray(tab.sections) ? tab.sections : [];
-
-    const filteredSections = tab.sections
-      .filter(s => s.id !== sectionId)
-      .map((s, idx) => ({ ...s, order: idx + 1 }));
-
-    tab.sections = filteredSections;
-    guide.updatedAt = new Date().toISOString();
-
-    await saveFullState(state);
-    res.json({ success: true, sections: filteredSections, guide });
+    try { writeData('patient_corner_state', state); } catch (e) {}
+    res.json({ success: true, message: 'Category deleted', category: removed, categories: state.categories });
   } catch (err) {
     next(err);
   }
-};
+});
 
-router.delete('/guides/:id/tabs/:tabId/sections/:sectionId', handleDeleteSection);
-router.delete('/:id/tabs/:tabId/sections/:sectionId', handleDeleteSection);
-
-// ----------------------------------------------------
 // Fallback root parameters (:id routes)
-// ----------------------------------------------------
 router.get('/:id', handleGetGuide);
 router.put('/:id', handleUpdateGuide);
 router.delete('/:id', handleDeleteGuide);
