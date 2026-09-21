@@ -241,35 +241,6 @@ async function saveFullState(state) {
           await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
         }
       }
-
-        if (services.length > 0) {
-          const rowsToInsert = services.map(srv => {
-            const cat = categoriesMap[srv.categoryId] || {};
-            return {
-              id: srv.id,
-              service_name: srv.name,
-              icon: srv.icon || 'medical_services',
-              short_description: srv.shortDescription || srv.description || '',
-              banner_image: srv.bannerImage || '',
-              thumbnail_image: srv.thumbnailImage || '',
-              slug: srv.slug || '',
-              status: srv.status ? 'Active' : 'Draft',
-              category_id: srv.categoryId || 'c1',
-              category_name: cat.name || 'Unassigned',
-              category_description: cat.description || '',
-              category_order: cat.order || 1,
-              category_status: cat.status !== false,
-              tabs_data: srv.tabs || [],
-              admin_id: srv.adminId || 'ADM-001',
-              admin_name: srv.adminName || 'Super Administrator',
-              created_at: srv.createdAt || now,
-              updated_at: now
-            };
-          });
-
-          await supabase.from('admin_services').upsert(rowsToInsert, { onConflict: 'id' });
-        }
-      }
     } catch (e) {
       console.error('[API Services] Supabase sync error in saveFullState:', e);
     }

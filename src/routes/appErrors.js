@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
   }
 });
 
-// POST record new application error
+// POST record new application error into database
 router.post('/', (req, res, next) => {
   try {
     const appErrors = readData('app_errors');
@@ -28,10 +28,12 @@ router.post('/', (req, res, next) => {
       details: req.body.details || ''
     };
 
+    console.log(`[DATABASE] Saved exception to app_errors table: ${newError.id} - ${newError.message}`);
     appErrors.unshift(newError);
     writeData('app_errors', appErrors);
     res.status(201).json(newError);
   } catch (err) {
+    console.error('[DATABASE ERROR] Failed to write exception to app_errors table:', err);
     next(err);
   }
 });
