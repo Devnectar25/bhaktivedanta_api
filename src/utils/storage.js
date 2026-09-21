@@ -50,6 +50,7 @@ export function readData(key) {
     else if (key === 'events') seedData = seeds.defaultEvents;
     else if (key === 'testimonials') seedData = seeds.defaultTestimonials;
     else if (key === 'news') seedData = seeds.defaultNews;
+    else if (key === 'blogs') seedData = seeds.defaultBlogs;
     else if (key === 'gallery') seedData = seeds.defaultGallery;
     else if (key === 'queries') seedData = seeds.defaultQueries;
     else if (key === 'subadmins') seedData = seeds.defaultSubAdmins;
@@ -117,6 +118,7 @@ export function initializeDatabase() {
     'events',
     'testimonials',
     'news',
+    'blogs',
     'gallery',
     'queries',
     'subadmins',

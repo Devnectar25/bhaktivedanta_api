@@ -1,51 +1,51 @@
 export const defaultDoctors = [
   {
-    id: 'd1',
-    name: 'Dr. Anand Sharma',
-    qualifications: 'MBBS, MD (Cardiology)',
-    department: 'Cardiology',
-    subSpeciality: 'Interventional Cardiology',
+    id: 'doc-1',
+    name: 'Dr. Kshama Shah',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Head of Department & Consultant Anesthesiologist',
+    experience: '25 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor1.png'
+  },
+  {
+    id: 'doc-2',
+    name: 'Dr. Shilpa Mangesh Tiwaskar',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
+    experience: '23 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor2.png'
+  },
+  {
+    id: 'doc-3',
+    name: 'Dr. Jyotsna Karande',
+    qualifications: 'MBBS, DA, BLS',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
+    experience: '16 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor3.png'
+  },
+  {
+    id: 'doc-4',
+    name: 'Dr. Vivek Kulkarni',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
     experience: '15 Years',
     availability: 'Available',
     featured: 'Yes',
     status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANPEj_KoNMPpIwdzuCD7lYGdAKEkyCWh6bTaQK8MJs_R4JVyJRsEBiMWrTQzDsV176cPtU3yccFuudW15cKMl437nzqw5tE9A3l9ZZfasQ9SJx96vYIX962IHbmK_xdfUiAohF8eavUhpXeVEW2mV78f5ATYHcgBnBWY8_UJEKzHq4bco6SZZlKcz-S4YZpKBmO1txtux3VF6wZXMQIop-vEphp1s5HxLkKU8I_EDCo-tkZYHkrT4Ut51mTZnyQ3xI9td7l-2oX0w'
-  },
-  {
-    id: 'd2',
-    name: 'Dr. Sunita Mehta',
-    qualifications: 'MBBS, DCH (Pediatrics)',
-    department: 'Pediatrics',
-    subSpeciality: 'Neonatology',
-    experience: '12 Years',
-    availability: 'Busy',
-    featured: 'No',
-    status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCctp6yfJXf7-1rFuObb0Ki2WL_4iCXFdr-eeffAgsiEZprEBPHOITEx4lJ0ZWTsXptmVimAX02smmRNrEPwmNtaF7dixkBM6uBPqP8VS4iQ1ABwARcVsAB3sC4yikrBK00EVlJ3DccFWO6eFC2IHJGB1YA9CQ6sVwNk8ddW7A75POQ8GrGXGUUMUnB0J3eAMfa1R1DjZW9haVx1D0xDPuDGFDW2QHuIrzO0i6ewLX5xojfAXkHV34sQ8BZn_GbfXZfFQJlz1oxUg'
-  },
-  {
-    id: 'd3',
-    name: 'Dr. Rajesh Kulkarni',
-    qualifications: 'MS (Orthopedics)',
-    department: 'Orthopedics',
-    subSpeciality: 'Spine Surgery',
-    experience: '20 Years',
-    availability: 'Available',
-    featured: 'Yes',
-    status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBdmg0ndil9ygADvQlpCQmfNoIcNC45P9w5ROaS-TN6viovJ7ua3O24RzZYzLfTVj9t96-3KNF1OfDuw9ScwW29oKTg3cDqGJ4XgHANO7_tJ0x47COi4X5JOnr8kR-VGei69sIsz0FIQcDJ48vjI1UfIy73TDBjHz5rul75v0EVd33BlzU1VhW38IAadSKb-eDGGK5iV6PNrasvuzfmR1S5QdoIi6e1BhwOb_6H2DlyZ1uprGGWWu6nsM4ehW5RgyfYYdqFbVXbass'
-  },
-  {
-    id: 'd4',
-    name: 'Dr. Priya Verma',
-    qualifications: 'MD (Oncology)',
-    department: 'Oncology',
-    subSpeciality: 'Radiation Therapy',
-    experience: '8 Years',
-    availability: 'On Leave',
-    featured: 'No',
-    status: 'Inactive',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA_HdwQUWFnwru1ZmIwrY4NBuEZ0_fKr5D2deJZ2IpoYbAYg8C4xB2wArEBfoFdTL42_089Du30ABxXwFERzM71sgFeUmXijTwlFYzt07mbY49JGxol4KT8g8LwA8x7U9LoroDDUSoWvOEDUCJOUurArP91HcNw8PpdVaUbas3sOrq4P9ElWiH6GLam51S89hffsSD3FX55tCwiZ9Dmrtj7AdfVNDNi_Hl3-TXWzuPP3qVVCCeahAhDc7T16QVNGY30Ls65W5QROBE'
+    image: '/doctor4.png'
   }
 ];
 
@@ -280,6 +280,78 @@ export const defaultAppErrors = [
     details: 'Database table bv_doctors requires verification in Supabase dashboard.'
   }
 ];
+
+export const defaultBlogs = [
+  {
+    id: 'blog-1',
+    title: 'Advancements in Robotic Cardiac Surgery: A New Era of Precision',
+    slug: 'advancements-in-robotic-cardiac-surgery',
+    category: 'Cardiology',
+    author: 'Dr. Anand Sharma',
+    authorRole: 'Senior Consultant Cardiologist',
+    date: 'September 15, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800',
+    summary: 'Discover how robotic-assisted cardiac procedures minimize recovery time, enhance surgical precision, and improve patient outcomes at Bhaktivedanta Hospital.',
+    content: '<p>Robotic surgery represents one of the most remarkable breakthroughs in modern cardiovascular medicine. At Bhaktivedanta Hospital & Research Institute, our cardiology and cardiothoracic surgery teams leverage state-of-the-art robotic platforms to perform complex heart valve repairs, coronary artery bypass procedures, and congenital deficit corrections with unmatched accuracy.</p><h3>Key Benefits of Robotic Cardiac Surgery:</h3><ul><li><strong>Minimal Invasiveness:</strong> Tiny keyhole incisions instead of traditional sternotomy.</li><li><strong>Faster Recovery:</strong> Patients often resume daily activities in 1-2 weeks compared to 6-8 weeks for traditional open heart surgery.</li><li><strong>Reduced Blood Loss:</strong> Enhanced 3D high-definition visualization allows ultra-precise tissue handling.</li></ul><p>Our dedicated team of cardiovascular surgeons remains committed to offering world-class, compassionate heart care to all our patients.</p>',
+    tags: ['Cardiology', 'Robotic Surgery', 'Heart Care', 'Medical Technology'],
+    status: 'Published',
+    views: 1240,
+    created_at: '2026-09-15T10:00:00.000Z'
+  },
+  {
+    id: 'blog-2',
+    title: 'Holistic Healing: Combining Modern Medical Science with Spiritual Care',
+    slug: 'holistic-healing-modern-medicine-spiritual-care',
+    category: 'Spiritual Care',
+    author: 'Spiritual Care Department',
+    authorRole: 'Bhaktivedanta Institute',
+    date: 'September 10, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800',
+    summary: 'Exploring how integrating spiritual support, meditation, and compassionate care alongside advanced clinical treatments leads to faster physical and emotional recovery.',
+    content: '<p>At Bhaktivedanta Hospital, we believe true healing encompasses the body, mind, and spirit. Clinical research increasingly confirms that emotional resilience and spiritual peace play a crucial role in patient recovery and post-operative outcomes.</p><h3>Our Integrative Care Approach:</h3><p>Through spiritual counseling, holy chants, soothing music therapy, and customized diet planning, our Spiritual Care department nurtures patients during their stay, reducing anxiety and strengthening their mental well-being.</p>',
+    tags: ['Spiritual Care', 'Holistic Health', 'Patient Well-being', 'Wellness'],
+    status: 'Published',
+    views: 890,
+    created_at: '2026-09-10T09:30:00.000Z'
+  },
+  {
+    id: 'blog-3',
+    title: 'Preventive Oncology: Early Screening and Lifestyle Modifications',
+    slug: 'preventive-oncology-early-screening-lifestyle',
+    category: 'Oncology',
+    author: 'Dr. Rajesh Patel',
+    authorRole: 'Head of Surgical Oncology',
+    date: 'September 05, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
+    summary: 'Understanding the importance of annual health checkups, tumor marker screenings, and proactive dietary habits in cancer prevention.',
+    content: '<p>Early detection remains the single most powerful tool in winning the fight against cancer. Screening tests such as mammograms, Pap smears, colonoscopies, and low-dose CT scans can identify pre-cancerous changes or early-stage tumors before symptoms arise.</p><p>We encourage adults above the age of 40 to undergo regular preventive cancer risk assessments at our Comprehensive Cancer Care Center.</p>',
+    tags: ['Oncology', 'Preventive Health', 'Cancer Screening', 'Awareness'],
+    status: 'Published',
+    views: 1560,
+    created_at: '2026-09-05T14:15:00.000Z'
+  },
+  {
+    id: 'blog-4',
+    title: 'Childhood Immunization Guide: Protecting Your Little Ones',
+    slug: 'childhood-immunization-guide-protecting-kids',
+    category: 'Pediatrics',
+    author: 'Dr. Sneha Verma',
+    authorRole: 'Consultant Pediatrician',
+    date: 'August 28, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1cdb?auto=format&fit=crop&q=80&w=800',
+    summary: 'A comprehensive vaccination schedule for newborns, infants, and adolescents to safeguard against preventable infectious diseases.',
+    content: '<p>Vaccines train your child immune system to recognize and fight harmful pathogens. Keeping up with recommended vaccination timelines ensures lifelong protection against diseases like polio, measles, hepatitis, and tetanus.</p>',
+    tags: ['Pediatrics', 'Vaccination', 'Child Health', 'Immunization'],
+    status: 'Draft',
+    views: 320,
+    created_at: '2026-08-28T11:45:00.000Z'
+  }
+];
+
 
 export const defaultSpecialitiesState = {
   view: 'listing',

@@ -166,7 +166,7 @@ async function getAllDoctors() {
     return localDocs.map((d, idx) => formatDoctor(d, idx, imageMap));
   }
 
-  // If localDocs exists and contains modifications or newly added doctors
+  // If localDocs exists and contains modifications, merge field updates for existing dbDoctors
   const localMap = new Map();
   for (const doc of localDocs) {
     if (doc.id) {
@@ -174,7 +174,7 @@ async function getAllDoctors() {
     }
   }
 
-  // Merge Supabase doctors with any local modifications
+  // Merge Supabase doctors with any local field modifications
   const merged = dbDoctors.map(dbDoc => {
     if (localMap.has(dbDoc.id)) {
       const local = localMap.get(dbDoc.id);
@@ -186,15 +186,8 @@ async function getAllDoctors() {
     return dbDoc;
   });
 
-  // Also include any custom added doctors that have an id not in dbDoctors
-  const dbIdSet = new Set(dbDoctors.map(d => d.id));
-  for (const doc of localDocs) {
-    if (doc.id && !dbIdSet.has(doc.id)) {
-      if (!['d1', 'd2', 'd3', 'd4'].includes(doc.id)) {
-        merged.push(formatDoctor(doc, merged.length, imageMap));
-      }
-    }
-  }
+  // Keep local storage cache in sync with live Supabase dataset
+  writeData('doctors', merged);
 
   return merged;
 }
@@ -209,12 +202,31 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// PUT bulk update doctors (overwrite list in local storage cache)
+// PUT bulk update doctors (overwrite list in local storage cache & sync with Supabase)
 router.put('/', async (req, res, next) => {
   try {
     const doctors = req.body;
     if (Array.isArray(doctors)) {
       writeData('doctors', doctors);
+
+      if (supabase) {
+        try {
+          const records = doctors.map(d => ({
+            'sr.no': parseInt(d['sr.no']) || parseInt(String(d.id).replace(/\D/g, '')) || 1,
+            Name: d.name || '',
+            Qualification: d.qualifications || '',
+            Description: d.subSpeciality || d.department || '',
+            Experience: d.experience || '5+ Years'
+          }));
+          const { error } = await supabase.from('bv_doctors').upsert(records, { onConflict: '"sr.no"' });
+          if (error) {
+            console.error('Error upserting doctors in Supabase:', error.message);
+          }
+        } catch (sErr) {
+          console.error('Exception upserting doctors in Supabase:', sErr.message);
+        }
+      }
+
       return res.json(doctors);
     }
     res.status(400).json({ error: 'Expected array of doctors' });
@@ -228,15 +240,29 @@ router.post('/', async (req, res, next) => {
   try {
     const imageMap = await getImageMap();
     const currentDoctors = await getAllDoctors();
-    const newSrNo = currentDoctors.length + 1;
+    
+    // Calculate new sr.no
+    let maxSrNo = 0;
+    currentDoctors.forEach(d => {
+      const num = parseInt(d['sr.no']);
+      if (!isNaN(num) && num > maxSrNo) maxSrNo = num;
+    });
+    const newSrNo = maxSrNo + 1;
+
+    const rawName = req.body.name || '';
+    const name = cleanDoctorName(rawName, newSrNo);
+    const qualifications = req.body.qualifications || 'MBBS, Specialist Consultant';
+    const subSpeciality = req.body.subSpeciality || req.body.department || 'Consultant Specialist';
+    const experience = req.body.experience || '5+ Years';
+
     const newDoctor = formatDoctor({
-      id: req.body.id || `doc-${Date.now()}`,
+      id: req.body.id || `doc-${newSrNo}`,
       'sr.no': newSrNo,
-      name: req.body.name || '',
-      qualifications: req.body.qualifications || '',
-      department: req.body.department || 'General Medicine',
-      subSpeciality: req.body.subSpeciality || '',
-      experience: req.body.experience || '5+ Years',
+      name,
+      qualifications,
+      department: req.body.department || 'General & Internal Medicine',
+      subSpeciality,
+      experience,
       availability: req.body.availability || 'Available',
       featured: req.body.featured || 'No',
       status: req.body.status || 'Active',
@@ -245,6 +271,26 @@ router.post('/', async (req, res, next) => {
 
     currentDoctors.unshift(newDoctor);
     writeData('doctors', currentDoctors);
+
+    if (supabase) {
+      try {
+        const { data, error } = await supabase.from('bv_doctors').insert([{
+          'sr.no': newSrNo,
+          Name: name,
+          Qualification: qualifications,
+          Description: subSpeciality,
+          Experience: experience
+        }]).select();
+
+        if (error) {
+          console.error('Supabase post doctor error:', error.message);
+        } else {
+          console.log('Successfully saved doctor to Supabase:', data);
+        }
+      } catch (sErr) {
+        console.error('Supabase post doctor exception:', sErr.message);
+      }
+    }
 
     res.status(201).json(newDoctor);
   } catch (err) {
@@ -263,15 +309,31 @@ router.put('/:id', async (req, res, next) => {
       return res.status(404).json({ error: 'Doctor not found' });
     }
     
+    const targetSrNo = parseInt(currentDoctors[index]['sr.no']) || parseInt(id) || (index + 1);
     const updated = {
       ...currentDoctors[index],
       ...req.body,
-      name: cleanDoctorName(req.body.name || currentDoctors[index].name, currentDoctors[index]['sr.no']),
+      name: cleanDoctorName(req.body.name || currentDoctors[index].name, targetSrNo),
       id: currentDoctors[index].id
     };
 
     currentDoctors[index] = updated;
     writeData('doctors', currentDoctors);
+
+    if (supabase) {
+      try {
+        const { error } = await supabase.from('bv_doctors').update({
+          Name: updated.name,
+          Qualification: updated.qualifications,
+          Description: updated.subSpeciality || updated.department,
+          Experience: updated.experience
+        }).eq('"sr.no"', targetSrNo);
+
+        if (error) console.error('Supabase update doctor error:', error.message);
+      } catch (sErr) {
+        console.error('Supabase update doctor exception:', sErr.message);
+      }
+    }
 
     res.json(updated);
   } catch (err) {
@@ -284,6 +346,9 @@ router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     const currentDoctors = await getAllDoctors();
+    const match = currentDoctors.find(d => d.id === id || String(d['sr.no']) === id);
+    const targetSrNo = match ? parseInt(match['sr.no']) : parseInt(id);
+
     const filtered = currentDoctors.filter(d => d.id !== id && String(d['sr.no']) !== id);
     
     if (filtered.length === currentDoctors.length) {
@@ -291,6 +356,16 @@ router.delete('/:id', async (req, res, next) => {
     }
 
     writeData('doctors', filtered);
+
+    if (supabase && targetSrNo && !isNaN(targetSrNo)) {
+      try {
+        const { error } = await supabase.from('bv_doctors').delete().eq('"sr.no"', targetSrNo);
+        if (error) console.error('Supabase delete doctor error:', error.message);
+      } catch (sErr) {
+        console.error('Supabase delete doctor exception:', sErr.message);
+      }
+    }
+
     res.json({ success: true, message: `Doctor ${id} deleted` });
   } catch (err) {
     next(err);
