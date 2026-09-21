@@ -2143,5 +2143,18 @@
     "featured": "Yes",
     "status": "Active",
     "image": "https://ohaokdfkdafgpwccauos.supabase.co/storage/v1/object/public/Doctors_Imeges/Dr.%20Chasanal%20Rathod.png"
+  },
+  {
+    "id": "doc-166",
+    "sr.no": 166,
+    "name": "Dr. Devendra Patel",
+    "qualifications": "MBBS, MS (General Surgery), M.Ch (Neurosurgery)",
+    "department": "Orthopedics",
+    "subSpeciality": "Senior Consultant Neurosurgeon & Spine Specialist",
+    "experience": "18 years+",
+    "availability": "Available",
+    "featured": "No",
+    "status": "Active",
+    "image": "/doctor2.png"
   }
 ]

@@ -18,3 +18,12 @@ lerna-debug.log*
 .vscode/
 .idea/
 .DS_Store
+
+# Runtime database JSON data storage
+src/data/*.json
+
+# Scratch and temporary files
+scratch/
+*.tmp
+.cache/
+

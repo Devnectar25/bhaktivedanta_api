@@ -12,6 +12,7 @@ import specialitiesRouter from './routes/specialities.js';
 import eventsRouter from './routes/events.js';
 import testimonialsRouter from './routes/testimonials.js';
 import newsRouter from './routes/news.js';
+import blogsRouter from './routes/blogs.js';
 import galleryRouter from './routes/gallery.js';
 import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
@@ -116,6 +117,7 @@ app.use('/api/specialities', specialitiesRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/news', newsRouter);
+app.use('/api/blogs', blogsRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/queries', queriesRouter);
 app.use('/api/subadmins', subadminsRouter);
@@ -154,9 +156,29 @@ app.use((err, req, res, next) => {
 
 // Start listening
 if (!process.env.VERCEL) {
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`CORS allowed origins: ${FRONTEND_URL}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`Port ${PORT} is busy, retrying listener...`);
+      setTimeout(() => {
+        try {
+          server.close();
+        } catch (e) { }
+        server.listen(PORT);
+      }, 1000);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+
+  process.once('SIGUSR2', () => {
+    server.close(() => {
+      process.kill(process.pid, 'SIGUSR2');
+    });
   });
 }
 
