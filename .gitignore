@@ -27,6 +27,7 @@ Thumbs.db
 data/*.json
 data/*.pdf
 src/data/*.json
+data/*.json
 
 # Scratch and temporary files
 scratch/
