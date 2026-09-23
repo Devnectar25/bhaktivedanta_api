@@ -742,28 +742,7 @@
       "General Surgery & Wound Healing Biologics"
     ]
   },
-  "customPrograms": [
-    {
-      "id": "edu-prog-1789992131641",
-      "title": "abcd",
-      "slug": "abcd",
-      "category": "Allied Health Science",
-      "badge": "Accredited",
-      "duration": "1 Year",
-      "seats": 2,
-      "eligibility": "cghjknmbvghjkm,nvghjknm",
-      "overview": "hvgfgyhjnbvgfhjnbvgfh",
-      "curriculum": [],
-      "faculties": [],
-      "highlights": [],
-      "contactInfo": {
-        "phone": "022 2845 8000",
-        "email": "education@bhaktivedantahospital.com"
-      },
-      "status": "Active",
-      "createdAt": "2026-09-21T12:02:11.641Z"
-    }
-  ],
+  "customPrograms": [],
   "digitalLibrary": {
     "image": "https://pub-a3f5d293f21c42ebb873059f3d9e05a3.r2.dev/upload/gallery/library.jpg",
     "title": "Digital Library",
