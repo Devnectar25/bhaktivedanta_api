@@ -4,6 +4,9 @@ node_modules/
 # Environment Variables
 .env
 .env*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
 logs
@@ -14,7 +17,23 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Editor files
+# Editor & OS files
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
+
+# Runtime database storage & generated buffers
+data/*.json
+data/*.pdf
+src/data/*.json
+data/*.json
+
+# Scratch and temporary files
+scratch/
+*.tmp
+*.temp
+.cache/
+.eslintcache
+
+

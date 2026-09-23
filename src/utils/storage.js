@@ -51,6 +51,7 @@ export function readData(key) {
     else if (key === 'events') seedData = seeds.defaultEvents;
     else if (key === 'testimonials') seedData = seeds.defaultTestimonials;
     else if (key === 'news') seedData = seeds.defaultNews;
+    else if (key === 'blogs') seedData = seeds.defaultBlogs;
     else if (key === 'gallery') seedData = seeds.defaultGallery;
     else if (key === 'queries') seedData = seeds.defaultQueries;
     else if (key === 'subadmins') seedData = seeds.defaultSubAdmins;
@@ -64,6 +65,7 @@ export function readData(key) {
     else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
     else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
     else if (key === 'about_us_state') seedData = defaultAboutUsData;
+    else if (key === 'statutory_compliances_state') seedData = seeds.defaultStatutoryCompliancesState;
 
     // Write seed data
     try {
@@ -119,6 +121,7 @@ export function initializeDatabase() {
     'events',
     'testimonials',
     'news',
+    'blogs',
     'gallery',
     'queries',
     'subadmins',
@@ -130,7 +133,8 @@ export function initializeDatabase() {
     'career_jobs',
     'career_applications',
     'education_research_state',
-    'dnb_inquiries'
+    'dnb_inquiries',
+    'statutory_compliances_state'
   ];
 
   for (const entity of entities) {

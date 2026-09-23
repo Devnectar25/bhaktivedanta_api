@@ -1,51 +1,51 @@
 export const defaultDoctors = [
   {
-    id: 'd1',
-    name: 'Dr. Anand Sharma',
-    qualifications: 'MBBS, MD (Cardiology)',
-    department: 'Cardiology',
-    subSpeciality: 'Interventional Cardiology',
+    id: 'doc-1',
+    name: 'Dr. Kshama Shah',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Head of Department & Consultant Anesthesiologist',
+    experience: '25 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor1.png'
+  },
+  {
+    id: 'doc-2',
+    name: 'Dr. Shilpa Mangesh Tiwaskar',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
+    experience: '23 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor2.png'
+  },
+  {
+    id: 'doc-3',
+    name: 'Dr. Jyotsna Karande',
+    qualifications: 'MBBS, DA, BLS',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
+    experience: '16 Years',
+    availability: 'Available',
+    featured: 'Yes',
+    status: 'Active',
+    image: '/doctor3.png'
+  },
+  {
+    id: 'doc-4',
+    name: 'Dr. Vivek Kulkarni',
+    qualifications: 'MBBS, MD (Anesthesia)',
+    department: 'Anesthesiology',
+    subSpeciality: 'Consultant Anesthesiologist',
     experience: '15 Years',
     availability: 'Available',
     featured: 'Yes',
     status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANPEj_KoNMPpIwdzuCD7lYGdAKEkyCWh6bTaQK8MJs_R4JVyJRsEBiMWrTQzDsV176cPtU3yccFuudW15cKMl437nzqw5tE9A3l9ZZfasQ9SJx96vYIX962IHbmK_xdfUiAohF8eavUhpXeVEW2mV78f5ATYHcgBnBWY8_UJEKzHq4bco6SZZlKcz-S4YZpKBmO1txtux3VF6wZXMQIop-vEphp1s5HxLkKU8I_EDCo-tkZYHkrT4Ut51mTZnyQ3xI9td7l-2oX0w'
-  },
-  {
-    id: 'd2',
-    name: 'Dr. Sunita Mehta',
-    qualifications: 'MBBS, DCH (Pediatrics)',
-    department: 'Pediatrics',
-    subSpeciality: 'Neonatology',
-    experience: '12 Years',
-    availability: 'Busy',
-    featured: 'No',
-    status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCctp6yfJXf7-1rFuObb0Ki2WL_4iCXFdr-eeffAgsiEZprEBPHOITEx4lJ0ZWTsXptmVimAX02smmRNrEPwmNtaF7dixkBM6uBPqP8VS4iQ1ABwARcVsAB3sC4yikrBK00EVlJ3DccFWO6eFC2IHJGB1YA9CQ6sVwNk8ddW7A75POQ8GrGXGUUMUnB0J3eAMfa1R1DjZW9haVx1D0xDPuDGFDW2QHuIrzO0i6ewLX5xojfAXkHV34sQ8BZn_GbfXZfFQJlz1oxUg'
-  },
-  {
-    id: 'd3',
-    name: 'Dr. Rajesh Kulkarni',
-    qualifications: 'MS (Orthopedics)',
-    department: 'Orthopedics',
-    subSpeciality: 'Spine Surgery',
-    experience: '20 Years',
-    availability: 'Available',
-    featured: 'Yes',
-    status: 'Active',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBdmg0ndil9ygADvQlpCQmfNoIcNC45P9w5ROaS-TN6viovJ7ua3O24RzZYzLfTVj9t96-3KNF1OfDuw9ScwW29oKTg3cDqGJ4XgHANO7_tJ0x47COi4X5JOnr8kR-VGei69sIsz0FIQcDJ48vjI1UfIy73TDBjHz5rul75v0EVd33BlzU1VhW38IAadSKb-eDGGK5iV6PNrasvuzfmR1S5QdoIi6e1BhwOb_6H2DlyZ1uprGGWWu6nsM4ehW5RgyfYYdqFbVXbass'
-  },
-  {
-    id: 'd4',
-    name: 'Dr. Priya Verma',
-    qualifications: 'MD (Oncology)',
-    department: 'Oncology',
-    subSpeciality: 'Radiation Therapy',
-    experience: '8 Years',
-    availability: 'On Leave',
-    featured: 'No',
-    status: 'Inactive',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA_HdwQUWFnwru1ZmIwrY4NBuEZ0_fKr5D2deJZ2IpoYbAYg8C4xB2wArEBfoFdTL42_089Du30ABxXwFERzM71sgFeUmXijTwlFYzt07mbY49JGxol4KT8g8LwA8x7U9LoroDDUSoWvOEDUCJOUurArP91HcNw8PpdVaUbas3sOrq4P9ElWiH6GLam51S89hffsSD3FX55tCwiZ9Dmrtj7AdfVNDNi_Hl3-TXWzuPP3qVVCCeahAhDc7T16QVNGY30Ls65W5QROBE'
+    image: '/doctor4.png'
   }
 ];
 
@@ -280,6 +280,78 @@ export const defaultAppErrors = [
     details: 'Database table bv_doctors requires verification in Supabase dashboard.'
   }
 ];
+
+export const defaultBlogs = [
+  {
+    id: 'blog-1',
+    title: 'Advancements in Robotic Cardiac Surgery: A New Era of Precision',
+    slug: 'advancements-in-robotic-cardiac-surgery',
+    category: 'Cardiology',
+    author: 'Dr. Anand Sharma',
+    authorRole: 'Senior Consultant Cardiologist',
+    date: 'September 15, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800',
+    summary: 'Discover how robotic-assisted cardiac procedures minimize recovery time, enhance surgical precision, and improve patient outcomes at Bhaktivedanta Hospital.',
+    content: '<p>Robotic surgery represents one of the most remarkable breakthroughs in modern cardiovascular medicine. At Bhaktivedanta Hospital & Research Institute, our cardiology and cardiothoracic surgery teams leverage state-of-the-art robotic platforms to perform complex heart valve repairs, coronary artery bypass procedures, and congenital deficit corrections with unmatched accuracy.</p><h3>Key Benefits of Robotic Cardiac Surgery:</h3><ul><li><strong>Minimal Invasiveness:</strong> Tiny keyhole incisions instead of traditional sternotomy.</li><li><strong>Faster Recovery:</strong> Patients often resume daily activities in 1-2 weeks compared to 6-8 weeks for traditional open heart surgery.</li><li><strong>Reduced Blood Loss:</strong> Enhanced 3D high-definition visualization allows ultra-precise tissue handling.</li></ul><p>Our dedicated team of cardiovascular surgeons remains committed to offering world-class, compassionate heart care to all our patients.</p>',
+    tags: ['Cardiology', 'Robotic Surgery', 'Heart Care', 'Medical Technology'],
+    status: 'Published',
+    views: 1240,
+    created_at: '2026-09-15T10:00:00.000Z'
+  },
+  {
+    id: 'blog-2',
+    title: 'Holistic Healing: Combining Modern Medical Science with Spiritual Care',
+    slug: 'holistic-healing-modern-medicine-spiritual-care',
+    category: 'Spiritual Care',
+    author: 'Spiritual Care Department',
+    authorRole: 'Bhaktivedanta Institute',
+    date: 'September 10, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800',
+    summary: 'Exploring how integrating spiritual support, meditation, and compassionate care alongside advanced clinical treatments leads to faster physical and emotional recovery.',
+    content: '<p>At Bhaktivedanta Hospital, we believe true healing encompasses the body, mind, and spirit. Clinical research increasingly confirms that emotional resilience and spiritual peace play a crucial role in patient recovery and post-operative outcomes.</p><h3>Our Integrative Care Approach:</h3><p>Through spiritual counseling, holy chants, soothing music therapy, and customized diet planning, our Spiritual Care department nurtures patients during their stay, reducing anxiety and strengthening their mental well-being.</p>',
+    tags: ['Spiritual Care', 'Holistic Health', 'Patient Well-being', 'Wellness'],
+    status: 'Published',
+    views: 890,
+    created_at: '2026-09-10T09:30:00.000Z'
+  },
+  {
+    id: 'blog-3',
+    title: 'Preventive Oncology: Early Screening and Lifestyle Modifications',
+    slug: 'preventive-oncology-early-screening-lifestyle',
+    category: 'Oncology',
+    author: 'Dr. Rajesh Patel',
+    authorRole: 'Head of Surgical Oncology',
+    date: 'September 05, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
+    summary: 'Understanding the importance of annual health checkups, tumor marker screenings, and proactive dietary habits in cancer prevention.',
+    content: '<p>Early detection remains the single most powerful tool in winning the fight against cancer. Screening tests such as mammograms, Pap smears, colonoscopies, and low-dose CT scans can identify pre-cancerous changes or early-stage tumors before symptoms arise.</p><p>We encourage adults above the age of 40 to undergo regular preventive cancer risk assessments at our Comprehensive Cancer Care Center.</p>',
+    tags: ['Oncology', 'Preventive Health', 'Cancer Screening', 'Awareness'],
+    status: 'Published',
+    views: 1560,
+    created_at: '2026-09-05T14:15:00.000Z'
+  },
+  {
+    id: 'blog-4',
+    title: 'Childhood Immunization Guide: Protecting Your Little Ones',
+    slug: 'childhood-immunization-guide-protecting-kids',
+    category: 'Pediatrics',
+    author: 'Dr. Sneha Verma',
+    authorRole: 'Consultant Pediatrician',
+    date: 'August 28, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1cdb?auto=format&fit=crop&q=80&w=800',
+    summary: 'A comprehensive vaccination schedule for newborns, infants, and adolescents to safeguard against preventable infectious diseases.',
+    content: '<p>Vaccines train your child immune system to recognize and fight harmful pathogens. Keeping up with recommended vaccination timelines ensures lifelong protection against diseases like polio, measles, hepatitis, and tetanus.</p>',
+    tags: ['Pediatrics', 'Vaccination', 'Child Health', 'Immunization'],
+    status: 'Draft',
+    views: 320,
+    created_at: '2026-08-28T11:45:00.000Z'
+  }
+];
+
 
 export const defaultSpecialitiesState = {
   view: 'listing',
@@ -678,301 +750,301 @@ export const defaultPatientCornerState = {
       createdAt: "2026-08-01T10:00:00.000Z",
       updatedAt: "2026-09-15T10:00:00.000Z",
       tabs: [
+        {
+          id: "tab-pc3-1",
+          title: "List of Corporates / TPA's / Insurance Companies",
+          type: "accordion",
+          order: 1,
+          enabled: true,
+          content: "<p>Bhaktivedanta Hospital & Research Institute is empanelled with leading corporate entities, national and private health insurance companies, and Third Party Administrators (TPAs) to facilitate hassle-free cashless hospitalization and credit services for patients and their beneficiaries.</p>",
+          steps: [],
+          items: [],
+          cards: [],
+          galleryImages: [],
+          faqs: [],
+          logos: [],
+          sections: [
             {
-                  id: "tab-pc3-1",
-                  title: "List of Corporates / TPA's / Insurance Companies",
-                  type: "accordion",
-                  order: 1,
+              id: "sec-empanelled-accordion",
+              title: "Empanelled Corporate / TPA / Insurance Companies",
+              type: "accordion",
+              order: 1,
+              enabled: true,
+              content: "",
+              accordionItems: [
+                {
+                  id: "acc-item-corp",
+                  title: "Corporates",
+                  contentType: "logo_grid",
                   enabled: true,
-                  content: "<p>Bhaktivedanta Hospital & Research Institute is empanelled with leading corporate entities, national and private health insurance companies, and Third Party Administrators (TPAs) to facilitate hassle-free cashless hospitalization and credit services for patients and their beneficiaries.</p>",
-                  steps: [],
-                  items: [],
-                  cards: [],
-                  galleryImages: [],
-                  faqs: [],
-                  logos: [],
-                  sections: [
-                        {
-                              id: "sec-empanelled-accordion",
-                              title: "Empanelled Corporate / TPA / Insurance Companies",
-                              type: "accordion",
-                              order: 1,
-                              enabled: true,
-                              content: "",
-                              accordionItems: [
-                                    {
-                                          id: "acc-item-corp",
-                                          title: "Corporates",
-                                          contentType: "logo_grid",
-                                          enabled: true,
-                                          logos: [
-                                                {
-                                                      id: "logo-c1",
-                                                      name: "Tata Consultancy Services (TCS)",
-                                                      imageUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=300&auto=format&fit=crop&q=80",
-                                                      order: 1,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-c2",
-                                                      name: "Larsen & Toubro (L&T)",
-                                                      imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&auto=format&fit=crop&q=80",
-                                                      order: 2,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-c3",
-                                                      name: "Reliance Industries Limited",
-                                                      imageUrl: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=300&auto=format&fit=crop&q=80",
-                                                      order: 3,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-c4",
-                                                      name: "Mahindra & Mahindra",
-                                                      imageUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=300&auto=format&fit=crop&q=80",
-                                                      order: 4,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-c5",
-                                                      name: "Godrej Group",
-                                                      imageUrl: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&auto=format&fit=crop&q=80",
-                                                      order: 5,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-c6",
-                                                      name: "Infosys Limited",
-                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
-                                                      order: 6,
-                                                      enabled: true
-                                                }
-                                          ]
-                                    },
-                                    {
-                                          id: "acc-item-ins",
-                                          title: "Insurance Company",
-                                          contentType: "logo_grid",
-                                          enabled: true,
-                                          logos: [
-                                                {
-                                                      id: "logo-i1",
-                                                      name: "Star Health and Allied Insurance",
-                                                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
-                                                      order: 1,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i2",
-                                                      name: "HDFC ERGO General Insurance",
-                                                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
-                                                      order: 2,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i3",
-                                                      name: "ICICI Lombard General Insurance",
-                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
-                                                      order: 3,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i4",
-                                                      name: "Bajaj Allianz General Insurance",
-                                                      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&auto=format&fit=crop&q=80",
-                                                      order: 4,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i5",
-                                                      name: "Niva Bupa Health Insurance",
-                                                      imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&auto=format&fit=crop&q=80",
-                                                      order: 5,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i6",
-                                                      name: "National Insurance Company",
-                                                      imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&auto=format&fit=crop&q=80",
-                                                      order: 6,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i7",
-                                                      name: "The New India Assurance Co. Ltd.",
-                                                      imageUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=300&auto=format&fit=crop&q=80",
-                                                      order: 7,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i8",
-                                                      name: "Oriental Insurance Company",
-                                                      imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&auto=format&fit=crop&q=80",
-                                                      order: 8,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-i9",
-                                                      name: "United India Insurance Co.",
-                                                      imageUrl: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=300&auto=format&fit=crop&q=80",
-                                                      order: 9,
-                                                      enabled: true
-                                                }
-                                          ]
-                                    },
-                                    {
-                                          id: "acc-item-tpa",
-                                          title: "TPA's (Third Party Administrator)",
-                                          contentType: "logo_grid",
-                                          enabled: true,
-                                          logos: [
-                                                {
-                                                      id: "logo-t1",
-                                                      name: "Medi Assist Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&auto=format&fit=crop&q=80",
-                                                      order: 1,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-t2",
-                                                      name: "Paramount Health Services & Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&auto=format&fit=crop&q=80",
-                                                      order: 2,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-t3",
-                                                      name: "MDIndia Health Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=300&auto=format&fit=crop&q=80",
-                                                      order: 3,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-t4",
-                                                      name: "Vidal Health Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
-                                                      order: 4,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-t5",
-                                                      name: "Heritage Health Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
-                                                      order: 5,
-                                                      enabled: true
-                                                },
-                                                {
-                                                      id: "logo-t6",
-                                                      name: "Raksha Health Insurance TPA",
-                                                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
-                                                      order: 6,
-                                                      enabled: true
-                                                }
-                                          ]
-                                    }
-                              ],
-                              items: [],
-                              steps: [],
-                              cards: [],
-                              galleryImages: [],
-                              faqs: [],
-                              settings: {}
-                        }
+                  logos: [
+                    {
+                      id: "logo-c1",
+                      name: "Tata Consultancy Services (TCS)",
+                      imageUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=300&auto=format&fit=crop&q=80",
+                      order: 1,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-c2",
+                      name: "Larsen & Toubro (L&T)",
+                      imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&auto=format&fit=crop&q=80",
+                      order: 2,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-c3",
+                      name: "Reliance Industries Limited",
+                      imageUrl: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=300&auto=format&fit=crop&q=80",
+                      order: 3,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-c4",
+                      name: "Mahindra & Mahindra",
+                      imageUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=300&auto=format&fit=crop&q=80",
+                      order: 4,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-c5",
+                      name: "Godrej Group",
+                      imageUrl: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&auto=format&fit=crop&q=80",
+                      order: 5,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-c6",
+                      name: "Infosys Limited",
+                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                      order: 6,
+                      enabled: true
+                    }
                   ]
-            },
-            {
-                  id: "tab-pc3-2",
-                  title: "Cashless Claim Process",
-                  type: "steps",
-                  order: 2,
+                },
+                {
+                  id: "acc-item-ins",
+                  title: "Insurance Company",
+                  contentType: "logo_grid",
                   enabled: true,
-                  content: "",
-                  steps: [
-                        {
-                              step: 1,
-                              title: "Pre-Authorization Request",
-                              description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
-                        },
-                        {
-                              step: 2,
-                              title: "Insurer Approval",
-                              description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
-                        },
-                        {
-                              step: 3,
-                              title: "Final Bill Settlement",
-                              description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
-                        }
-                  ],
-                  items: [],
-                  cards: [],
-                  galleryImages: [],
-                  faqs: [],
-                  sections: [
-                        {
-                              id: "sec-cashless-steps",
-                              title: "Cashless Claim Workflow",
-                              type: "steps",
-                              order: 1,
-                              enabled: true,
-                              content: "",
-                              items: [],
-                              steps: [
-                                    {
-                                          step: 1,
-                                          title: "Pre-Authorization Request",
-                                          description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
-                                    },
-                                    {
-                                          step: 2,
-                                          title: "Insurer Approval",
-                                          description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
-                                    },
-                                    {
-                                          step: 3,
-                                          title: "Final Bill Settlement",
-                                          description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
-                                    }
-                              ],
-                              cards: [],
-                              galleryImages: [],
-                              faqs: [],
-                              settings: {}
-                        }
+                  logos: [
+                    {
+                      id: "logo-i1",
+                      name: "Star Health and Allied Insurance",
+                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
+                      order: 1,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i2",
+                      name: "HDFC ERGO General Insurance",
+                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
+                      order: 2,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i3",
+                      name: "ICICI Lombard General Insurance",
+                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                      order: 3,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i4",
+                      name: "Bajaj Allianz General Insurance",
+                      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&auto=format&fit=crop&q=80",
+                      order: 4,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i5",
+                      name: "Niva Bupa Health Insurance",
+                      imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&auto=format&fit=crop&q=80",
+                      order: 5,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i6",
+                      name: "National Insurance Company",
+                      imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&auto=format&fit=crop&q=80",
+                      order: 6,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i7",
+                      name: "The New India Assurance Co. Ltd.",
+                      imageUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=300&auto=format&fit=crop&q=80",
+                      order: 7,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i8",
+                      name: "Oriental Insurance Company",
+                      imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&auto=format&fit=crop&q=80",
+                      order: 8,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-i9",
+                      name: "United India Insurance Co.",
+                      imageUrl: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=300&auto=format&fit=crop&q=80",
+                      order: 9,
+                      enabled: true
+                    }
                   ]
-            },
-            {
-                  id: "tab-pc3-3",
-                  title: "TPA & Helpdesk Assistance",
-                  type: "rich_text",
-                  order: 3,
+                },
+                {
+                  id: "acc-item-tpa",
+                  title: "TPA's (Third Party Administrator)",
+                  contentType: "logo_grid",
                   enabled: true,
-                  content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
-                  steps: [],
-                  items: [],
-                  cards: [],
-                  galleryImages: [],
-                  faqs: [],
-                  sections: [
-                        {
-                              id: "sec-cashless-overview",
-                              title: "TPA Desk Assistance",
-                              type: "rich_text",
-                              order: 1,
-                              enabled: true,
-                              content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
-                              items: [],
-                              steps: [],
-                              cards: [],
-                              galleryImages: [],
-                              faqs: [],
-                              settings: {}
-                        }
+                  logos: [
+                    {
+                      id: "logo-t1",
+                      name: "Medi Assist Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&auto=format&fit=crop&q=80",
+                      order: 1,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-t2",
+                      name: "Paramount Health Services & Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&auto=format&fit=crop&q=80",
+                      order: 2,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-t3",
+                      name: "MDIndia Health Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=300&auto=format&fit=crop&q=80",
+                      order: 3,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-t4",
+                      name: "Vidal Health Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=300&auto=format&fit=crop&q=80",
+                      order: 4,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-t5",
+                      name: "Heritage Health Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=80",
+                      order: 5,
+                      enabled: true
+                    },
+                    {
+                      id: "logo-t6",
+                      name: "Raksha Health Insurance TPA",
+                      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=300&auto=format&fit=crop&q=80",
+                      order: 6,
+                      enabled: true
+                    }
                   ]
+                }
+              ],
+              items: [],
+              steps: [],
+              cards: [],
+              galleryImages: [],
+              faqs: [],
+              settings: {}
             }
+          ]
+        },
+        {
+          id: "tab-pc3-2",
+          title: "Cashless Claim Process",
+          type: "steps",
+          order: 2,
+          enabled: true,
+          content: "",
+          steps: [
+            {
+              step: 1,
+              title: "Pre-Authorization Request",
+              description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
+            },
+            {
+              step: 2,
+              title: "Insurer Approval",
+              description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
+            },
+            {
+              step: 3,
+              title: "Final Bill Settlement",
+              description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
+            }
+          ],
+          items: [],
+          cards: [],
+          galleryImages: [],
+          faqs: [],
+          sections: [
+            {
+              id: "sec-cashless-steps",
+              title: "Cashless Claim Workflow",
+              type: "steps",
+              order: 1,
+              enabled: true,
+              content: "",
+              items: [],
+              steps: [
+                {
+                  step: 1,
+                  title: "Pre-Authorization Request",
+                  description: "Submit TPA / Health Insurance card and pre-authorization request form 48 hours prior for planned admission, or within 24 hours of emergency admission."
+                },
+                {
+                  step: 2,
+                  title: "Insurer Approval",
+                  description: "TPA/Insurance provider verifies coverage and sends initial approval amount."
+                },
+                {
+                  step: 3,
+                  title: "Final Bill Settlement",
+                  description: "Upon discharge, final bill and medical records are sent to TPA for final authorization."
+                }
+              ],
+              cards: [],
+              galleryImages: [],
+              faqs: [],
+              settings: {}
+            }
+          ]
+        },
+        {
+          id: "tab-pc3-3",
+          title: "TPA & Helpdesk Assistance",
+          type: "rich_text",
+          order: 3,
+          enabled: true,
+          content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
+          steps: [],
+          items: [],
+          cards: [],
+          galleryImages: [],
+          faqs: [],
+          sections: [
+            {
+              id: "sec-cashless-overview",
+              title: "TPA Desk Assistance",
+              type: "rich_text",
+              order: 1,
+              enabled: true,
+              content: "<p>The dedicated TPA and Cashless Insurance Helpdesk at Bhaktivedanta Hospital is operational 24/7 on Ground Floor. Our team assists patients with query resolution, pre-authorization, query documentation, and final settlement with insurance providers.</p>",
+              items: [],
+              steps: [],
+              cards: [],
+              galleryImages: [],
+              faqs: [],
+              settings: {}
+            }
+          ]
+        }
       ]
-},
+    },
     {
       id: 'pc-4',
       categoryId: 'cat-discharge',
@@ -2286,3 +2358,35 @@ export const defaultEducationResearchState = {
 };
 
 export const defaultDnbInquiries = [];
+
+export const defaultStatutoryCompliancesState = {
+  compliances: [
+    {
+      id: 'comp-1',
+      title: 'Coronary Stent Prices',
+      icon: 'HeartPulse',
+      pdfUrl: '',
+      order: 1,
+      updatedAt: new Date().toISOString()
+    },
+    {
+      id: 'comp-2',
+      title: 'Knee Implant Prices',
+      icon: 'Bone',
+      pdfUrl: '',
+      order: 2,
+      updatedAt: new Date().toISOString()
+    },
+    {
+      id: 'comp-3',
+      title: 'Indigent and Weaker Section Category',
+      icon: 'BedDouble',
+      pdfUrl: '',
+      order: 3,
+      updatedAt: new Date().toISOString()
+    }
+  ],
+  siteMapPdfUrl: '',
+  siteMapFileName: '',
+  updatedAt: new Date().toISOString()
+};
