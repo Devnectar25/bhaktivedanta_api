@@ -46,6 +46,182 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+// Helper to sync all sections as individual rows in bv_education_research_state and admin_education_programs
+async function syncSectionsAndProgramsToDb(payload) {
+  if (!supabase || !payload || typeof payload !== 'object') return;
+  try {
+    const sectionKeys = [
+      'dnbProgram', 'seatsMatrix', 'specialities', 'facilities',
+      'digitalLibrary', 'cmeList2023', 'testimonials', 'research',
+      'holisticProgram', 'nursingProgram', 'cmeProgram', 'cneProgram',
+      'spiritualCareCourse', 'clinicalResearchCourse', 'clinicalTrials',
+      'ethicsCommittee', 'publications', 'governmentAccreditation'
+    ];
+
+    const batchUpserts = [];
+    for (const key of sectionKeys) {
+      if (payload[key] !== undefined) {
+        batchUpserts.push({
+          id: key,
+          state_data: payload[key],
+          updated_at: new Date().toISOString()
+        });
+      }
+    }
+
+    if (batchUpserts.length > 0) {
+      await supabase.from('bv_education_research_state').upsert(batchUpserts);
+    }
+
+    // Sync corresponding program rows to admin_education_programs
+    if (payload.nursingProgram) {
+      const n = payload.nursingProgram;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'nursing-program',
+        title: n.title || 'Rosalind S. Teton School of Nursing',
+        slug: 'nursing-program',
+        category: 'Nursing Education',
+        badge: n.badge || 'Recognized by MNC & INC',
+        duration: n.duration || '3 Years',
+        seats: n.intakeSeats || 30,
+        overview: n.overview || '',
+        contact_info: n.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.cmeProgram) {
+      const c = payload.cmeProgram;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'cme',
+        title: c.title || 'Continuing Medical Education (CME)',
+        slug: 'cme',
+        category: 'Medical Education',
+        badge: c.accreditationBadge || 'MMC Accredited',
+        duration: 'Continuous Programs',
+        seats: 150,
+        overview: c.overview || '',
+        contact_info: c.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.cneProgram) {
+      const c = payload.cneProgram;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'cne',
+        title: c.title || 'Continuing Nursing Education (CNE)',
+        slug: 'cne',
+        category: 'Nursing Education',
+        badge: c.accreditationBadge || 'MNC Points',
+        duration: 'Modular Workshops',
+        seats: 100,
+        overview: c.overview || '',
+        contact_info: c.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.spiritualCareCourse) {
+      const s = payload.spiritualCareCourse;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'spiritual-care-course',
+        title: s.title || 'Spiritual Care Certificate Course',
+        slug: 'spiritual-care-course',
+        category: 'Holistic Healthcare',
+        badge: 'Since 2010',
+        duration: s.duration || '6 Months',
+        seats: 30,
+        overview: s.overview || '',
+        contact_info: s.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.clinicalResearchCourse) {
+      const cr = payload.clinicalResearchCourse;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'clinical-research-course',
+        title: cr.title || 'Post Graduate Certificate in Clinical Research (PGCR)',
+        slug: 'clinical-research-course',
+        category: 'Clinical Research',
+        badge: '15 Months',
+        duration: cr.duration || '15 Months',
+        seats: 25,
+        overview: cr.overview || '',
+        contact_info: cr.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.clinicalTrials) {
+      const ct = payload.clinicalTrials;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'clinical-trials',
+        title: ct.title || 'Clinical Trials Centre of Excellence',
+        slug: 'clinical-trials',
+        category: 'Medical Research',
+        badge: 'NABH Accredited',
+        duration: 'Phase II - IV',
+        seats: 0,
+        overview: ct.overview || '',
+        contact_info: ct.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.ethicsCommittee) {
+      const ec = payload.ethicsCommittee;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'ethics-committee',
+        title: ec.title || 'Institutional Ethics Committees (IEC)',
+        slug: 'ethics-committee',
+        category: 'Regulatory & Ethics',
+        badge: 'CDSCO & DHR',
+        duration: 'Statutory Body',
+        seats: 0,
+        overview: ec.overview || '',
+        contact_info: ec.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.publications) {
+      const pb = payload.publications;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'publications',
+        title: pb.title || 'Publications & Research Output',
+        slug: 'publications',
+        category: 'Medical Research',
+        badge: 'Indexed Theses',
+        duration: 'Annual Compendium',
+        seats: 0,
+        overview: pb.overview || '',
+        contact_info: pb.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    if (payload.governmentAccreditation) {
+      const ga = payload.governmentAccreditation;
+      await supabase.from('admin_education_programs').upsert({
+        id: 'government-accreditation',
+        title: ga.title || 'Government & National Accreditations',
+        slug: 'government-accreditation',
+        category: 'Accreditation',
+        badge: 'Govt Approved',
+        duration: 'Permanent Accreditations',
+        seats: 0,
+        overview: ga.overview || '',
+        contact_info: ga.contactInfo || {},
+        updated_at: new Date().toISOString()
+      });
+    }
+  } catch (err) {
+    console.warn('[Supabase sync error]:', err.message);
+  }
+}
+
 // PUT update education & medical research state in database
 router.put('/', async (req, res, next) => {
   try {
@@ -69,7 +245,7 @@ router.put('/', async (req, res, next) => {
       console.warn('[PostgreSQL] Could not update bv_education_research_state:', pgErr.message);
     }
 
-    // 3. Optional Supabase client fallback
+    // 3. Persist to Supabase client (both primary row and individual section rows)
     if (supabase) {
       try {
         await supabase
@@ -79,6 +255,8 @@ router.put('/', async (req, res, next) => {
             state_data: payload,
             updated_at: new Date().toISOString()
           });
+
+        await syncSectionsAndProgramsToDb(payload);
       } catch (err) { }
     }
 
@@ -104,6 +282,19 @@ router.get('/section/:sectionKey', async (req, res, next) => {
         state = pgRes.rows[0].state_data;
       }
     } catch (e) { }
+
+    if (!state && supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('bv_education_research_state')
+          .select('state_data')
+          .eq('id', 'primary')
+          .single();
+        if (!error && data?.state_data) {
+          state = data.state_data;
+        }
+      } catch (err) { }
+    }
 
     if (!state) {
       state = readData('education_research_state') || {};
@@ -133,6 +324,19 @@ router.put('/section/:sectionKey', async (req, res, next) => {
       }
     } catch (e) { }
 
+    if (!currentState && supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('bv_education_research_state')
+          .select('state_data')
+          .eq('id', 'primary')
+          .single();
+        if (!error && data?.state_data) {
+          currentState = data.state_data;
+        }
+      } catch (err) { }
+    }
+
     if (!currentState) {
       currentState = readData('education_research_state') || {};
     }
@@ -152,6 +356,20 @@ router.put('/section/:sectionKey', async (req, res, next) => {
         [JSON.stringify(updatedState)]
       );
     } catch (e) { }
+
+    if (supabase) {
+      try {
+        await supabase
+          .from('bv_education_research_state')
+          .upsert({
+            id: 'primary',
+            state_data: updatedState,
+            updated_at: new Date().toISOString()
+          });
+
+        await syncSectionsAndProgramsToDb(updatedState);
+      } catch (err) { }
+    }
 
     return res.json({
       success: true,
@@ -187,6 +405,8 @@ router.post('/reset', async (req, res, next) => {
             state_data: defaultData,
             updated_at: new Date().toISOString()
           });
+
+        await syncSectionsAndProgramsToDb(defaultData);
       } catch (err) { }
     }
 
@@ -214,6 +434,30 @@ router.get('/programs', async (req, res, next) => {
       }
     } catch (pgErr) {
       console.warn('[PostgreSQL] Could not read admin_education_programs:', pgErr.message);
+    }
+
+    // Supabase fallback
+    if (supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('admin_education_programs')
+          .select('*')
+          .order('created_at', { ascending: false });
+        if (!error && Array.isArray(data) && data.length > 0) {
+          return res.json(data);
+        }
+      } catch (err) { }
+
+      try {
+        const { data, error } = await supabase
+          .from('bv_education_research_state')
+          .select('state_data')
+          .eq('id', 'primary')
+          .single();
+        if (!error && Array.isArray(data?.state_data?.customPrograms) && data.state_data.customPrograms.length > 0) {
+          return res.json(data.state_data.customPrograms);
+        }
+      } catch (err) { }
     }
 
     const state = readData('education_research_state') || {};
@@ -268,7 +512,7 @@ router.post('/programs', async (req, res, next) => {
       createdAt: new Date().toISOString()
     };
 
-    // 1. Insert into PostgreSQL database table
+    // 1. Insert into PostgreSQL database table via direct query
     try {
       await query(
         `INSERT INTO admin_education_programs 
@@ -299,10 +543,37 @@ router.post('/programs', async (req, res, next) => {
       console.warn('[PostgreSQL] Could not insert into admin_education_programs:', pgErr.message);
     }
 
+    // 1b. Upsert into Supabase table admin_education_programs
+    if (supabase) {
+      try {
+        await supabase
+          .from('admin_education_programs')
+          .upsert({
+            id: newProgram.id,
+            title: newProgram.title,
+            slug: newProgram.slug,
+            category: newProgram.category,
+            badge: newProgram.badge,
+            duration: newProgram.duration,
+            seats: newProgram.seats,
+            eligibility: newProgram.eligibility,
+            overview: newProgram.overview,
+            curriculum: newProgram.curriculum,
+            faculties: newProgram.faculties,
+            highlights: newProgram.highlights,
+            contact_info: newProgram.contactInfo,
+            status: newProgram.status,
+            updated_at: new Date().toISOString()
+          });
+      } catch (sbErr) {
+        console.warn('[Supabase] Could not upsert admin_education_programs:', sbErr.message);
+      }
+    }
+
     // 2. Append to full state JSON & update bv_education_research_state
     const state = readData('education_research_state') || {};
     const existingList = state.customPrograms || [];
-    const updatedPrograms = [newProgram, ...existingList.filter(p => p.id !== id)];
+    const updatedPrograms = [newProgram, ...existingList.filter(p => p.id !== id && p.slug !== newProgram.slug)];
     const updatedState = {
       ...state,
       customPrograms: updatedPrograms
@@ -317,6 +588,18 @@ router.post('/programs', async (req, res, next) => {
         [JSON.stringify(updatedState)]
       );
     } catch (e) { }
+
+    if (supabase) {
+      try {
+        await supabase
+          .from('bv_education_research_state')
+          .upsert({
+            id: 'primary',
+            state_data: updatedState,
+            updated_at: new Date().toISOString()
+          });
+      } catch (e) { }
+    }
 
     return res.status(201).json({
       success: true,
@@ -340,6 +623,16 @@ router.delete('/programs/:id', async (req, res, next) => {
       console.warn('[PostgreSQL] Could not delete from admin_education_programs:', pgErr.message);
     }
 
+    // 1b. Delete from Supabase table
+    if (supabase) {
+      try {
+        await supabase
+          .from('admin_education_programs')
+          .delete()
+          .or(`id.eq.${id},slug.eq.${id}`);
+      } catch (sbErr) { }
+    }
+
     // 2. Remove from state JSON
     const state = readData('education_research_state') || {};
     const filtered = (state.customPrograms || []).filter(p => p.id !== id && p.slug !== id);
@@ -355,6 +648,18 @@ router.delete('/programs/:id', async (req, res, next) => {
         [JSON.stringify(updatedState)]
       );
     } catch (e) { }
+
+    if (supabase) {
+      try {
+        await supabase
+          .from('bv_education_research_state')
+          .upsert({
+            id: 'primary',
+            state_data: updatedState,
+            updated_at: new Date().toISOString()
+          });
+      } catch (e) { }
+    }
 
     return res.json({
       success: true,
@@ -410,6 +715,30 @@ router.get('/inquiries', async (req, res, next) => {
       }
     } catch (pgErr) {
       console.warn('[PostgreSQL] Could not read bv_education_inquiries:', pgErr.message);
+    }
+
+    // 1b. Fallback to Supabase
+    if (supabase) {
+      try {
+        let q = supabase.from('bv_education_inquiries').select('*').order('created_at', { ascending: false });
+        if (status) q = q.ilike('status', status);
+        if (specialty) q = q.ilike('program_name', `%${specialty}%`);
+        const { data, error } = await q;
+        if (!error && Array.isArray(data) && data.length > 0) {
+          const formatted = data.map(r => ({
+            id: r.id,
+            candidateName: r.candidate_name,
+            email: r.email,
+            phone: r.phone,
+            specialty: r.program_name,
+            neetScore: r.neet_score,
+            message: r.message,
+            status: r.status,
+            submittedDate: r.created_at
+          }));
+          return res.json(formatted);
+        }
+      } catch (err) { }
     }
 
     // 2. Fallback to local storage
@@ -470,6 +799,25 @@ router.post('/inquiries', async (req, res, next) => {
       console.warn('[PostgreSQL] Could not insert inquiry:', pgErr.message);
     }
 
+    // 1b. Save to Supabase
+    if (supabase) {
+      try {
+        await supabase
+          .from('bv_education_inquiries')
+          .upsert({
+            id: newInquiry.id,
+            candidate_name: newInquiry.candidateName,
+            email: newInquiry.email,
+            phone: newInquiry.phone,
+            program_name: newInquiry.specialty,
+            neet_score: newInquiry.neetScore,
+            message: newInquiry.message,
+            status: newInquiry.status,
+            created_at: newInquiry.submittedDate
+          });
+      } catch (err) { }
+    }
+
     // 2. Sync to local storage
     const inquiries = readData('dnb_inquiries') || [];
     const updated = [newInquiry, ...inquiries];
@@ -495,6 +843,15 @@ router.put('/inquiries/:id', async (req, res, next) => {
       console.warn('[PostgreSQL] Could not update inquiry status:', pgErr.message);
     }
 
+    if (supabase && updates.status) {
+      try {
+        await supabase
+          .from('bv_education_inquiries')
+          .update({ status: updates.status })
+          .eq('id', id);
+      } catch (err) { }
+    }
+
     const inquiries = readData('dnb_inquiries') || [];
     const index = inquiries.findIndex(i => i.id === id);
     if (index !== -1) {
@@ -518,6 +875,15 @@ router.delete('/inquiries/:id', async (req, res, next) => {
       await query(`DELETE FROM bv_education_inquiries WHERE id = $1;`, [id]);
     } catch (pgErr) {
       console.warn('[PostgreSQL] Could not delete inquiry:', pgErr.message);
+    }
+
+    if (supabase) {
+      try {
+        await supabase
+          .from('bv_education_inquiries')
+          .delete()
+          .eq('id', id);
+      } catch (err) { }
     }
 
     const inquiries = readData('dnb_inquiries') || [];
