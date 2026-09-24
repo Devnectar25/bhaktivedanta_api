@@ -17,13 +17,14 @@ import galleryRouter from './routes/gallery.js';
 import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
 import helpdeskRouter from './routes/helpdesk.js';
-import appErrorsRouter from './routes/appErrors.js';
+import appErrorsRouter, { logAppError } from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
 import educationResearchRouter from './routes/educationResearch.js';
 import spiritualCareRouter from './routes/spiritualCare.js';
 import statutoryCompliancesRouter from './routes/statutoryCompliances.js';
+import feedbackRouter from './routes/feedback.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -60,8 +61,8 @@ app.use(cors({
   },
   credentials: true
 }));
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Ensure dynamic endpoints are never cached by proxies / browsers
 app.use((req, res, next) => {
@@ -134,6 +135,7 @@ app.use('/api/spiritual-care', spiritualCareRouter);
 app.use('/api/education-research', educationResearchRouter);
 app.use('/api/statutory-compliances-state', statutoryCompliancesRouter);
 app.use('/api/statutory-compliances', statutoryCompliancesRouter);
+app.use('/api/feedback', feedbackRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
@@ -151,6 +153,21 @@ app.use((err, req, res, next) => {
   }
 
   console.error('Unhandled server error:', err);
+
+  // Automatically record server exception into database (bv_app_errors)
+  try {
+    logAppError({
+      id: `ERR-${Date.now()}`,
+      timestamp: new Date().toLocaleString(),
+      level: (err.status >= 500 || !err.status) ? 'Critical' : 'Error',
+      source: 'Server API',
+      endpoint: req.originalUrl || req.path || '',
+      message: err.message || 'Unhandled server exception',
+      status: 'Investigating',
+      details: err.stack || String(err)
+    });
+  } catch (logErr) {}
+
   res.status(err.status || err.statusCode || 500).json({
     error: err.name || 'Internal server error',
     message: err.message || 'An unexpected error occurred'

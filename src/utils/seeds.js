@@ -191,14 +191,32 @@ export const defaultQueries = [
 
 export const defaultSubAdmins = [
   {
-    username: 'admin.sneha',
-    email: 'sneha@bhaktivedantahospital.com',
-    role: 'Administration',
+    username: 'admin.aksh',
+    name: 'admin.aksh',
+    email: 'aksh@bhaktivedantahospital.com',
+    role: 'Operations Manager',
     status: 'Active',
-    created: '12 Oct 2023'
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.kuldeep',
+    name: 'admin.kuldeep',
+    email: 'kuldeep@bhaktivedantahospital.com',
+    role: 'Administrator',
+    status: 'Active',
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.Neha',
+    name: 'admin.Neha',
+    email: 'Neha@bhaktivedantahospital.com',
+    role: 'Content Manager',
+    status: 'Active',
+    created: '9/21/2026'
   },
   {
     username: 'admin.rajesh',
+    name: 'admin.rajesh',
     email: 'rajesh@bhaktivedantahospital.com',
     role: 'Administration',
     status: 'Active',
