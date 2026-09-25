@@ -23,8 +23,8 @@ import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
 import educationResearchRouter from './routes/educationResearch.js';
 import spiritualCareRouter from './routes/spiritualCare.js';
-import aboutUsRouter from './routes/aboutUs.js';
 import statutoryCompliancesRouter from './routes/statutoryCompliances.js';
+import associateCentresRouter from './routes/associateCentres.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -97,8 +97,7 @@ app.get('/', (req, res) => {
       services: '/api/services-state',
       patientCorner: '/api/patient-corner-state',
       spiritualCare: '/api/spiritual-care-state',
-      educationResearch: '/api/education-research',
-      aboutUs: '/api/about-us'
+      educationResearch: '/api/education-research'
     }
   });
 });
@@ -134,9 +133,9 @@ app.use('/api/careers', careersRouter);
 app.use('/api/spiritual-care-state', spiritualCareRouter);
 app.use('/api/spiritual-care', spiritualCareRouter);
 app.use('/api/education-research', educationResearchRouter);
-app.use('/api/about-us', aboutUsRouter);
 app.use('/api/statutory-compliances-state', statutoryCompliancesRouter);
 app.use('/api/statutory-compliances', statutoryCompliancesRouter);
+app.use('/api/associate-centres', associateCentresRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
