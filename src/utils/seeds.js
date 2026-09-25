@@ -113,7 +113,58 @@ export const defaultEvents = [
   }
 ];
 
-export const defaultTestimonials = [
+export const defaultVipTestimonials = [
+  {
+    id: 'VIP-01',
+    name: 'Hon. Late Dr. A. P. J. Abdul Kalam',
+    designation: 'Former President Of India And Senior Scientist',
+    content: "Bhaktivedanta Hospital's commitment to provide quality healthcare services to everyone, without any discrimination, is really commendable. When I visit the hospital facilities, I see the righteousness prevailing. Please keep it up!",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/A._P._J._Abdul_Kalam_in_2008.jpg/440px-A._P._J._Abdul_Kalam_in_2008.jpg',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-02',
+    name: 'Gaur Gopal Das',
+    designation: 'Indian Monk, International Life Coach, Wellness Advisor, Author & Motivational Strategist',
+    content: 'I have known Bhaktivedanta Hospital for the last 25 years as one of the most ethical & trusted hospitals in Mumbai providing world class medical services while staying true to their mission of providing affordable healthcare services, especially to the poor & needy.',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-03',
+    name: 'Mr. Alfred B. Ford',
+    designation: 'Director – Ford Motor Foundation, Detroit USA',
+    content: 'It has been a privilege for so many years to have known the doctors and staff of the Bhaktivedanta Hospital & Research Institute, Mumbai...I urge you from the bottom of my heart to please support this worthy project.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-04',
+    name: 'Dr. Subramanian Swamy',
+    designation: 'Ex-Rajya Sabha MP And Former Union Cabinet Minister',
+    content: 'Very impressed by the organised way this hospital is run. Congrats.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-05',
+    name: 'Ms. Niddhi Choudhari',
+    designation: 'IAS, Ex-VMS Officer, Ex-RBI Officer',
+    content: 'Thank you, Bhaktivedanta Hospital & Research Institute, for always co-operating with Palghar District Health Administration in improving health service delivery.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-06',
+    name: 'Mr. Madhur Vishnu Talwalkar',
+    designation: 'Director – Talwalkars Better Value Fitness Ltd.',
+    content: 'Hats off to Bhaktivedanta Hospital & Research Institute for their great social work in India. Great!',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  }
+];
+
+export const defaultReviews = [
   {
     id: 'TST-201',
     patientName: 'Harish Mehta',
@@ -131,6 +182,8 @@ export const defaultTestimonials = [
     status: 'Approved'
   }
 ];
+
+export const defaultTestimonials = defaultVipTestimonials;
 
 export const defaultNews = [
   {
@@ -191,14 +244,32 @@ export const defaultQueries = [
 
 export const defaultSubAdmins = [
   {
-    username: 'admin.sneha',
-    email: 'sneha@bhaktivedantahospital.com',
-    role: 'Administration',
+    username: 'admin.aksh',
+    name: 'admin.aksh',
+    email: 'aksh@bhaktivedantahospital.com',
+    role: 'Operations Manager',
     status: 'Active',
-    created: '12 Oct 2023'
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.kuldeep',
+    name: 'admin.kuldeep',
+    email: 'kuldeep@bhaktivedantahospital.com',
+    role: 'Administrator',
+    status: 'Active',
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.Neha',
+    name: 'admin.Neha',
+    email: 'Neha@bhaktivedantahospital.com',
+    role: 'Content Manager',
+    status: 'Active',
+    created: '9/21/2026'
   },
   {
     username: 'admin.rajesh',
+    name: 'admin.rajesh',
     email: 'rajesh@bhaktivedantahospital.com',
     role: 'Administration',
     status: 'Active',

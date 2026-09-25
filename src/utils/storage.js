@@ -49,6 +49,8 @@ export function readData(key) {
     else if (key === 'appointments') seedData = seeds.defaultAppointments;
     else if (key === 'events') seedData = seeds.defaultEvents;
     else if (key === 'testimonials') seedData = seeds.defaultTestimonials;
+    else if (key === 'reviews') seedData = seeds.defaultReviews;
+    else if (key === 'vip_testimonials') seedData = seeds.defaultVipTestimonials;
     else if (key === 'news') seedData = seeds.defaultNews;
     else if (key === 'blogs') seedData = seeds.defaultBlogs;
     else if (key === 'gallery') seedData = seeds.defaultGallery;

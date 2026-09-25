@@ -1,13 +1,124 @@
 [
   {
-    "id": "ERR-8369",
-    "timestamp": "23/09/2026, 11:04:12",
+    "id": "ERR-1054",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 7:04:38 PM",
+    "details": "URL: http://localhost:5173/",
+    "count": 2310
+  },
+  {
+    "id": "ERR-1665",
+    "timestamp": "9/25/2026, 6:42:53 PM",
     "level": "Warning",
     "source": "API Gateway",
     "message": "Failed to fetch",
-    "endpoint": "/about-us",
+    "endpoint": "/doctors",
     "status": "Investigating",
-    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js?t=1790141236981:25:21)\n    at getAboutUsState (http://localhost:5173/src/utils/api.js?t=1790141236981:435:23)\n    at loadData (http://localhost:5173/src/pages/admin/AboutUs/AboutUs.jsx?t=1790141236981:106:23)\n    at handleSync (http://localhost:5173/src/pages/admin/AboutUs/AboutUs.jsx?t=1790141236981:95:28)\n    at apiMutation (http://localhost:5173/src/utils/api.js?t=1790141236981:111:11)\n    at async logException ("
+    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js:25:21)\n    at getDoctors (http://localhost:5173/src/utils/api.js:136:41)\n    at initialDoctors (http://localhost:5173/src/data/adminState.js:144:37)\n    at http://localhost:5173/src/components/Doctors/Doctors.jsx:61:3\n    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:12902:13)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/re",
+    "count": 1
+  },
+  {
+    "id": "ERR-5903",
+    "level": "Error",
+    "source": "API Mutation",
+    "message": "Endpoint not found",
+    "endpoint": "/reviews",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 5:19:10 PM",
+    "details": "Stacktrace: Error: Endpoint not found\n    at apiMutation (http://localhost:5174/src/utils/api.js?t=1790333956089:101:16)",
+    "count": 2
+  },
+  {
+    "id": "ERR-6472",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_services_state' exceeded the quota.",
+    "endpoint": "/services-state",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:18 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_services_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 224
+  },
+  {
+    "id": "ERR-1363",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_specialities_state' exceeded the quota.",
+    "endpoint": "/specialities-state",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:17 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_specialities_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 289
+  },
+  {
+    "id": "ERR-4534",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_education_custom_programs' exceeded the quota.",
+    "endpoint": "/education-research/programs",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:16 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_education_custom_programs' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)\n    at async Promise.all (index 0)",
+    "count": 62
+  },
+  {
+    "id": "ERR-7607",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_spiritual_care_state' exceeded the quota.",
+    "endpoint": "/spiritual-care",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:10 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_spiritual_care_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 19
+  },
+  {
+    "id": "ERR-8796",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_patient_corner_state' exceeded the quota.",
+    "endpoint": "/patient-corner",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:09 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_patient_corner_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 69
+  },
+  {
+    "id": "ERR-1817",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_education_research_state' exceeded the quota.",
+    "endpoint": "/education-research",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:59:00 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_education_research_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)\n    at async Promise.all (index 1)",
+    "count": 36
+  },
+  {
+    "id": "ERR-5893",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_statutory_compliances_state' exceeded the quota.",
+    "endpoint": "/statutory-compliances",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 3:57:20 PM",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_statutory_compliances_state' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 12
+  },
+  {
+    "id": "ERR-5189",
+    "timestamp": "9/25/2026, 3:54:04 PM",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_doctors' exceeded the quota.",
+    "endpoint": "/doctors",
+    "status": "Investigating",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_doctors' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "count": 1
   },
   {
     "id": "ERR-8965",
@@ -500,16 +611,6 @@
     "details": "URL: http://localhost:5173/about-us/our-management-team"
   },
   {
-    "id": "ERR-9928",
-    "timestamp": "23/09/2026, 11:03:15",
-    "level": "Error",
-    "source": "API Gateway",
-    "message": "HTTP 404 on GET /statutory-compliances",
-    "endpoint": "/statutory-compliances",
-    "status": "Investigating",
-    "details": "URL: http://localhost:5173/about-us/our-management-team"
-  },
-  {
     "id": "ERR-3336",
     "timestamp": "23/09/2026, 11:03:15",
     "level": "Error",
@@ -988,26 +1089,6 @@
     "endpoint": "/statutory-compliances",
     "status": "Investigating",
     "details": "URL: http://localhost:5173/about-us/our-management-team"
-  },
-  {
-    "id": "ERR-1370",
-    "timestamp": "23/09/2026, 11:02:58",
-    "level": "Warning",
-    "source": "API Gateway",
-    "message": "Failed to fetch",
-    "endpoint": "/statutory-compliances",
-    "status": "Investigating",
-    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js?t=1790141236981:25:21)\n    at getStatutoryCompliancesState (http://localhost:5173/src/utils/api.js?t=1790141236981:455:59)\n    at fetchCompliances (http://localhost:5173/src/components/Footer/Footer.jsx?t=1790141236981:46:4)\n    at handleSync (http://localhost:5173/src/components/Footer/Footer.jsx?t=1790141236981:60:28)\n    at logException (http://localhost:5173/src/utils/errorLogger.js?t=1790141236981:26:11)"
-  },
-  {
-    "id": "ERR-7681",
-    "timestamp": "23/09/2026, 11:02:58",
-    "level": "Warning",
-    "source": "API Gateway",
-    "message": "Failed to fetch",
-    "endpoint": "/about-us",
-    "status": "Investigating",
-    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js?t=1790141236981:25:21)\n    at getAboutUsState (http://localhost:5173/src/utils/api.js?t=1790141236981:435:23)\n    at loadData (http://localhost:5173/src/pages/admin/AboutUs/AboutUs.jsx?t=1790141236981:106:23)\n    at handleSync (http://localhost:5173/src/pages/admin/AboutUs/AboutUs.jsx?t=1790141236981:95:28)\n    at logException (http://localhost:5173/src/utils/errorLogger.js?t=1790141236981:26:11)"
   },
   {
     "id": "ERR-5216",
@@ -2041,16 +2122,6 @@
   },
   {
     "id": "ERR-4463",
-    "timestamp": "23/09/2026, 11:02:20",
-    "level": "Error",
-    "source": "API Gateway",
-    "message": "HTTP 404 on GET /statutory-compliances",
-    "endpoint": "/statutory-compliances",
-    "status": "Investigating",
-    "details": "URL: http://localhost:5173/about-us/our-management-team"
-  },
-  {
-    "id": "ERR-5903",
     "timestamp": "23/09/2026, 11:02:20",
     "level": "Error",
     "source": "API Gateway",
