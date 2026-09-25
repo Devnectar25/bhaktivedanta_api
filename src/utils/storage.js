@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as seeds from './seeds.js';
-import { defaultAboutUsData } from '../data/defaultAboutUsData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -64,7 +63,6 @@ export function readData(key) {
     else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
     else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
     else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
-    else if (key === 'about_us_state') seedData = defaultAboutUsData;
     else if (key === 'statutory_compliances_state') seedData = seeds.defaultStatutoryCompliancesState;
 
     // Write seed data
