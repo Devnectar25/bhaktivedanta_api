@@ -2621,4 +2621,16 @@ export const defaultFaqs = [
   }
 ];
 
+export const defaultHeroBanners = [
+  {
+    id: 'hero-banner-1',
+    imageUrl: '/hero_new.jpg',
+    title: 'Compassionate Care with Advanced Technology',
+    subtitle: 'Where expert healing wisdom meets modern medical excellence.',
+    order: 1,
+    isActive: true,
+    createdAt: new Date().toISOString()
+  }
+];
+
 
