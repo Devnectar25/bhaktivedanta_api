@@ -1,25 +1,36 @@
 [
   {
-    "id": "ERR-1054",
-    "level": "Error",
+    "id": "ERR-9695",
+    "level": "Warning",
     "source": "API Gateway",
-    "message": "HTTP 404 on GET /associate-centres",
-    "endpoint": "/associate-centres",
+    "message": "signal timed out",
+    "endpoint": "/doctors",
     "status": "Investigating",
-    "timestamp": "9/25/2026, 7:04:38 PM",
-    "details": "URL: http://localhost:5173/",
-    "count": 2310
+    "timestamp": "9/26/2026, 11:59:19 AM",
+    "details": "Stacktrace: TimeoutError: signal timed out",
+    "count": 2
+  },
+  {
+    "id": "ERR-8156",
+    "level": "Error",
+    "source": "Global Runtime Exception",
+    "message": "navigate is not defined",
+    "endpoint": "/about-us/about-hospital",
+    "status": "Investigating",
+    "timestamp": "9/26/2026, 11:38:19 AM",
+    "details": "Stacktrace: ReferenceError: navigate is not defined\n    at handlePatientGuideClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790402163086:654:3)\n    at onClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790402163086:1337:19)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:851:66)\n    at processDispatchQueue (http:",
+    "count": 33
   },
   {
     "id": "ERR-1665",
-    "timestamp": "9/25/2026, 6:42:53 PM",
     "level": "Warning",
     "source": "API Gateway",
     "message": "Failed to fetch",
     "endpoint": "/doctors",
     "status": "Investigating",
-    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js:25:21)\n    at getDoctors (http://localhost:5173/src/utils/api.js:136:41)\n    at initialDoctors (http://localhost:5173/src/data/adminState.js:144:37)\n    at http://localhost:5173/src/components/Doctors/Doctors.jsx:61:3\n    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:12902:13)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/re",
-    "count": 1
+    "timestamp": "9/25/2026, 11:09:20 PM",
+    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js?t=1790342127846:25:21)\n    at getSpiritualCareState (http://localhost:5173/src/utils/api.js?t=1790342127846:472:52)\n    at fetchSpiritualCare (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790357907698:526:4)\n    at http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790357907698:576:3\n    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a2",
+    "count": 3
   },
   {
     "id": "ERR-5903",
@@ -28,9 +39,20 @@
     "message": "Endpoint not found",
     "endpoint": "/reviews",
     "status": "Investigating",
-    "timestamp": "9/25/2026, 5:19:10 PM",
+    "timestamp": "9/25/2026, 10:15:40 PM",
     "details": "Stacktrace: Error: Endpoint not found\n    at apiMutation (http://localhost:5174/src/utils/api.js?t=1790333956089:101:16)",
-    "count": 2
+    "count": 4
+  },
+  {
+    "id": "ERR-1054",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "timestamp": "9/25/2026, 7:06:45 PM",
+    "details": "URL: http://localhost:5173/",
+    "count": 2547
   },
   {
     "id": "ERR-6472",
@@ -111,13 +133,13 @@
   },
   {
     "id": "ERR-5189",
-    "timestamp": "9/25/2026, 3:54:04 PM",
     "level": "Warning",
     "source": "API Gateway",
     "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_doctors' exceeded the quota.",
     "endpoint": "/doctors",
-    "status": "Investigating",
-    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_doctors' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
+    "status": "Resolved",
+    "timestamp": "9/25/2026, 3:54:04 PM",
+    "details": "[Source: API Gateway] [Endpoint: /doctors] [Status: Investigating] [Timestamp: 9/25/2026, 3:54:04 PM] [Count: 1]\nDetails / Stack:\nStacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_doctors' exceeded the quota.\n    at apiGet (http://localhost:5174/src/utils/api.js:36:18)",
     "count": 1
   },
   {
@@ -602,6 +624,16 @@
   },
   {
     "id": "ERR-6760",
+    "timestamp": "23/09/2026, 11:03:15",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /statutory-compliances",
+    "endpoint": "/statutory-compliances",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/about-us/our-management-team"
+  },
+  {
+    "id": "ERR-9928",
     "timestamp": "23/09/2026, 11:03:15",
     "level": "Error",
     "source": "API Gateway",

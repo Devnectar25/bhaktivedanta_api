@@ -66,6 +66,8 @@ export function readData(key) {
     else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
     else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
     else if (key === 'statutory_compliances_state') seedData = seeds.defaultStatutoryCompliancesState;
+    else if (key === 'hospital_settings') seedData = seeds.defaultHospitalSettings;
+    else if (key === 'faqs') seedData = seeds.defaultFaqs;
 
     // Write seed data
     try {
