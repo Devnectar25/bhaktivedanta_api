@@ -186,9 +186,6 @@ async function getAllDoctors() {
     return dbDoc;
   });
 
-  // Keep local storage cache in sync with live Supabase dataset
-  writeData('doctors', merged);
-
   return merged;
 }
 

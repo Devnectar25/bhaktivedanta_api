@@ -2461,3 +2461,164 @@ export const defaultStatutoryCompliancesState = {
   siteMapFileName: '',
   updatedAt: new Date().toISOString()
 };
+
+export const defaultHospitalSettings = {
+  id: 'hospital-settings-main',
+  hospitalName: 'Bhaktivedanta Hospital & Research Institute',
+  adminEmail: 'admin@bhaktivedantahospital.com',
+  contactTitle: 'Contact Us',
+  contactPhone: '079-69002222',
+  contactWhatsapp: '8400146262',
+  contactEmail: 'info@bhaktivedantahospital.com',
+  contactAddress: 'Mira Road East, Thane, Maharashtra 401107',
+  mapUrl: 'https://maps.app.goo.gl/yX3uLp8jXz2U4u1D6',
+  emergencyPhone: '079 6900 2222',
+  emergencyLabel: 'For Emergency & Appointments',
+  appointmentSlot: '20 minutes',
+  updatedAt: new Date().toISOString()
+};
+
+export const defaultFaqs = [
+  {
+    id: 'faq-1',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'How can I book an appointment with a doctor at Bhaktivedanta Hospital?',
+    answer: 'You can book an appointment online through our website using the "Book Appointment" button, by calling our centralized appointment desk at 079-69002222, or via WhatsApp at 8400146262. Walk-in appointments are also accepted at the OPD registration counters.',
+    order: 1,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-2',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'What are the OPD consultation timings?',
+    answer: 'General and specialist OPD consultations run Monday through Saturday from 9:00 AM to 8:00 PM. Certain super-specialty clinics have dedicated days and time slots. Please check doctor availability online or confirm with the reception before your visit.',
+    order: 2,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-3',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'Can I reschedule or cancel my booked appointment?',
+    answer: 'Yes, you can reschedule or cancel your appointment up to 2 hours prior to your scheduled time slot by calling our helpline at 079-69002222 or messaging us on WhatsApp with your appointment reference number.',
+    order: 3,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-4',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What documents are required during inpatient admission?',
+    answer: 'For planned or emergency admission, please carry: 1) Doctor’s admission advice note, 2) Government-issued photo ID (Aadhaar Card / PAN Card / Passport) of patient and attendant, 3) Past medical records, prescription history, and diagnostic reports, 4) Insurance/TPA card & policy documents (if cashless).',
+    order: 4,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-5',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What types of room accommodations are available?',
+    answer: 'We offer a wide range of patient-centric accommodations including General Wards, Semi-Private Twin Sharing rooms, Single Private Rooms, Deluxe Suites, as well as state-of-the-art Intensive Care Units (ICU, ICCU, NICU, PICU) equipped with high-dependency monitoring.',
+    order: 5,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-6',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What are the hospital visiting hours for relatives?',
+    answer: 'Visiting hours are strictly designed to balance patient rest and infection prevention: General & Private Wards: 4:30 PM to 7:00 PM (Daily). ICU / Critical Care Units: 11:00 AM to 12:00 PM and 5:00 PM to 6:00 PM (1 attendant only with visitor pass).',
+    order: 6,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-7',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'Does Bhaktivedanta Hospital offer cashless mediclaim facilities?',
+    answer: 'Yes, our dedicated TPA & Insurance Desk supports cashless mediclaim services with leading government and private insurance companies, TPAs, and corporate organizations. Pre-authorization is processed directly with your insurer.',
+    order: 7,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-8',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'How long does the cashless insurance pre-authorization approval take?',
+    answer: 'For planned admissions, pre-authorization should be initiated 48–72 hours prior to admission. For emergency admissions, the initial pre-authorization request is submitted to the TPA within 3 hours of admission.',
+    order: 8,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-9',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'What happens if my insurance cashless claim is partially approved or denied?',
+    answer: 'In the rare event of a cashless denial or partial settlement, you may pay the balance amount directly to the hospital at discharge and subsequently submit the original bills, discharge summary, and payment receipts to your insurer for reimbursement.',
+    order: 9,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-10',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'Are Emergency and Trauma services operational 24x7?',
+    answer: 'Yes, our 24x7 Emergency and Trauma Centre is fully operational round-the-clock with dedicated emergency physicians, advanced life support (ALS) ambulances, trauma OT, and rapid triaging. For emergency assistance, immediately call 079-69002222.',
+    order: 10,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-11',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'Are the Pharmacy and Diagnostic Labs open round-the-clock?',
+    answer: 'Yes, our in-house Pathology Laboratory, Digital Radiology/Imaging Services (CT Scan, Ultrasound, Digital X-ray), and 24-hour Inpatient Pharmacy are open 24 hours a day, 365 days a year.',
+    order: 11,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-12',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'How can I collect my pathology or radiology test reports?',
+    answer: 'Diagnostic reports can be collected in person from the Central Reports Dispatch counter, or accessed electronically via our Patient Portal / WhatsApp notification as soon as tests are verified by our pathologists.',
+    order: 12,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-13',
+    category: 'spiritual',
+    categoryLabel: 'Spiritual Care & Visitors',
+    question: 'What is the Spiritual Care Department at Bhaktivedanta Hospital?',
+    answer: 'Unique to Bhaktivedanta Hospital, our Spiritual Care Department offers holistic healing addressing emotional, psychological, and spiritual well-being alongside advanced clinical treatment. Qualified counselors provide empathetic guidance, prayer sessions, and meditation support for patients and families.',
+    order: 13,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-14',
+    category: 'spiritual',
+    categoryLabel: 'Spiritual Care & Visitors',
+    question: 'Are pure vegetarian meals provided to patients?',
+    answer: 'Yes, our Dietary Department provides 100% wholesome, pure vegetarian, satvik meals hygienically prepared under the supervision of qualified clinical nutritionists, tailored specifically to each patient’s medical and dietary requirements.',
+    order: 14,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  }
+];
+
+
