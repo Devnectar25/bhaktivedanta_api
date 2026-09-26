@@ -1,5 +1,2935 @@
 [
   {
+    "id": "ERR-7106",
+    "timestamp": "9/26/2026, 5:36:40 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1265",
+    "timestamp": "9/26/2026, 5:36:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1293",
+    "timestamp": "9/26/2026, 5:36:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3515",
+    "timestamp": "9/26/2026, 5:36:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3802",
+    "timestamp": "9/26/2026, 5:36:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1179",
+    "timestamp": "9/26/2026, 5:36:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7267",
+    "timestamp": "9/26/2026, 5:36:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1770",
+    "timestamp": "9/26/2026, 5:36:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4079",
+    "timestamp": "9/26/2026, 5:36:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9463",
+    "timestamp": "9/26/2026, 5:36:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6076",
+    "timestamp": "9/26/2026, 5:36:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9832",
+    "timestamp": "9/26/2026, 5:36:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2821",
+    "timestamp": "9/26/2026, 5:36:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2892",
+    "timestamp": "9/26/2026, 5:36:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5157",
+    "timestamp": "9/26/2026, 5:36:35 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4453",
+    "timestamp": "9/26/2026, 5:36:35 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8514",
+    "timestamp": "9/26/2026, 5:36:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2485",
+    "timestamp": "9/26/2026, 5:36:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6201",
+    "timestamp": "9/26/2026, 5:36:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5987",
+    "timestamp": "9/26/2026, 5:36:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4882",
+    "timestamp": "9/26/2026, 5:36:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6262",
+    "timestamp": "9/26/2026, 5:36:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2811",
+    "timestamp": "9/26/2026, 5:36:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7147",
+    "timestamp": "9/26/2026, 5:36:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3714",
+    "timestamp": "9/26/2026, 5:36:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5831",
+    "timestamp": "9/26/2026, 5:36:31 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9403",
+    "timestamp": "9/26/2026, 5:36:31 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3523",
+    "timestamp": "9/26/2026, 5:36:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3611",
+    "timestamp": "9/26/2026, 5:36:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4246",
+    "timestamp": "9/26/2026, 5:36:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3173",
+    "timestamp": "9/26/2026, 5:36:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3297",
+    "timestamp": "9/26/2026, 5:36:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9517",
+    "timestamp": "9/26/2026, 5:36:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7196",
+    "timestamp": "9/26/2026, 5:36:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4296",
+    "timestamp": "9/26/2026, 5:36:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5087",
+    "timestamp": "9/26/2026, 5:36:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4921",
+    "timestamp": "9/26/2026, 5:36:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2587",
+    "timestamp": "9/26/2026, 5:36:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4120",
+    "timestamp": "9/26/2026, 5:36:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9673",
+    "timestamp": "9/26/2026, 5:36:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3991",
+    "timestamp": "9/26/2026, 5:36:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3740",
+    "timestamp": "9/26/2026, 5:36:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8988",
+    "timestamp": "9/26/2026, 5:36:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4716",
+    "timestamp": "9/26/2026, 5:36:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5931",
+    "timestamp": "9/26/2026, 5:36:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3982",
+    "timestamp": "9/26/2026, 5:36:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1730",
+    "timestamp": "9/26/2026, 5:36:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6659",
+    "timestamp": "9/26/2026, 5:36:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2592",
+    "timestamp": "9/26/2026, 5:36:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6889",
+    "timestamp": "9/26/2026, 5:36:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7509",
+    "timestamp": "9/26/2026, 5:36:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7861",
+    "timestamp": "9/26/2026, 5:36:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9911",
+    "timestamp": "9/26/2026, 5:36:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2007",
+    "timestamp": "9/26/2026, 5:36:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3194",
+    "timestamp": "9/26/2026, 5:36:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1089",
+    "timestamp": "9/26/2026, 5:36:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4979",
+    "timestamp": "9/26/2026, 5:36:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4933",
+    "timestamp": "9/26/2026, 5:36:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4592",
+    "timestamp": "9/26/2026, 5:36:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1875",
+    "timestamp": "9/26/2026, 5:36:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3415",
+    "timestamp": "9/26/2026, 5:36:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5170",
+    "timestamp": "9/26/2026, 5:36:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2439",
+    "timestamp": "9/26/2026, 5:36:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7516",
+    "timestamp": "9/26/2026, 5:36:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6870",
+    "timestamp": "9/26/2026, 5:36:18 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1636",
+    "timestamp": "9/26/2026, 5:36:18 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /settings",
+    "endpoint": "/settings",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6772",
+    "timestamp": "9/26/2026, 5:36:18 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9495",
+    "timestamp": "9/26/2026, 5:36:17 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6544",
+    "timestamp": "9/26/2026, 5:36:17 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4716",
+    "timestamp": "9/26/2026, 5:36:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2870",
+    "timestamp": "9/26/2026, 5:36:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4570",
+    "timestamp": "9/26/2026, 5:36:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7447",
+    "timestamp": "9/26/2026, 5:36:15 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7160",
+    "timestamp": "9/26/2026, 5:36:15 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2250",
+    "timestamp": "9/26/2026, 5:36:15 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7397",
+    "timestamp": "9/26/2026, 5:36:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4537",
+    "timestamp": "9/26/2026, 5:36:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2612",
+    "timestamp": "9/26/2026, 5:36:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5822",
+    "timestamp": "9/26/2026, 5:36:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6213",
+    "timestamp": "9/26/2026, 5:36:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1040",
+    "timestamp": "9/26/2026, 5:36:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6329",
+    "timestamp": "9/26/2026, 5:36:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1245",
+    "timestamp": "9/26/2026, 5:36:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7150",
+    "timestamp": "9/26/2026, 5:36:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5655",
+    "timestamp": "9/26/2026, 5:36:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5305",
+    "timestamp": "9/26/2026, 5:36:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3232",
+    "timestamp": "9/26/2026, 5:36:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9393",
+    "timestamp": "9/26/2026, 5:36:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3595",
+    "timestamp": "9/26/2026, 5:36:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2823",
+    "timestamp": "9/26/2026, 5:36:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8341",
+    "timestamp": "9/26/2026, 5:36:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1329",
+    "timestamp": "9/26/2026, 5:36:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3525",
+    "timestamp": "9/26/2026, 5:36:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4704",
+    "timestamp": "9/26/2026, 5:36:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7558",
+    "timestamp": "9/26/2026, 5:36:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9089",
+    "timestamp": "9/26/2026, 5:36:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8075",
+    "timestamp": "9/26/2026, 5:36:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4344",
+    "timestamp": "9/26/2026, 5:36:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8400",
+    "timestamp": "9/26/2026, 5:36:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6673",
+    "timestamp": "9/26/2026, 5:36:07 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3140",
+    "timestamp": "9/26/2026, 5:36:07 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9323",
+    "timestamp": "9/26/2026, 5:36:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7961",
+    "timestamp": "9/26/2026, 5:36:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6164",
+    "timestamp": "9/26/2026, 5:36:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6072",
+    "timestamp": "9/26/2026, 5:36:05 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2574",
+    "timestamp": "9/26/2026, 5:36:05 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5652",
+    "timestamp": "9/26/2026, 5:36:05 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8861",
+    "timestamp": "9/26/2026, 5:36:05 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5451",
+    "timestamp": "9/26/2026, 5:36:04 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2056",
+    "timestamp": "9/26/2026, 5:36:04 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7691",
+    "timestamp": "9/26/2026, 5:36:04 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1088",
+    "timestamp": "9/26/2026, 5:36:03 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3054",
+    "timestamp": "9/26/2026, 5:36:03 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4342",
+    "timestamp": "9/26/2026, 5:36:03 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9031",
+    "timestamp": "9/26/2026, 5:36:03 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6351",
+    "timestamp": "9/26/2026, 5:36:02 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1061",
+    "timestamp": "9/26/2026, 5:36:02 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4515",
+    "timestamp": "9/26/2026, 5:36:02 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4009",
+    "timestamp": "9/26/2026, 5:36:01 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8231",
+    "timestamp": "9/26/2026, 5:36:01 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3580",
+    "timestamp": "9/26/2026, 5:36:01 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1803",
+    "timestamp": "9/26/2026, 5:36:00 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5573",
+    "timestamp": "9/26/2026, 5:36:00 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7430",
+    "timestamp": "9/26/2026, 5:36:00 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4271",
+    "timestamp": "9/26/2026, 5:35:59 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3367",
+    "timestamp": "9/26/2026, 5:35:59 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3468",
+    "timestamp": "9/26/2026, 5:35:59 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6807",
+    "timestamp": "9/26/2026, 5:35:59 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9818",
+    "timestamp": "9/26/2026, 5:35:58 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2685",
+    "timestamp": "9/26/2026, 5:35:58 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3131",
+    "timestamp": "9/26/2026, 5:35:57 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1622",
+    "timestamp": "9/26/2026, 5:35:57 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6954",
+    "timestamp": "9/26/2026, 5:35:57 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6049",
+    "timestamp": "9/26/2026, 5:35:57 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9787",
+    "timestamp": "9/26/2026, 5:35:56 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7582",
+    "timestamp": "9/26/2026, 5:35:56 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9549",
+    "timestamp": "9/26/2026, 5:35:56 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9916",
+    "timestamp": "9/26/2026, 5:35:55 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5940",
+    "timestamp": "9/26/2026, 5:35:55 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2856",
+    "timestamp": "9/26/2026, 5:35:55 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8845",
+    "timestamp": "9/26/2026, 5:35:54 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1871",
+    "timestamp": "9/26/2026, 5:35:54 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1167",
+    "timestamp": "9/26/2026, 5:35:54 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3091",
+    "timestamp": "9/26/2026, 5:35:53 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7320",
+    "timestamp": "9/26/2026, 5:35:53 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7725",
+    "timestamp": "9/26/2026, 5:35:53 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4849",
+    "timestamp": "9/26/2026, 5:35:52 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6527",
+    "timestamp": "9/26/2026, 5:35:52 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3706",
+    "timestamp": "9/26/2026, 5:35:52 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8929",
+    "timestamp": "9/26/2026, 5:35:51 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3080",
+    "timestamp": "9/26/2026, 5:35:51 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1165",
+    "timestamp": "9/26/2026, 5:35:51 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2920",
+    "timestamp": "9/26/2026, 5:35:50 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9801",
+    "timestamp": "9/26/2026, 5:35:50 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9109",
+    "timestamp": "9/26/2026, 5:35:50 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8197",
+    "timestamp": "9/26/2026, 5:35:49 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6830",
+    "timestamp": "9/26/2026, 5:35:49 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4301",
+    "timestamp": "9/26/2026, 5:35:49 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6223",
+    "timestamp": "9/26/2026, 5:35:48 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2255",
+    "timestamp": "9/26/2026, 5:35:48 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2320",
+    "timestamp": "9/26/2026, 5:35:48 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9921",
+    "timestamp": "9/26/2026, 5:35:48 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6841",
+    "timestamp": "9/26/2026, 5:35:47 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7137",
+    "timestamp": "9/26/2026, 5:35:47 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8983",
+    "timestamp": "9/26/2026, 5:35:46 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8575",
+    "timestamp": "9/26/2026, 5:35:46 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8970",
+    "timestamp": "9/26/2026, 5:35:46 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5008",
+    "timestamp": "9/26/2026, 5:35:45 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1351",
+    "timestamp": "9/26/2026, 5:35:45 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9740",
+    "timestamp": "9/26/2026, 5:35:45 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6985",
+    "timestamp": "9/26/2026, 5:35:45 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6905",
+    "timestamp": "9/26/2026, 5:35:44 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7926",
+    "timestamp": "9/26/2026, 5:35:44 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1891",
+    "timestamp": "9/26/2026, 5:35:44 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4235",
+    "timestamp": "9/26/2026, 5:35:43 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3750",
+    "timestamp": "9/26/2026, 5:35:43 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1282",
+    "timestamp": "9/26/2026, 5:35:43 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3517",
+    "timestamp": "9/26/2026, 5:35:43 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5758",
+    "timestamp": "9/26/2026, 5:35:42 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1879",
+    "timestamp": "9/26/2026, 5:35:42 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6787",
+    "timestamp": "9/26/2026, 5:35:41 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2205",
+    "timestamp": "9/26/2026, 5:35:41 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7575",
+    "timestamp": "9/26/2026, 5:35:41 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3649",
+    "timestamp": "9/26/2026, 5:35:40 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9715",
+    "timestamp": "9/26/2026, 5:35:40 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5016",
+    "timestamp": "9/26/2026, 5:35:40 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /settings",
+    "endpoint": "/settings",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4921",
+    "timestamp": "9/26/2026, 5:35:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4233",
+    "timestamp": "9/26/2026, 5:35:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2516",
+    "timestamp": "9/26/2026, 5:35:39 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4547",
+    "timestamp": "9/26/2026, 5:35:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3983",
+    "timestamp": "9/26/2026, 5:35:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2814",
+    "timestamp": "9/26/2026, 5:35:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8418",
+    "timestamp": "9/26/2026, 5:35:38 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6315",
+    "timestamp": "9/26/2026, 5:35:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4900",
+    "timestamp": "9/26/2026, 5:35:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2105",
+    "timestamp": "9/26/2026, 5:35:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5830",
+    "timestamp": "9/26/2026, 5:35:37 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8129",
+    "timestamp": "9/26/2026, 5:35:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3368",
+    "timestamp": "9/26/2026, 5:35:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9963",
+    "timestamp": "9/26/2026, 5:35:36 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5112",
+    "timestamp": "9/26/2026, 5:35:35 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9363",
+    "timestamp": "9/26/2026, 5:35:35 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1173",
+    "timestamp": "9/26/2026, 5:35:35 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5672",
+    "timestamp": "9/26/2026, 5:35:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2293",
+    "timestamp": "9/26/2026, 5:35:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9443",
+    "timestamp": "9/26/2026, 5:35:34 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5965",
+    "timestamp": "9/26/2026, 5:35:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7082",
+    "timestamp": "9/26/2026, 5:35:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6275",
+    "timestamp": "9/26/2026, 5:35:33 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8379",
+    "timestamp": "9/26/2026, 5:35:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8938",
+    "timestamp": "9/26/2026, 5:35:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7893",
+    "timestamp": "9/26/2026, 5:35:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9034",
+    "timestamp": "9/26/2026, 5:35:32 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2934",
+    "timestamp": "9/26/2026, 5:35:31 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3566",
+    "timestamp": "9/26/2026, 5:35:31 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7708",
+    "timestamp": "9/26/2026, 5:35:31 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5984",
+    "timestamp": "9/26/2026, 5:35:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3833",
+    "timestamp": "9/26/2026, 5:35:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2648",
+    "timestamp": "9/26/2026, 5:35:30 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6789",
+    "timestamp": "9/26/2026, 5:35:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1095",
+    "timestamp": "9/26/2026, 5:35:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9982",
+    "timestamp": "9/26/2026, 5:35:29 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8866",
+    "timestamp": "9/26/2026, 5:35:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5042",
+    "timestamp": "9/26/2026, 5:35:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1717",
+    "timestamp": "9/26/2026, 5:35:28 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5197",
+    "timestamp": "9/26/2026, 5:35:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6351",
+    "timestamp": "9/26/2026, 5:35:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5637",
+    "timestamp": "9/26/2026, 5:35:27 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8205",
+    "timestamp": "9/26/2026, 5:35:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7210",
+    "timestamp": "9/26/2026, 5:35:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8042",
+    "timestamp": "9/26/2026, 5:35:26 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2963",
+    "timestamp": "9/26/2026, 5:35:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4651",
+    "timestamp": "9/26/2026, 5:35:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9209",
+    "timestamp": "9/26/2026, 5:35:25 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2181",
+    "timestamp": "9/26/2026, 5:35:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6724",
+    "timestamp": "9/26/2026, 5:35:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8537",
+    "timestamp": "9/26/2026, 5:35:24 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3762",
+    "timestamp": "9/26/2026, 5:35:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1049",
+    "timestamp": "9/26/2026, 5:35:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6579",
+    "timestamp": "9/26/2026, 5:35:23 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4355",
+    "timestamp": "9/26/2026, 5:35:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4232",
+    "timestamp": "9/26/2026, 5:35:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3905",
+    "timestamp": "9/26/2026, 5:35:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3362",
+    "timestamp": "9/26/2026, 5:35:22 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4065",
+    "timestamp": "9/26/2026, 5:35:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2179",
+    "timestamp": "9/26/2026, 5:35:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3817",
+    "timestamp": "9/26/2026, 5:35:21 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9703",
+    "timestamp": "9/26/2026, 5:35:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6122",
+    "timestamp": "9/26/2026, 5:35:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4894",
+    "timestamp": "9/26/2026, 5:35:20 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9343",
+    "timestamp": "9/26/2026, 5:35:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6201",
+    "timestamp": "9/26/2026, 5:35:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5596",
+    "timestamp": "9/26/2026, 5:35:19 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4278",
+    "timestamp": "9/26/2026, 5:35:18 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3421",
+    "timestamp": "9/26/2026, 5:35:18 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6653",
+    "timestamp": "9/26/2026, 5:35:17 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4265",
+    "timestamp": "9/26/2026, 5:35:17 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7375",
+    "timestamp": "9/26/2026, 5:35:17 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2321",
+    "timestamp": "9/26/2026, 5:35:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2482",
+    "timestamp": "9/26/2026, 5:35:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4930",
+    "timestamp": "9/26/2026, 5:35:16 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9856",
+    "timestamp": "9/26/2026, 5:35:15 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4924",
+    "timestamp": "9/26/2026, 5:35:15 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3935",
+    "timestamp": "9/26/2026, 5:35:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9724",
+    "timestamp": "9/26/2026, 5:35:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7141",
+    "timestamp": "9/26/2026, 5:35:14 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-1045",
+    "timestamp": "9/26/2026, 5:35:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5539",
+    "timestamp": "9/26/2026, 5:35:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3803",
+    "timestamp": "9/26/2026, 5:35:13 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6538",
+    "timestamp": "9/26/2026, 5:35:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7671",
+    "timestamp": "9/26/2026, 5:35:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9161",
+    "timestamp": "9/26/2026, 5:35:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /settings",
+    "endpoint": "/settings",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6146",
+    "timestamp": "9/26/2026, 5:35:12 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3363",
+    "timestamp": "9/26/2026, 5:35:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3570",
+    "timestamp": "9/26/2026, 5:35:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6160",
+    "timestamp": "9/26/2026, 5:35:11 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5761",
+    "timestamp": "9/26/2026, 5:35:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7574",
+    "timestamp": "9/26/2026, 5:35:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-2953",
+    "timestamp": "9/26/2026, 5:35:10 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9035",
+    "timestamp": "9/26/2026, 5:35:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-3737",
+    "timestamp": "9/26/2026, 5:35:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8500",
+    "timestamp": "9/26/2026, 5:35:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5438",
+    "timestamp": "9/26/2026, 5:35:09 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-4686",
+    "timestamp": "9/26/2026, 5:35:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7224",
+    "timestamp": "9/26/2026, 5:35:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6697",
+    "timestamp": "9/26/2026, 5:35:08 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5294",
+    "timestamp": "9/26/2026, 5:35:07 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7607",
+    "timestamp": "9/26/2026, 5:35:07 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-6507",
+    "timestamp": "9/26/2026, 5:35:07 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-7059",
+    "timestamp": "9/26/2026, 5:35:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-8181",
+    "timestamp": "9/26/2026, 5:35:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-5237",
+    "timestamp": "9/26/2026, 5:35:06 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
+    "id": "ERR-9697",
+    "timestamp": "9/26/2026, 5:35:05 PM",
+    "level": "Error",
+    "source": "API Gateway",
+    "message": "HTTP 404 on GET /associate-centres",
+    "endpoint": "/associate-centres",
+    "status": "Investigating",
+    "details": "URL: http://localhost:5173/"
+  },
+  {
     "id": "ERR-5999",
     "timestamp": "9/26/2026, 5:35:05 PM",
     "level": "Error",
