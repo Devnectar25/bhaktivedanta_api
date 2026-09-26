@@ -111,6 +111,8 @@ async function saveFullState(state) {
             slug: (guide.slug || guide.title || guide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
             category_id: guide.categoryId || 'pc-cat-guide',
             category_name: guide.category || 'Patient Guide',
+            short_description: guide.shortDescription || guide.short_description || '',
+            banner_image: guide.bannerImage || '',
             status: guide.status || 'Published',
             display_order: parseInt(guide.displayOrder || guide.order, 10) || 1,
             tabs: Array.isArray(guide.tabs) ? guide.tabs : [],
@@ -127,6 +129,65 @@ async function saveFullState(state) {
 
   return state;
 }
+
+// ----------------------------------------------------
+// POST UPLOAD PATIENT CORNER BANNER IMAGE (Supabase Storage)
+// ----------------------------------------------------
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { guideTitle, title, fileName, base64Data } = req.body || {};
+    if (!base64Data) {
+      return res.status(400).json({ error: 'No media data provided' });
+    }
+
+    // Convert base64 to Buffer
+    const base64Clean = base64Data.replace(/^data:[^;]+;base64,/, '');
+    const buffer = Buffer.from(base64Clean, 'base64');
+
+    // Extract mime type & extension
+    const mimeMatch = base64Data.match(/^data:([^;]+);base64,/);
+    const mimeType = mimeMatch ? mimeMatch[1] : 'image/png';
+    const ext = mimeType.split('/')[1] || 'png';
+
+    // Create a clean slug from the guide title
+    const slug = (guideTitle || title || 'patient-guide')
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    const timestamp = Date.now();
+    const filePath = `patient-corner/${slug}/${slug}-${timestamp}.${ext}`;
+
+    if (supabase) {
+      const bucketName = 'specialities-images';
+      const { data, error } = await supabase.storage
+        .from(bucketName)
+        .upload(filePath, buffer, {
+          contentType: mimeType,
+          upsert: true
+        });
+
+      if (error) {
+        console.error('[API Patient Corner Upload] Supabase Storage upload error:', error.message);
+        return res.json({ success: true, url: base64Data, path: filePath, fallback: true });
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from(bucketName)
+        .getPublicUrl(filePath);
+
+      const publicUrl = publicUrlData?.publicUrl || '';
+      console.log(`[API Patient Corner Upload] Uploaded image for "${guideTitle || title || 'guide'}" ->`, publicUrl);
+      return res.json({ success: true, url: publicUrl, path: filePath });
+    } else {
+      return res.json({ success: true, url: base64Data, path: filePath });
+    }
+  } catch (err) {
+    console.error('[API Patient Corner Upload] Error handling image upload:', err);
+    next(err);
+  }
+});
 
 // ----------------------------------------------------
 // 1. GET FULL PATIENTS CORNER STATE
@@ -287,6 +348,8 @@ const handleCreateGuide = async (req, res, next) => {
         slug: newGuide.slug,
         category_id: newGuide.categoryId,
         category_name: newGuide.category,
+        short_description: newGuide.shortDescription || '',
+        banner_image: newGuide.bannerImage || '',
         status: newGuide.status,
         display_order: newGuide.displayOrder,
         tabs: newGuide.tabs,
@@ -378,6 +441,7 @@ const handleUpdateGuide = async (req, res, next) => {
         slug: (updatedGuide.slug || updatedGuide.title || updatedGuide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
         category_id: updatedGuide.categoryId || 'pc-cat-guide',
         category_name: updatedGuide.category || 'Patient Guide',
+        banner_image: updatedGuide.bannerImage || '',
         status: updatedGuide.status || 'Published',
         display_order: parseInt(updatedGuide.displayOrder || updatedGuide.order, 10) || 1,
         tabs: Array.isArray(updatedGuide.tabs) ? updatedGuide.tabs : [],
