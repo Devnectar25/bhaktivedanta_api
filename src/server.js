@@ -11,20 +11,24 @@ import appointmentsRouter from './routes/appointments.js';
 import specialitiesRouter from './routes/specialities.js';
 import eventsRouter from './routes/events.js';
 import testimonialsRouter from './routes/testimonials.js';
+import reviewsRouter from './routes/reviews.js';
 import newsRouter from './routes/news.js';
 import blogsRouter from './routes/blogs.js';
 import galleryRouter from './routes/gallery.js';
 import queriesRouter from './routes/queries.js';
 import subadminsRouter from './routes/subadmins.js';
 import helpdeskRouter from './routes/helpdesk.js';
-import appErrorsRouter from './routes/appErrors.js';
+import appErrorsRouter, { logAppError } from './routes/appErrors.js';
 import servicesRouter from './routes/services.js';
 import patientCornerRouter from './routes/patientCorner.js';
 import careersRouter from './routes/careers.js';
 import educationResearchRouter from './routes/educationResearch.js';
 import spiritualCareRouter from './routes/spiritualCare.js';
-import aboutUsRouter from './routes/aboutUs.js';
 import statutoryCompliancesRouter from './routes/statutoryCompliances.js';
+import feedbackRouter from './routes/feedback.js';
+import associateCentresRouter from './routes/associateCentres.js';
+import settingsRouter from './routes/settings.js';
+import faqsRouter from './routes/faqs.js';
 
 // Load Environment Configuration
 dotenv.config();
@@ -61,8 +65,8 @@ app.use(cors({
   },
   credentials: true
 }));
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Ensure dynamic endpoints are never cached by proxies / browsers
 app.use((req, res, next) => {
@@ -98,7 +102,7 @@ app.get('/', (req, res) => {
       patientCorner: '/api/patient-corner-state',
       spiritualCare: '/api/spiritual-care-state',
       educationResearch: '/api/education-research',
-      aboutUs: '/api/about-us'
+      faqs: '/api/faqs'
     }
   });
 });
@@ -119,6 +123,7 @@ app.use('/api/specialities-state', specialitiesRouter);
 app.use('/api/specialities', specialitiesRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/testimonials', testimonialsRouter);
+app.use('/api/reviews', reviewsRouter);
 app.use('/api/news', newsRouter);
 app.use('/api/blogs', blogsRouter);
 app.use('/api/gallery', galleryRouter);
@@ -134,9 +139,13 @@ app.use('/api/careers', careersRouter);
 app.use('/api/spiritual-care-state', spiritualCareRouter);
 app.use('/api/spiritual-care', spiritualCareRouter);
 app.use('/api/education-research', educationResearchRouter);
-app.use('/api/about-us', aboutUsRouter);
 app.use('/api/statutory-compliances-state', statutoryCompliancesRouter);
 app.use('/api/statutory-compliances', statutoryCompliancesRouter);
+app.use('/api/feedback', feedbackRouter);
+app.use('/api/associate-centres', associateCentresRouter);
+app.use('/api/settings', settingsRouter);
+app.use('/api/hospital-settings', settingsRouter);
+app.use('/api/faqs', faqsRouter);
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {
@@ -154,6 +163,21 @@ app.use((err, req, res, next) => {
   }
 
   console.error('Unhandled server error:', err);
+
+  // Automatically record server exception into database (bv_app_errors)
+  try {
+    logAppError({
+      id: `ERR-${Date.now()}`,
+      timestamp: new Date().toLocaleString(),
+      level: (err.status >= 500 || !err.status) ? 'Critical' : 'Error',
+      source: 'Server API',
+      endpoint: req.originalUrl || req.path || '',
+      message: err.message || 'Unhandled server exception',
+      status: 'Investigating',
+      details: err.stack || String(err)
+    });
+  } catch (logErr) {}
+
   res.status(err.status || err.statusCode || 500).json({
     error: err.name || 'Internal server error',
     message: err.message || 'An unexpected error occurred'

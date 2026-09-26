@@ -23,33 +23,33 @@ router.get('/', async (req, res, next) => {
       return res.json(localSubadmins);
     }
 
-    // Merge Supabase records with local storage records to preserve passwords & creation dates
-    const mergedMap = new Map();
-
-    // 1. First populate map with local records
+    // Map local password cache by username
+    const localMap = new Map();
     localSubadmins.forEach(item => {
       if (item && item.username) {
-        mergedMap.set(item.username.toLowerCase(), item);
+        localMap.set(item.username.toLowerCase(), item);
       }
     });
 
-    // 2. Merge with Supabase DB records
-    (dbData || []).forEach(dbItem => {
-      if (!dbItem || !dbItem.username) return;
-      const key = dbItem.username.toLowerCase();
-      const localItem = mergedMap.get(key) || {};
+    // Return ONLY records present in Supabase DB
+    const result = (dbData || []).map(dbItem => {
+      const key = (dbItem.username || '').toLowerCase();
+      const localItem = localMap.get(key) || {};
 
-      mergedMap.set(key, {
+      return {
         username: dbItem.username,
-        email: dbItem.email || localItem.email || '',
+        name: dbItem.name || dbItem.username,
+        email: dbItem.email || '',
         role: dbItem.role || localItem.role || 'Administrator',
-        status: dbItem.status || localItem.status || 'Active',
-        created: localItem.created || (dbItem.created_at ? new Date(dbItem.created_at).toLocaleDateString() : 'Recent'),
+        status: dbItem.status || 'Active',
+        created: localItem.created || (dbItem.created_at ? new Date(dbItem.created_at).toLocaleDateString() : '9/21/2026'),
         password: localItem.password || 'Password123'
-      });
+      };
     });
 
-    const result = Array.from(mergedMap.values());
+    // Sync disk cache so local storage matches database records
+    writeData('subadmins', result);
+
     res.json(result);
   } catch (err) {
     next(err);

@@ -40,8 +40,8 @@ if (process.env.DATABASE_URL) {
  * Execute a query with error handling
  */
 export async function query(text, params = []) {
-  if (!pool) {
-    throw new Error('PostgreSQL pool not configured');
+  if (!pool || !isConnected) {
+    throw new Error('PostgreSQL pool not connected');
   }
   const start = Date.now();
   try {

@@ -1,8 +1,35 @@
 import express from 'express';
 import { supabase } from '../utils/supabase.js';
 import { readData, writeData } from '../utils/storage.js';
+import * as seeds from '../utils/seeds.js';
 
 const router = express.Router();
+
+// Auto-sync local queries to Supabase on startup
+if (supabase) {
+  setTimeout(async () => {
+    try {
+      const localQueries = readData('queries') || [];
+      if (Array.isArray(localQueries) && localQueries.length > 0) {
+        const rowsToUpsert = localQueries.map(q => ({
+          id: q.id,
+          name: q.name || '',
+          email: q.email || '',
+          subject: q.subject || 'General Inquiry',
+          message: q.message || '',
+          date: q.date || 'Recent',
+          status: q.status || 'Pending'
+        }));
+        await supabase
+          .from('bv_queries')
+          .upsert(rowsToUpsert, { onConflict: 'id' });
+        console.log('[API Queries] Synced local queries to Supabase.');
+      }
+    } catch (e) {
+      console.warn('[API Queries] Supabase initial sync warning:', e.message);
+    }
+  }, 2000);
+}
 
 // GET all queries
 router.get('/', async (req, res, next) => {
@@ -23,35 +50,33 @@ router.get('/', async (req, res, next) => {
       return res.json(localQueries);
     }
 
-    // Merge Supabase records with local storage records to preserve extra metadata
-    const mergedMap = new Map();
-
-    // 1. Populate from local
+    // Map local phone cache by ID
+    const localMap = new Map();
     localQueries.forEach(item => {
       if (item && item.id) {
-        mergedMap.set(item.id.toString(), item);
+        localMap.set(item.id.toString(), item);
       }
     });
 
-    // 2. Merge with Supabase DB records
-    (dbData || []).forEach(dbItem => {
-      if (!dbItem || !dbItem.id) return;
-      const key = dbItem.id.toString();
-      const localItem = mergedMap.get(key) || {};
+    const result = (dbData || []).map(dbItem => {
+      const key = (dbItem.id || '').toString();
+      const localItem = localMap.get(key) || {};
 
-      mergedMap.set(key, {
+      return {
         id: dbItem.id,
         name: dbItem.name || localItem.name || 'Anonymous',
         email: dbItem.email || localItem.email || '',
         phone: localItem.phone || '',
         subject: dbItem.subject || localItem.subject || 'General Inquiry',
         message: dbItem.message || localItem.message || '',
-        date: localItem.date || (dbItem.created_at ? new Date(dbItem.created_at).toLocaleDateString() : 'Recent'),
+        date: dbItem.date || localItem.date || (dbItem.created_at ? new Date(dbItem.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recent'),
         status: dbItem.status || localItem.status || 'Pending'
-      });
+      };
     });
 
-    const result = Array.from(mergedMap.values());
+    // Write back to local file so local disk cache stays in sync
+    writeData('queries', result);
+
     res.json(result);
   } catch (err) {
     next(err);
@@ -84,10 +109,10 @@ router.post('/', async (req, res, next) => {
 
     // Save locally
     const queries = readData('queries') || [];
-    queries.unshift(newQuery);
-    writeData('queries', queries);
+    const updatedLocal = [newQuery, ...queries.filter(q => q.id.toString() !== newQuery.id.toString())];
+    writeData('queries', updatedLocal);
 
-    // Save to Supabase (only send valid columns: id, name, email, subject, message, status)
+    // Save to Supabase
     if (supabase) {
       const dbPayload = {
         id: newQuery.id,
@@ -95,16 +120,17 @@ router.post('/', async (req, res, next) => {
         email: newQuery.email,
         subject: newQuery.subject,
         message: newQuery.message,
+        date: newQuery.date,
         status: newQuery.status
       };
 
       const { data, error } = await supabase
         .from('bv_queries')
-        .insert([dbPayload])
+        .upsert([dbPayload], { onConflict: 'id' })
         .select();
 
       if (error) {
-        console.error('Supabase queries insert error:', error.message);
+        console.error('Supabase queries upsert error:', error.message);
       } else if (data && data.length > 0) {
         return res.status(201).json({ ...data[0], phone: newQuery.phone, date: newQuery.date });
       }
@@ -139,6 +165,7 @@ router.put('/:id', async (req, res, next) => {
       if (updateData.email !== undefined) dbPayload.email = updateData.email;
       if (updateData.subject !== undefined) dbPayload.subject = updateData.subject;
       if (updateData.message !== undefined) dbPayload.message = updateData.message;
+      if (updateData.date !== undefined) dbPayload.date = updateData.date;
       if (updateData.status !== undefined) dbPayload.status = updateData.status;
 
       if (Object.keys(dbPayload).length > 0) {

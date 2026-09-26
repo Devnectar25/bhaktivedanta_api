@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as seeds from './seeds.js';
-import { defaultAboutUsData } from '../data/defaultAboutUsData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -50,6 +49,8 @@ export function readData(key) {
     else if (key === 'appointments') seedData = seeds.defaultAppointments;
     else if (key === 'events') seedData = seeds.defaultEvents;
     else if (key === 'testimonials') seedData = seeds.defaultTestimonials;
+    else if (key === 'reviews') seedData = seeds.defaultReviews;
+    else if (key === 'vip_testimonials') seedData = seeds.defaultVipTestimonials;
     else if (key === 'news') seedData = seeds.defaultNews;
     else if (key === 'blogs') seedData = seeds.defaultBlogs;
     else if (key === 'gallery') seedData = seeds.defaultGallery;
@@ -64,8 +65,9 @@ export function readData(key) {
     else if (key === 'career_applications') seedData = seeds.defaultCareerApplications;
     else if (key === 'education_research_state') seedData = seeds.defaultEducationResearchState;
     else if (key === 'dnb_inquiries') seedData = seeds.defaultDnbInquiries;
-    else if (key === 'about_us_state') seedData = defaultAboutUsData;
     else if (key === 'statutory_compliances_state') seedData = seeds.defaultStatutoryCompliancesState;
+    else if (key === 'hospital_settings') seedData = seeds.defaultHospitalSettings;
+    else if (key === 'faqs') seedData = seeds.defaultFaqs;
 
     // Write seed data
     try {

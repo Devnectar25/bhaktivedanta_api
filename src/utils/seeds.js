@@ -113,7 +113,58 @@ export const defaultEvents = [
   }
 ];
 
-export const defaultTestimonials = [
+export const defaultVipTestimonials = [
+  {
+    id: 'VIP-01',
+    name: 'Hon. Late Dr. A. P. J. Abdul Kalam',
+    designation: 'Former President Of India And Senior Scientist',
+    content: "Bhaktivedanta Hospital's commitment to provide quality healthcare services to everyone, without any discrimination, is really commendable. When I visit the hospital facilities, I see the righteousness prevailing. Please keep it up!",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/A._P._J._Abdul_Kalam_in_2008.jpg/440px-A._P._J._Abdul_Kalam_in_2008.jpg',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-02',
+    name: 'Gaur Gopal Das',
+    designation: 'Indian Monk, International Life Coach, Wellness Advisor, Author & Motivational Strategist',
+    content: 'I have known Bhaktivedanta Hospital for the last 25 years as one of the most ethical & trusted hospitals in Mumbai providing world class medical services while staying true to their mission of providing affordable healthcare services, especially to the poor & needy.',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-03',
+    name: 'Mr. Alfred B. Ford',
+    designation: 'Director – Ford Motor Foundation, Detroit USA',
+    content: 'It has been a privilege for so many years to have known the doctors and staff of the Bhaktivedanta Hospital & Research Institute, Mumbai...I urge you from the bottom of my heart to please support this worthy project.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-04',
+    name: 'Dr. Subramanian Swamy',
+    designation: 'Ex-Rajya Sabha MP And Former Union Cabinet Minister',
+    content: 'Very impressed by the organised way this hospital is run. Congrats.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-05',
+    name: 'Ms. Niddhi Choudhari',
+    designation: 'IAS, Ex-VMS Officer, Ex-RBI Officer',
+    content: 'Thank you, Bhaktivedanta Hospital & Research Institute, for always co-operating with Palghar District Health Administration in improving health service delivery.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  },
+  {
+    id: 'VIP-06',
+    name: 'Mr. Madhur Vishnu Talwalkar',
+    designation: 'Director – Talwalkars Better Value Fitness Ltd.',
+    content: 'Hats off to Bhaktivedanta Hospital & Research Institute for their great social work in India. Great!',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    status: 'Approved'
+  }
+];
+
+export const defaultReviews = [
   {
     id: 'TST-201',
     patientName: 'Harish Mehta',
@@ -131,6 +182,8 @@ export const defaultTestimonials = [
     status: 'Approved'
   }
 ];
+
+export const defaultTestimonials = defaultVipTestimonials;
 
 export const defaultNews = [
   {
@@ -191,14 +244,32 @@ export const defaultQueries = [
 
 export const defaultSubAdmins = [
   {
-    username: 'admin.sneha',
-    email: 'sneha@bhaktivedantahospital.com',
-    role: 'Administration',
+    username: 'admin.aksh',
+    name: 'admin.aksh',
+    email: 'aksh@bhaktivedantahospital.com',
+    role: 'Operations Manager',
     status: 'Active',
-    created: '12 Oct 2023'
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.kuldeep',
+    name: 'admin.kuldeep',
+    email: 'kuldeep@bhaktivedantahospital.com',
+    role: 'Administrator',
+    status: 'Active',
+    created: '9/21/2026'
+  },
+  {
+    username: 'admin.Neha',
+    name: 'admin.Neha',
+    email: 'Neha@bhaktivedantahospital.com',
+    role: 'Content Manager',
+    status: 'Active',
+    created: '9/21/2026'
   },
   {
     username: 'admin.rajesh',
+    name: 'admin.rajesh',
     email: 'rajesh@bhaktivedantahospital.com',
     role: 'Administration',
     status: 'Active',
@@ -2390,3 +2461,164 @@ export const defaultStatutoryCompliancesState = {
   siteMapFileName: '',
   updatedAt: new Date().toISOString()
 };
+
+export const defaultHospitalSettings = {
+  id: 'hospital-settings-main',
+  hospitalName: 'Bhaktivedanta Hospital & Research Institute',
+  adminEmail: 'admin@bhaktivedantahospital.com',
+  contactTitle: 'Contact Us',
+  contactPhone: '079-69002222',
+  contactWhatsapp: '8400146262',
+  contactEmail: 'info@bhaktivedantahospital.com',
+  contactAddress: 'Mira Road East, Thane, Maharashtra 401107',
+  mapUrl: 'https://maps.app.goo.gl/yX3uLp8jXz2U4u1D6',
+  emergencyPhone: '079 6900 2222',
+  emergencyLabel: 'For Emergency & Appointments',
+  appointmentSlot: '20 minutes',
+  updatedAt: new Date().toISOString()
+};
+
+export const defaultFaqs = [
+  {
+    id: 'faq-1',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'How can I book an appointment with a doctor at Bhaktivedanta Hospital?',
+    answer: 'You can book an appointment online through our website using the "Book Appointment" button, by calling our centralized appointment desk at 079-69002222, or via WhatsApp at 8400146262. Walk-in appointments are also accepted at the OPD registration counters.',
+    order: 1,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-2',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'What are the OPD consultation timings?',
+    answer: 'General and specialist OPD consultations run Monday through Saturday from 9:00 AM to 8:00 PM. Certain super-specialty clinics have dedicated days and time slots. Please check doctor availability online or confirm with the reception before your visit.',
+    order: 2,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-3',
+    category: 'appointment',
+    categoryLabel: 'Appointments & OPD',
+    question: 'Can I reschedule or cancel my booked appointment?',
+    answer: 'Yes, you can reschedule or cancel your appointment up to 2 hours prior to your scheduled time slot by calling our helpline at 079-69002222 or messaging us on WhatsApp with your appointment reference number.',
+    order: 3,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-4',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What documents are required during inpatient admission?',
+    answer: 'For planned or emergency admission, please carry: 1) Doctor’s admission advice note, 2) Government-issued photo ID (Aadhaar Card / PAN Card / Passport) of patient and attendant, 3) Past medical records, prescription history, and diagnostic reports, 4) Insurance/TPA card & policy documents (if cashless).',
+    order: 4,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-5',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What types of room accommodations are available?',
+    answer: 'We offer a wide range of patient-centric accommodations including General Wards, Semi-Private Twin Sharing rooms, Single Private Rooms, Deluxe Suites, as well as state-of-the-art Intensive Care Units (ICU, ICCU, NICU, PICU) equipped with high-dependency monitoring.',
+    order: 5,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-6',
+    category: 'admission',
+    categoryLabel: 'Admission & Inpatient',
+    question: 'What are the hospital visiting hours for relatives?',
+    answer: 'Visiting hours are strictly designed to balance patient rest and infection prevention: General & Private Wards: 4:30 PM to 7:00 PM (Daily). ICU / Critical Care Units: 11:00 AM to 12:00 PM and 5:00 PM to 6:00 PM (1 attendant only with visitor pass).',
+    order: 6,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-7',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'Does Bhaktivedanta Hospital offer cashless mediclaim facilities?',
+    answer: 'Yes, our dedicated TPA & Insurance Desk supports cashless mediclaim services with leading government and private insurance companies, TPAs, and corporate organizations. Pre-authorization is processed directly with your insurer.',
+    order: 7,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-8',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'How long does the cashless insurance pre-authorization approval take?',
+    answer: 'For planned admissions, pre-authorization should be initiated 48–72 hours prior to admission. For emergency admissions, the initial pre-authorization request is submitted to the TPA within 3 hours of admission.',
+    order: 8,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-9',
+    category: 'insurance',
+    categoryLabel: 'Insurance & TPA',
+    question: 'What happens if my insurance cashless claim is partially approved or denied?',
+    answer: 'In the rare event of a cashless denial or partial settlement, you may pay the balance amount directly to the hospital at discharge and subsequently submit the original bills, discharge summary, and payment receipts to your insurer for reimbursement.',
+    order: 9,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-10',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'Are Emergency and Trauma services operational 24x7?',
+    answer: 'Yes, our 24x7 Emergency and Trauma Centre is fully operational round-the-clock with dedicated emergency physicians, advanced life support (ALS) ambulances, trauma OT, and rapid triaging. For emergency assistance, immediately call 079-69002222.',
+    order: 10,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-11',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'Are the Pharmacy and Diagnostic Labs open round-the-clock?',
+    answer: 'Yes, our in-house Pathology Laboratory, Digital Radiology/Imaging Services (CT Scan, Ultrasound, Digital X-ray), and 24-hour Inpatient Pharmacy are open 24 hours a day, 365 days a year.',
+    order: 11,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-12',
+    category: 'emergency',
+    categoryLabel: 'Emergency & Diagnostics',
+    question: 'How can I collect my pathology or radiology test reports?',
+    answer: 'Diagnostic reports can be collected in person from the Central Reports Dispatch counter, or accessed electronically via our Patient Portal / WhatsApp notification as soon as tests are verified by our pathologists.',
+    order: 12,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-13',
+    category: 'spiritual',
+    categoryLabel: 'Spiritual Care & Visitors',
+    question: 'What is the Spiritual Care Department at Bhaktivedanta Hospital?',
+    answer: 'Unique to Bhaktivedanta Hospital, our Spiritual Care Department offers holistic healing addressing emotional, psychological, and spiritual well-being alongside advanced clinical treatment. Qualified counselors provide empathetic guidance, prayer sessions, and meditation support for patients and families.',
+    order: 13,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  },
+  {
+    id: 'faq-14',
+    category: 'spiritual',
+    categoryLabel: 'Spiritual Care & Visitors',
+    question: 'Are pure vegetarian meals provided to patients?',
+    answer: 'Yes, our Dietary Department provides 100% wholesome, pure vegetarian, satvik meals hygienically prepared under the supervision of qualified clinical nutritionists, tailored specifically to each patient’s medical and dietary requirements.',
+    order: 14,
+    status: 'Active',
+    updatedAt: new Date().toISOString()
+  }
+];
+
+
