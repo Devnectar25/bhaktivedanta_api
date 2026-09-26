@@ -6,9 +6,9 @@
     "message": "signal timed out",
     "endpoint": "/doctors",
     "status": "Investigating",
-    "timestamp": "9/26/2026, 11:59:19 AM",
+    "timestamp": "9/26/2026, 7:01:54 PM",
     "details": "Stacktrace: TimeoutError: signal timed out",
-    "count": 2
+    "count": 4
   },
   {
     "id": "ERR-8156",
@@ -17,9 +17,20 @@
     "message": "navigate is not defined",
     "endpoint": "/about-us/about-hospital",
     "status": "Investigating",
-    "timestamp": "9/26/2026, 11:38:19 AM",
-    "details": "Stacktrace: ReferenceError: navigate is not defined\n    at handlePatientGuideClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790402163086:654:3)\n    at onClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790402163086:1337:19)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:851:66)\n    at processDispatchQueue (http:",
-    "count": 33
+    "timestamp": "9/26/2026, 6:54:26 PM",
+    "details": "Stacktrace: ReferenceError: navigate is not defined\n    at handlePatientGuideClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790428984071:657:3)\n    at onClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790428984071:1376:19)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:851:66)\n    at processDispatchQueue (http:",
+    "count": 88
+  },
+  {
+    "id": "ERR-9748",
+    "timestamp": "9/26/2026, 6:46:34 PM",
+    "level": "Error",
+    "source": "Global Runtime Exception",
+    "message": "Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_services' exceeded the quota.",
+    "endpoint": "/admin/edit-service/srv15",
+    "status": "Investigating",
+    "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_services' exceeded the quota.\n    at saveAdminData (http://localhost:5173/src/data/adminState.js?t=1790425584685:241:15)\n    at handleSubmit (http://localhost:5173/src/pages/admin/Services/AddService.jsx?t=1790425584685:671:3)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules",
+    "count": 1
   },
   {
     "id": "ERR-1665",
