@@ -165,12 +165,10 @@ async function saveFullState(state) {
 
         // Clean up deleted programmes if any
         const progIds = state.programmes.map(p => p.id).filter(Boolean);
-        if (progIds.length > 0) {
-          const { data: allProgs } = await supabase.from('admin_spiritual_programmes').select('id');
-          const toDelete = (allProgs || []).filter(p => !progIds.includes(p.id)).map(p => p.id);
-          if (toDelete.length > 0) {
-            await supabase.from('admin_spiritual_programmes').delete().in('id', toDelete);
-          }
+        const { data: allProgs } = await supabase.from('admin_spiritual_programmes').select('id');
+        const toDelete = (allProgs || []).filter(p => !progIds.includes(p.id)).map(p => p.id);
+        if (toDelete.length > 0) {
+          await supabase.from('admin_spiritual_programmes').delete().in('id', toDelete);
         }
       }
 
