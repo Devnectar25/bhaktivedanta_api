@@ -46,7 +46,7 @@ function formatCentre(row) {
   };
 }
 
-// GET all associate centres (Newest first)
+// GET all associate centres (Newest first, unlimited)
 router.get('/', async (req, res, next) => {
   try {
     if (!supabase) {
@@ -58,7 +58,8 @@ router.get('/', async (req, res, next) => {
     const { data, error } = await supabase
       .from('bv_associate_centres')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(2000);
 
     if (error) {
       console.warn('[API] Supabase get associate centres error, falling back to local:', error.message);
@@ -93,7 +94,7 @@ router.get('/:idOrSlug', async (req, res, next) => {
       .from('bv_associate_centres')
       .select('*')
       .or(`slug.eq.${idOrSlug},id.eq.${idOrSlug}`)
-      .single();
+      .maybeSingle();
 
     if (error || !data) {
       const local = readData('associate_centres') || [];
@@ -108,11 +109,57 @@ router.get('/:idOrSlug', async (req, res, next) => {
   }
 });
 
-// POST create new associate centre
+// POST create new associate centre (Strict max 10 slots allowed)
 router.post('/', async (req, res, next) => {
   try {
+    const MAX_CENTRES = 10;
+
+    // Check existing count before allowing new centre
+    if (supabase) {
+      const { count, error: countErr } = await supabase
+        .from('bv_associate_centres')
+        .select('*', { count: 'exact', head: true });
+      
+      if (!countErr && typeof count === 'number' && count >= MAX_CENTRES) {
+        return res.status(400).json({ 
+          error: `The Associate Center only allows up to ${MAX_CENTRES} associates. All ${MAX_CENTRES} slots are completed. No additional associates can be added.` 
+        });
+      }
+    } else {
+      const local = readData('associate_centres') || [];
+      if (local.length >= MAX_CENTRES) {
+        return res.status(400).json({ 
+          error: `The Associate Center only allows up to ${MAX_CENTRES} associates. All ${MAX_CENTRES} slots are completed. No additional associates can be added.` 
+        });
+      }
+    }
+
     const title = req.body.title || req.body.name || 'New Associate Centre';
-    const slug = slugify(req.body.slug || title);
+    const baseSlug = slugify(req.body.slug || title) || `centre-${Date.now().toString(36)}`;
+    let slug = baseSlug;
+
+    // Ensure slug uniqueness automatically
+    if (supabase) {
+      let counter = 1;
+      while (true) {
+        const { data: existing } = await supabase
+          .from('bv_associate_centres')
+          .select('id')
+          .eq('slug', slug)
+          .maybeSingle();
+        if (!existing) break;
+        counter++;
+        slug = `${baseSlug}-${counter}`;
+      }
+    } else {
+      const local = readData('associate_centres') || [];
+      let counter = 1;
+      while (local.some(c => c.slug === slug)) {
+        counter++;
+        slug = `${baseSlug}-${counter}`;
+      }
+    }
+
     const id = req.body.id || `ac-${slug}-${Date.now().toString(36)}`;
 
     const newRecord = {
@@ -142,7 +189,7 @@ router.post('/', async (req, res, next) => {
 
       if (error) {
         console.error('[API] Supabase insert associate centre error:', error);
-        throw error;
+        return res.status(500).json({ error: error.message || 'Failed to insert associate centre into database' });
       }
 
       const formatted = formatCentre(data);
