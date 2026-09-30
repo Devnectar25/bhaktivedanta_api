@@ -1,25 +1,58 @@
 [
   {
-    "id": "ERR-9695",
-    "level": "Warning",
-    "source": "API Gateway",
-    "message": "signal timed out",
-    "endpoint": "/doctors",
-    "status": "Investigating",
-    "timestamp": "9/26/2026, 7:01:54 PM",
-    "details": "Stacktrace: TimeoutError: signal timed out",
-    "count": 4
-  },
-  {
     "id": "ERR-8156",
     "level": "Error",
     "source": "Global Runtime Exception",
     "message": "navigate is not defined",
     "endpoint": "/about-us/about-hospital",
     "status": "Investigating",
-    "timestamp": "9/26/2026, 6:54:26 PM",
-    "details": "Stacktrace: ReferenceError: navigate is not defined\n    at handlePatientGuideClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790428984071:657:3)\n    at onClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790428984071:1376:19)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:851:66)\n    at processDispatchQueue (http:",
-    "count": 88
+    "timestamp": "9/30/2026, 4:11:11 PM",
+    "details": "Stacktrace: ReferenceError: navigate is not defined\n    at handlePatientGuideClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790764395938:657:3)\n    at onClick (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790764395938:1379:19)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:851:66)\n    at processDispatchQueue (http:",
+    "count": 143
+  },
+  {
+    "id": "ERR-1665",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "Failed to fetch",
+    "endpoint": "/doctors",
+    "status": "Investigating",
+    "timestamp": "9/30/2026, 11:07:55 AM",
+    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js:25:21)\n    at getQueries (http://localhost:5173/src/utils/api.js:297:41)\n    at loadDashboardData (http://localhost:5173/src/pages/admin/Dashboard/Dashboard.jsx:42:5)",
+    "count": 7
+  },
+  {
+    "id": "ERR-9695",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "signal timed out",
+    "endpoint": "/doctors",
+    "status": "Investigating",
+    "timestamp": "9/29/2026, 6:01:47 PM",
+    "details": "Stacktrace: TimeoutError: signal timed out",
+    "count": 42
+  },
+  {
+    "id": "ERR-2408",
+    "level": "Warning",
+    "source": "API Gateway",
+    "message": "The user aborted a request.",
+    "endpoint": "/spiritual-care",
+    "status": "Investigating",
+    "timestamp": "9/29/2026, 5:22:06 PM",
+    "details": "URL: http://localhost:5173/admin/dashboard",
+    "count": 3
+  },
+  {
+    "id": "ERR-5674",
+    "level": "Error",
+    "source": "System Diagnostic Test",
+    "message": "Simulated runtime check exception triggered from Admin Console.",
+    "endpoint": "/api/health-check",
+    "status": "Investigating",
+    "timestamp": "9/26/2026, 9:40:22 PM",
+    "details": "Stacktrace: at Object.SimulateDiagnostic (ApplicationErrors.jsx:45:12)",
+    "count": 4
   },
   {
     "id": "ERR-9748",
@@ -31,17 +64,6 @@
     "status": "Investigating",
     "details": "Stacktrace: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'bhaktivedanta_admin_services' exceeded the quota.\n    at saveAdminData (http://localhost:5173/src/data/adminState.js?t=1790425584685:241:15)\n    at handleSubmit (http://localhost:5173/src/pages/admin/Services/AddService.jsx?t=1790425584685:671:3)\n    at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a20a:9141:5)\n    at runWithFiberInDEV (http://localhost:5173/node_modules",
     "count": 1
-  },
-  {
-    "id": "ERR-1665",
-    "level": "Warning",
-    "source": "API Gateway",
-    "message": "Failed to fetch",
-    "endpoint": "/doctors",
-    "status": "Investigating",
-    "timestamp": "9/25/2026, 11:09:20 PM",
-    "details": "Stacktrace: TypeError: Failed to fetch\n    at apiGet (http://localhost:5173/src/utils/api.js?t=1790342127846:25:21)\n    at getSpiritualCareState (http://localhost:5173/src/utils/api.js?t=1790342127846:472:52)\n    at fetchSpiritualCare (http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790357907698:526:4)\n    at http://localhost:5173/src/components/Navbar/Navbar.jsx?t=1790357907698:576:3\n    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=d690a2",
-    "count": 3
   },
   {
     "id": "ERR-5903",

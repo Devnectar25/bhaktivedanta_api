@@ -1,11 +1,27 @@
 import express from 'express';
 import { supabase } from '../utils/supabase.js';
 import { readData, writeData } from '../utils/storage.js';
+import { uploadImageToBucket } from '../utils/supabaseStorage.js';
 import * as seeds from '../utils/seeds.js';
 
 const router = express.Router();
 
 const MAX_HERO_BANNERS = 10;
+
+// POST /api/hero-banners/upload - Upload image to Supabase Storage Bucket 'hero-banners'
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { fileName, base64Data } = req.body;
+    if (!base64Data) {
+      return res.status(400).json({ error: 'base64Data is required' });
+    }
+
+    const result = await uploadImageToBucket('hero-banners', fileName || 'banner', base64Data);
+    return res.json(result);
+  } catch (err) {
+    next(err);
+  }
+});
 
 function getLocalBanners() {
   const data = readData('hero_banners');

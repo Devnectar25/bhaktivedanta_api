@@ -54,6 +54,13 @@ function mapFromSupabaseRow(dbRow) {
 
     const cntMatch = dbRow.errorStack.match(/\[Count:\s*(\d+)\]/);
     if (cntMatch) count = parseInt(cntMatch[1], 10);
+
+    const detailsMarker = dbRow.errorStack.indexOf('Details / Stack:\n');
+    if (detailsMarker !== -1) {
+      details = dbRow.errorStack.substring(detailsMarker + 'Details / Stack:\n'.length).trim();
+    } else if (dbRow.errorStack.startsWith('[Source:')) {
+      details = dbRow.errorStack.replace(/^(\[[A-Za-z]+:\s*[^\]]+\]\s*)+/g, '').trim();
+    }
   }
 
   return {
