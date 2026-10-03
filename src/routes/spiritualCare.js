@@ -249,6 +249,62 @@ router.get('/', async (req, res, next) => {
 });
 
 // ----------------------------------------------------
+// POST UPLOAD SPIRITUAL CARE MEDIA (Supabase Storage)
+// ----------------------------------------------------
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { itemName, title, fileName, base64Data } = req.body || {};
+    if (!base64Data) {
+      return res.status(400).json({ error: 'No media data provided' });
+    }
+
+    const base64Clean = base64Data.replace(/^data:[^;]+;base64,/, '');
+    const buffer = Buffer.from(base64Clean, 'base64');
+
+    const mimeMatch = base64Data.match(/^data:([^;]+);base64,/);
+    const mimeType = mimeMatch ? mimeMatch[1] : 'image/png';
+    const ext = mimeType.split('/')[1] || 'png';
+
+    const slug = (itemName || title || 'spiritual-care')
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    const timestamp = Date.now();
+    const filePath = `${slug}/${slug}-${timestamp}.${ext}`;
+
+    if (supabase) {
+      const bucketName = 'spiritual-care-images';
+      const { data, error } = await supabase.storage
+        .from(bucketName)
+        .upload(filePath, buffer, {
+          contentType: mimeType,
+          upsert: true
+        });
+
+      if (error) {
+        console.error('[API Spiritual Care Upload] Supabase Storage upload error:', error.message);
+        return res.json({ success: true, url: base64Data, path: filePath, fallback: true });
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from(bucketName)
+        .getPublicUrl(filePath);
+
+      const publicUrl = publicUrlData?.publicUrl || '';
+      console.log(`[API Spiritual Care Upload] Uploaded image for "${itemName || title || 'spiritual-care'}" ->`, publicUrl);
+      return res.json({ success: true, url: publicUrl, path: filePath });
+    } else {
+      return res.json({ success: true, url: base64Data, path: filePath });
+    }
+  } catch (err) {
+    console.error('[API Spiritual Care Upload] Error handling image upload:', err);
+    next(err);
+  }
+});
+
+// ----------------------------------------------------
 // 2. PUT / UPDATE FULL SPIRITUAL CARE STATE
 // ----------------------------------------------------
 router.put('/', async (req, res, next) => {

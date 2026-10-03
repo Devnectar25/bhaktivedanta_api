@@ -28,13 +28,11 @@ import spiritualCareRouter from './routes/spiritualCare.js';
 import statutoryCompliancesRouter from './routes/statutoryCompliances.js';
 import feedbackRouter from './routes/feedback.js';
 import associateCentresRouter from './routes/associateCentres.js';
-<<<<<<< Updated upstream
-=======
+import aboutUsRouter from './routes/aboutUs.js';
 import settingsRouter from './routes/settings.js';
 import faqsRouter from './routes/faqs.js';
 import heroBannersRouter from './routes/heroBanners.js';
 import uploadRouter from './routes/upload.js';
->>>>>>> Stashed changes
 
 // Load Environment Configuration
 dotenv.config();
@@ -150,14 +148,12 @@ app.use('/api/statutory-compliances-state', statutoryCompliancesRouter);
 app.use('/api/statutory-compliances', statutoryCompliancesRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/associate-centres', associateCentresRouter);
-<<<<<<< Updated upstream
-=======
+app.use('/api/about-us', aboutUsRouter);
 app.use('/api/settings', settingsRouter);
 app.use('/api/hospital-settings', settingsRouter);
 app.use('/api/faqs', faqsRouter);
 app.use('/api/hero-banners', heroBannersRouter);
 app.use('/api/upload', uploadRouter);
->>>>>>> Stashed changes
 
 // Page Not Found (404) Handler
 app.use((req, res, next) => {

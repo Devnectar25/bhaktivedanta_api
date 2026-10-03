@@ -77,7 +77,7 @@ router.post('/upload', async (req, res, next) => {
     const filePath = `${slug}/${slug}-${timestamp}.${ext}`;
 
     if (supabase) {
-      const bucketName = mimeType.startsWith('video') ? 'specialities-images' : 'specialities-images';
+      const bucketName = 'services-images';
       const { data, error } = await supabase.storage
         .from(bucketName)
         .upload(filePath, buffer, {
