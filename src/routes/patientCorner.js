@@ -157,10 +157,10 @@ router.post('/upload', async (req, res, next) => {
       .replace(/(^-|-$)/g, '');
 
     const timestamp = Date.now();
-    const filePath = `patient-corner/${slug}/${slug}-${timestamp}.${ext}`;
+    const filePath = `${slug}/${slug}-${timestamp}.${ext}`;
 
     if (supabase) {
-      const bucketName = 'specialities-images';
+      const bucketName = 'patient-corner-images';
       const { data, error } = await supabase.storage
         .from(bucketName)
         .upload(filePath, buffer, {
