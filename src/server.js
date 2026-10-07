@@ -149,6 +149,7 @@ app.use('/api/statutory-compliances', statutoryCompliancesRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/associate-centres', associateCentresRouter);
 app.use('/api/about-us', aboutUsRouter);
+app.use('/api/about-us-state', aboutUsRouter);
 app.use('/api/settings', settingsRouter);
 app.use('/api/hospital-settings', settingsRouter);
 app.use('/api/faqs', faqsRouter);

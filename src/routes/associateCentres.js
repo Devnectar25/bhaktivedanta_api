@@ -291,7 +291,7 @@ router.delete('/:id', async (req, res, next) => {
       const { error } = await supabase
         .from('bv_associate_centres')
         .delete()
-        .eq('id', id);
+        .or(`id.eq.${id},slug.eq.${id}`);
 
       if (error) {
         console.error('[API] Supabase delete associate centre error:', error);
@@ -301,7 +301,7 @@ router.delete('/:id', async (req, res, next) => {
 
     // Sync local storage
     const local = readData('associate_centres') || [];
-    const filtered = local.filter(c => c.id !== id);
+    const filtered = local.filter(c => c.id !== id && c.slug !== id);
     writeData('associate_centres', filtered);
 
     res.json({ success: true, message: 'Associate centre deleted successfully', id });
