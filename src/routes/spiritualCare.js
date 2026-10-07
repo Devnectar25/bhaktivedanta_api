@@ -17,9 +17,9 @@ async function getCurrentState() {
         publicationsRes,
         sectionsRes
       ] = await Promise.all([
-        supabase.from('admin_spiritual_services').select('*'),
+        supabase.from('admin_spiritual_services').select('*').order('updated_at', { ascending: false }),
         supabase.from('admin_spiritual_programmes').select('*').order('display_order', { ascending: true }),
-        supabase.from('admin_spiritual_retreats').select('*'),
+        supabase.from('admin_spiritual_retreats').select('*').order('updated_at', { ascending: false }),
         supabase.from('admin_spiritual_publications').select('*').order('display_order', { ascending: true }),
         supabase.from('admin_spiritual_dynamic_sections').select('*').order('display_order', { ascending: true })
       ]);
@@ -27,55 +27,63 @@ async function getCurrentState() {
       const hasError = servicesRes.error || programmesRes.error || retreatsRes.error || publicationsRes.error || sectionsRes.error;
       
       if (!hasError) {
-        const servicesData = servicesRes.data?.[0]?.content || {};
-        const retreatsData = retreatsRes.data?.[0]?.content || {};
+        const hasAnyData = (servicesRes.data && servicesRes.data.length > 0) ||
+                           (retreatsRes.data && retreatsRes.data.length > 0) ||
+                           (programmesRes.data && programmesRes.data.length > 0) ||
+                           (publicationsRes.data && publicationsRes.data.length > 0) ||
+                           (sectionsRes.data && sectionsRes.data.length > 0);
 
-        const programmesData = (programmesRes.data || []).map(row => {
-          if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
-            return { ...row.content, id: row.id, title: row.title || row.content.title, slug: row.slug || row.content.slug };
-          }
+        if (hasAnyData) {
+          const servicesData = servicesRes.data?.[0]?.content || {};
+          const retreatsData = retreatsRes.data?.[0]?.content || {};
+
+          const programmesData = (programmesRes.data || []).map(row => {
+            if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
+              return { ...row.content, id: row.id, title: row.title || row.content.title, slug: row.slug || row.content.slug };
+            }
+            return {
+              id: row.id,
+              title: row.title,
+              slug: row.slug,
+              description: row.short_description || '',
+              enabled: row.status !== 'false'
+            };
+          });
+
+          const publicationsData = (publicationsRes.data || []).map(row => {
+            if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
+              return { ...row.content, id: row.id, title: row.title || row.content.title };
+            }
+            return {
+              id: row.id,
+              title: row.title,
+              authors: row.authors ? row.authors.split(',').map(s => s.trim()) : [],
+              journal: row.citation || '',
+              url: row.pdf_url || '',
+              status: row.status || 'Published'
+            };
+          });
+
+          const sectionsData = (sectionsRes.data || []).map(row => {
+            if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
+              return { ...row.content, id: row.id, title: row.title || row.content.title };
+            }
+            return {
+              id: row.id,
+              title: row.title,
+              order: row.display_order || 1,
+              enabled: row.status !== 'false'
+            };
+          });
+
           return {
-            id: row.id,
-            title: row.title,
-            slug: row.slug,
-            description: row.short_description || '',
-            enabled: row.status !== 'false'
+            services: servicesData,
+            programmes: programmesData,
+            retreats: retreatsData,
+            publications: publicationsData,
+            sections: sectionsData
           };
-        });
-
-        const publicationsData = (publicationsRes.data || []).map(row => {
-          if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
-            return { ...row.content, id: row.id, title: row.title || row.content.title };
-          }
-          return {
-            id: row.id,
-            title: row.title,
-            authors: row.authors ? row.authors.split(',').map(s => s.trim()) : [],
-            journal: row.citation || '',
-            url: row.pdf_url || '',
-            status: row.status || 'Published'
-          };
-        });
-
-        const sectionsData = (sectionsRes.data || []).map(row => {
-          if (row.content && typeof row.content === 'object' && Object.keys(row.content).length > 0) {
-            return { ...row.content, id: row.id, title: row.title || row.content.title };
-          }
-          return {
-            id: row.id,
-            title: row.title,
-            order: row.display_order || 1,
-            enabled: row.status !== 'false'
-          };
-        });
-
-        return {
-          services: servicesData,
-          programmes: programmesData,
-          retreats: retreatsData,
-          publications: publicationsData,
-          sections: sectionsData
-        };
+        }
       } else {
         console.warn('Supabase spiritual care fetch errors:', {
           services: servicesRes.error?.message,
@@ -90,9 +98,9 @@ async function getCurrentState() {
     }
   }
 
-  // Fallback to local JSON backup if Supabase unavailable
+  // Fallback to local JSON backup if Supabase unavailable or empty
   const state = readData('spiritual_care_state');
-  if (state && typeof state === 'object') {
+  if (state && typeof state === 'object' && !Array.isArray(state) && Object.keys(state).length > 0) {
     return state;
   }
   return {
@@ -122,12 +130,20 @@ async function saveFullState(state) {
 
       // (a) Services
       if (state.services && typeof state.services === 'object') {
-        const { error: sErr } = await supabase.from('admin_spiritual_services').upsert({
-          id: 'spiritual-services',
-          content: state.services,
-          status: 'true',
-          updated_at: now
-        }, { onConflict: 'id' });
+        const { error: sErr } = await supabase.from('admin_spiritual_services').upsert([
+          {
+            id: 'spiritual-services',
+            content: state.services,
+            status: 'true',
+            updated_at: now
+          },
+          {
+            id: 'spiritual-care-services',
+            content: state.services,
+            status: 'true',
+            updated_at: now
+          }
+        ], { onConflict: 'id' });
         if (sErr) console.warn('Supabase save services error:', sErr.message);
       }
 
@@ -315,11 +331,7 @@ router.put('/', async (req, res, next) => {
     }
 
     const saved = await saveFullState(updatedState);
-    res.json({
-      success: true,
-      message: 'Spiritual care state updated successfully',
-      data: saved
-    });
+    res.json(saved);
   } catch (err) {
     next(err);
   }

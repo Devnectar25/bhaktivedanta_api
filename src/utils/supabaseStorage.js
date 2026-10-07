@@ -4,7 +4,8 @@ export const REQUIRED_BUCKETS = [
   'hero-banners',
   'specialities-images',
   'Doctors_Imeges',
-  'hospital-assets'
+  'hospital-assets',
+  'patient-corner-images'
 ];
 
 /**
