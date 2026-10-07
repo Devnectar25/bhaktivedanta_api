@@ -111,7 +111,6 @@ async function saveFullState(state) {
             slug: (guide.slug || guide.title || guide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
             category_id: guide.categoryId || 'pc-cat-guide',
             category_name: guide.category || 'Patient Guide',
-            short_description: guide.shortDescription || guide.short_description || '',
             banner_image: guide.bannerImage || '',
             status: guide.status || 'Published',
             display_order: parseInt(guide.displayOrder || guide.order, 10) || 1,
@@ -310,6 +309,36 @@ const handleCreateGuide = async (req, res, next) => {
     }
 
     const targetCatId = categoryId || 'pc-cat-guide';
+    const targetCatName = category || (targetCatId === 'pc-cat-guide' ? 'Patient Guide' : 'Patient Guide');
+
+    // 1. Ensure category exists in bv_patient_corner_categories in Supabase
+    if (supabase) {
+      try {
+        const { data: existingCat } = await supabase
+          .from('bv_patient_corner_categories')
+          .select('id, name')
+          .eq('id', targetCatId)
+          .maybeSingle();
+
+        if (!existingCat) {
+          await supabase.from('bv_patient_corner_categories').upsert({
+            id: targetCatId,
+            name: targetCatName,
+            description: 'Patient Corner Category',
+            order: 1,
+            status: true,
+            max_items: 6,
+            adminId: 'ADM-001',
+            adminName: 'Super Administrator',
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+          }, { onConflict: 'id' });
+        }
+      } catch (catErr) {
+        console.warn('Auto-ensuring category warning:', catErr.message);
+      }
+    }
+
     const limitCheck = await checkCategoryLimit(targetCatId);
     if (!limitCheck.allowed) {
       return res.status(400).json({ error: limitCheck.error });
@@ -324,9 +353,9 @@ const handleCreateGuide = async (req, res, next) => {
 
     const now = new Date().toISOString();
     const newGuide = {
-      id: `pc-${Date.now()}`,
+      id: req.body.id || `pc-${Date.now()}`,
       categoryId: targetCatId,
-      category: category || 'Inpatient Guide',
+      category: targetCatName,
       title: guideTitle,
       name: guideTitle,
       slug: cleanSlug,
@@ -348,7 +377,6 @@ const handleCreateGuide = async (req, res, next) => {
         slug: newGuide.slug,
         category_id: newGuide.categoryId,
         category_name: newGuide.category,
-        short_description: newGuide.shortDescription || '',
         banner_image: newGuide.bannerImage || '',
         status: newGuide.status,
         display_order: newGuide.displayOrder,
@@ -358,13 +386,16 @@ const handleCreateGuide = async (req, res, next) => {
         created_at: now,
         updated_at: now
       });
-      if (dbErr) console.warn('Supabase insert guide error:', dbErr.message);
+      if (dbErr) {
+        console.error('Supabase insert guide error:', dbErr.message);
+        return res.status(500).json({ error: `Database insert failed: ${dbErr.message}` });
+      }
     }
 
     state.guides.push(newGuide);
     try { writeData('patient_corner_state', state); } catch (e) {}
 
-    res.status(201).json({ success: true, guide: newGuide });
+    res.status(201).json({ success: true, guide: newGuide, state });
   } catch (err) {
     next(err);
   }
@@ -436,6 +467,33 @@ const handleUpdateGuide = async (req, res, next) => {
     };
 
     if (supabase) {
+      if (newCatId) {
+        try {
+          const { data: existingCat } = await supabase
+            .from('bv_patient_corner_categories')
+            .select('id')
+            .eq('id', newCatId)
+            .maybeSingle();
+
+          if (!existingCat) {
+            await supabase.from('bv_patient_corner_categories').upsert({
+              id: newCatId,
+              name: updatedGuide.category || 'Patient Guide',
+              description: 'Patient Corner Category',
+              order: 1,
+              status: true,
+              max_items: 6,
+              adminId: 'ADM-001',
+              adminName: 'Super Administrator',
+              created_at: now,
+              updated_at: now
+            }, { onConflict: 'id' });
+          }
+        } catch (catErr) {
+          console.warn('Auto-ensuring category on update warning:', catErr.message);
+        }
+      }
+
       const { error: dbErr } = await supabase.from('admin_patient_corner_guides').update({
         title: updatedGuide.title,
         slug: (updatedGuide.slug || updatedGuide.title || updatedGuide.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
@@ -448,7 +506,10 @@ const handleUpdateGuide = async (req, res, next) => {
         updated_at: now
       }).eq('id', currentGuide.id);
 
-      if (dbErr) console.warn('Supabase update guide error:', dbErr.message);
+      if (dbErr) {
+        console.error('Supabase update guide error:', dbErr.message);
+        return res.status(500).json({ error: `Database update failed: ${dbErr.message}` });
+      }
     }
 
     state.guides[index] = updatedGuide;
